@@ -1,0 +1,50 @@
+<!--Section: Features v.3-->
+<section>
+
+  <!--Section heading-->
+  <h2 class="h1 py-5 font-weight-bold text-center">Postpaid connection</h2>
+  <!--Section description-->
+  <p class="px-5 mb-5 pb-3 lead grey-text text-center">Now getting a new postpaid connection is as easy as it seems!, just give us your contact number we'll contact you and let you know what you need to do to get a new postpaid connection.</p>
+
+  <!--Grid row-->
+  <div class="row pt-2">
+
+    <!--Grid column-->
+    <div class="col-lg-5 text-center text-lg-left">
+      <img src="https://mdbootstrap.com/img/Photos/Others/screens-section.jpg" alt="" class="img-fluid z-depth-0">
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-lg-7">
+<div style="height: 90px;"></div>
+      <!--Grid row-->
+      <form>
+			  <div class="form-row text-white text-center">
+			    <div class="col-4 offset-2">
+
+			    	<div class="md-form md-bg form-lg">
+					  <input mdbValidate name="mobile" type="tel" id="form-bg-lg" class="form-control form-control-lg" type="text" mdbInput [(ngModel)]="mobile" #input="ngModel" required pattern="[6789][0-9]{9}">
+					  <label for="form-bg-lg">Mobile</label>
+					  <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)">Input invalid</mdb-error>
+					<mdb-success *ngIf="input.valid && (input.dirty || input.touched)"> </mdb-success>
+					</div>
+			    </div>
+			    <div class="col-3">
+			      <div class="md-form form-lg">
+			        <input mdbInput mdbBtn type="submit" size="lg" rounded="true" gradient="blue" class="form-control form-control-lg text-white mt-0" value="Submit">
+			      </div>
+			    </div>
+			  </div>
+			</form>
+      <!--Grid row-->
+
+    </div>
+    <!--Grid column-->
+
+  </div>
+  <!--Grid row-->
+
+</section>
+<!--Section: Features v.3-->
+

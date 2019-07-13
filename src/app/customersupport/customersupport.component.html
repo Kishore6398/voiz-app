@@ -1,0 +1,111 @@
+<!-- Grid row -->
+<div class="row">
+
+  <!-- Grid column -->
+  <div class="col-md-3 col-lg-3 col-xl-3">
+    <div rounded="true" class="">
+    <ul class="nav md-pills nav-justified pills-primary btn btn-lg tabs-default">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#panel100" role="tab">Bill Payment</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel101" role="tab">Generate Invoice </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel101" role="tab">Download Invoice </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel102" role="tab">Inquiry</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel103" role="tab">Feedback</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel103" role="tab">Complient</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="col-md-9 col-lg-9 col-xl-9">
+    <!-- Tab panels -->
+    <div class="tab-content">
+
+      <!--Panel 1-->
+      <div class="tab-pane fade in show active" id="panel100" role="tabpanel">
+        <form>
+        <div class="card col-lg-4 offset-4 mt-2 mb-2">
+            <div class="card-body mx-4">
+                <div class="text-center">
+                    <h3 class="dark-grey-text mb-5">
+                        <strong>Log In</strong>
+                    </h3>
+                </div>
+                <div class="md-form md-outline">
+                   <input mdbInput mdbValidate name="email" type="email" id="form8" class="form-control" [(ngModel)]="email" #input="ngModel" required pattern="[^ @]*@[^ @]*">
+                  <label for="form2">Email </label>
+                  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
+                  <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                  </div>
+                <div class="md-form pb-3 md-outline">
+                   <input mdbInput mdbValidate name="password" type="password" class="form-control" [(ngModel)]="password" #input="ngModel" required pattern="[0-9a-zA-Z]{8,16}">
+                  <label for="form2">Password </label>
+                  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
+                  <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                  </div>
+                <div class="text-center mb-3">
+                    <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Log in</button>
+                </div>
+            </div>
+            <div class="modal-footer mx-5 pt-3 mb-1">
+                <p class="font-small grey-text d-flex justify-content-end">Not a member?
+                    <a routerLink="/signup" class="blue-text ml-1"> Sign Up</a>
+                </p>
+            </div>
+        </div>
+                </form>
+
+
+      </div>
+      <!--/.Panel 1-->
+
+      <!--Panel 2-->
+      <div class="tab-pane fade" id="panel101" role="tabpanel">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+          reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+          porro voluptate odit minima.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+          reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+          porro voluptate odit minima.</p>
+
+      </div>
+      <!--/.Panel 2-->
+
+      <!--Panel 3-->
+      <div class="tab-pane fade" id="panel102" role="tabpanel">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+          reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+          porro voluptate odit minima.</p>
+
+      </div>
+      <!--/.Panel 3-->
+
+      <!--Panel 4-->
+      <div class="tab-pane fade" id="panel103" role="tabpanel">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+          reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+          porro voluptate odit minima.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+          reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+          porro voluptate odit minima.</p>
+
+      </div>
+      <!--/.Panel 4-->
+
+    </div>
+
+  </div>
+  <!-- Grid column -->
+</div>

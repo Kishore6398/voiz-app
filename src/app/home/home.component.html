@@ -1,0 +1,80 @@
+<mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+  <mdb-carousel-item>
+    <a routerLink="/"><img class="d-block w-100" style="height: 300px;" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide"></a>
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+     <a routerLink="/"><img class="d-block w-100" style="height: 300px;" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide"></a>
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+     <a routerLink="/"><img class="d-block w-100" style="height: 300px;" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide"></a>
+  </mdb-carousel-item>
+</mdb-carousel>
+
+ <div class="col-lg-8 align-items-center offset-4">
+<form >
+  <div class="form-row">
+  <div class="col-lg-5 md-form form-lg md-outline">
+  <input mdbInput mdbValidate name="email" type="tel" id="form8" class="form-control form-control-lg mt-1" [(ngModel)]="email" #input="ngModel" required pattern="[6789][0-9]{9}">
+  <label for="form2">Mobile </label>
+  <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)">Input invalid</mdb-error>
+  <mdb-success *ngIf="input.valid && (input.dirty || input.touched)"></mdb-success>
+</div>
+    <div class="col-lg-3">
+      <div class="md-form">
+        <input mdbInput mdbBtn type="submit" size="lg" rounded="true" gradient="blue" class="form-control form-control-lg text-white mt-0" value="Pay bill">
+      </div>
+    </div>
+  </div>
+</form>
+</div> 
+<div class="container">
+  <div class="row">
+    <div class="col-md">
+      <mdb-card class="mb-4 text-center text-white raised" borderColor="border-info" style="height:30px;" style="max-width: 20rem">
+          <mdb-card-body class="text-center offset-2">
+          <mdb-card-text> <mdb-icon fas icon="mobile-alt" size="3x" class="cyan-text pr-3" aria-hidden="true"></mdb-icon>
+          </mdb-card-text>
+      </mdb-card-body>
+      <mdb-card-footer class="blue-gradient"> <a routerLink="/recharge" class="text-white"> Recharge </a></mdb-card-footer>
+    </mdb-card>
+    </div>
+    <div class="col-md">
+       <mdb-card class="mb-4 text-center text-white" borderColor="border-info" style="height:30px;" style="max-width: 20rem">     
+          <mdb-card-body class="text-center offset-2">
+          <mdb-card-text> <mdb-icon fas icon="sim-card" size="3x" class="cyan-text pr-3" aria-hidden="true"></mdb-icon>
+          </mdb-card-text>
+      </mdb-card-body>
+      <mdb-card-footer class="blue-gradient"> <a routerLink="/prepaid" class="text-white"> Prepaid connection </a></mdb-card-footer>
+    </mdb-card>
+    </div>
+
+    <div class="col-md">
+       <mdb-card class="mb-4 text-center text-white" borderColor="border-info" style="height:30px;" style="max-width: 20rem">      
+          <mdb-card-body class="text-center offset-2">
+          <mdb-card-text> <mdb-icon fas icon="sim-card" size="3x" class="cyan-text pr-3" aria-hidden="true"></mdb-icon>
+          </mdb-card-text>
+      </mdb-card-body>
+      <mdb-card-footer class="blue-gradient"> <a routerLink="/postpaid" class="text-white"> Postpaid connection </a></mdb-card-footer>
+    </mdb-card>
+    </div>
+
+    <div class="col-md">
+       <mdb-card class="mb-4 text-center text-white" borderColor="border-info" style="height:30px;" style="max-width: 20rem">     
+          <mdb-card-body class="text-center offset-2">
+          <mdb-card-text> <mdb-icon fas icon="wifi" size="3x" class="cyan-text pr-3" aria-hidden="true"></mdb-icon>
+          </mdb-card-text>
+      </mdb-card-body>
+      <mdb-card-footer class="blue-gradient"> <a routerLink="/broadband" class="text-white"> Home Broadband </a></mdb-card-footer>
+    </mdb-card>
+    </div>
+    <div class="col-md">
+       <mdb-card class="mb-4 text-center text-white" borderColor="border-info" style="height:30px;" style="max-width: 20rem">
+          <mdb-card-body class="text-center offset-2">
+          <mdb-card-text> <mdb-icon fas icon="credit-card" size="3x" class="cyan-text pr-3" aria-hidden="true"></mdb-icon>
+          </mdb-card-text>
+      </mdb-card-body>
+      <mdb-card-footer class="blue-gradient"> <a routerLink="/paybill" class="text-white"> Pay bill </a></mdb-card-footer>
+    </mdb-card>
+    </div>
+  </div>
+  </div>

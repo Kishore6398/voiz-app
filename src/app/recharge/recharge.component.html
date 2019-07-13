@@ -1,0 +1,49 @@
+<!--Section: Features v.3-->
+<section>
+
+  <!--Section heading-->
+  <h2 class="h1 py-5 font-weight-bold text-center">Quick Recharge</h2>
+  <!--Section description-->
+  <p class="px-5 mb-5 pb-3 lead grey-text text-center">Now you can recharge your prepaid, postpaid, broadband online with internet banking and card payment methods.</p>
+
+  <!--Grid row-->
+  <div class="row pt-2">
+
+    <!--Grid column-->
+    <div class="col-lg-5 text-center text-lg-left">
+      <img src="https://mdbootstrap.com/img/Photos/Others/screens-section.jpg" alt="" class="img-fluid z-depth-0">
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-lg-7">
+<div style="height: 90px;"></div>
+    	
+      <!--Grid row-->
+      <form>
+			  <div class="form-row text-white text-center">
+			    <div class="col-5 offset-2">
+			    	<div class="md-form md-bg form-lg">
+					  <input mdbValidate name="mobile" type="tel" id="form-bg-lg" class="form-control form-control-lg" type="text" mdbInput [(ngModel)]="mobile" #input="ngModel" required pattern="[^ @]*@[^ @]*">
+					  <label for="form-bg-lg">Mobile</label>
+					  <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)">Input invalid</mdb-error>
+					<mdb-success *ngIf="input.valid && (input.dirty || input.touched)">Input valid</mdb-success>
+					</div>
+			    </div>
+			    <div class="col-2">
+			      <div class="md-form form-lg">
+			        <input mdbInput type="submit" class="form-control form-control-bg btn btn-md btn-lg blue-gradient mt-2" value="Pay">
+			      </div>
+			    </div>
+			  </div>
+			</form>
+      <!--Grid row-->
+
+    </div>
+    <!--Grid column-->
+
+  </div>
+  <!--Grid row-->
+
+</section>
+<!--Section: Features v.3-->

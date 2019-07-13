@@ -1,0 +1,57 @@
+<form>
+                      <div class="card col-lg-4 offset-4 mt-2 mb-2">
+                          <div class="card-body mx-4">
+                              <div class="text-center">
+                                  <h3 class="dark-grey-text mb-5">
+                                      <strong>Sign Up</strong>
+                                  </h3>
+                              </div>
+                              <div class="md-form md-outline">
+                                 <input mdbInput mdbValidate name="email" type="email" id="email" class="form-control" [(ngModel)]="email" #input="ngModel" required pattern="[^ @]*@[^ @]*">
+								  <label for="email">Email </label>
+								  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
+								  <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                              </div>
+                              <div class="md-form md-outline">
+                                 <input mdbInput mdbValidate name="mobile" type="tel" id="form8" class="form-control" [(ngModel)]="mobile" #input="ngModel" required pattern="[789][0-9]{9}">
+                  <label for="form2">Mobile </label>
+                  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
+                  <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                              </div>
+                              <div class="md-form md-outline">
+                                 <input mdbInput mdbValidate name="password" id="password" type="password" class="form-control" [(ngModel)]="password" #input="ngModel" required pattern="[0-9a-zA-Z]{8,16}">
+								  <label for="form2">Password </label>
+								  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
+								  <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                              </div>
+                               <div class="md-form pb-3 md-outline">
+                                 <input mdbInput mdbValidate name="repassword" id="repassword" type="password" class="form-control" [(ngModel)]="repassword" #input="ngModel" required pattern="[0-9a-zA-Z]{8,16}">
+                  <label for="form2">Re-enter Password </label>
+                  <mdb-error class="offset-7" *ngIf="password != repassword">Password not matched</mdb-error>
+                  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
+                  <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                              </div>
+                              <div class="text-center mb-3">
+                                  <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Sign up</button>
+                              </div>
+                             <!--  <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign up with:</p>
+
+                              <div class="row my-3 d-flex justify-content-center">
+                                  <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a waves-effect waves-light">
+                                      <i class="fab fa-facebook-f blue-text text-center"></i>
+                                  </button>
+                                  <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a waves-effect waves-light">
+                                      <i class="fab fa-twitter blue-text"></i>
+                                  </button>
+                                  <button type="button" class="btn btn-white btn-rounded z-depth-1a waves-effect waves-light">
+                                      <i class="fab fa-google-plus-g blue-text"></i>
+                                  </button>
+                              </div> -->
+                          </div>
+                          <div class="modal-footer mx-5 pt-3 mb-1">
+                              <p class="font-small grey-text d-flex justify-content-end">Already a member?
+                                  <a href="#" class="blue-text ml-1"> Log In</a>
+                              </p>
+                          </div>
+                      </div>
+                </form>
