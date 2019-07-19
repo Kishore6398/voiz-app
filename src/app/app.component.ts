@@ -13,9 +13,9 @@ import { NavigationCancel, Event, NavigationEnd, NavigationError, NavigationStar
 })
 export class AppComponent {
   title = 'app';
-  repdata;
+  Repdata;
   valbutton = 'save';
-  constructor(private _loadingBar: SlimLoadingBarService, private router: Router, private newService: CommonService) { 
+  constructor(private _loadingBar: SlimLoadingBarService, private router: Router, private newService: CommonService) {
     this.router.events.subscribe((event: Event) => {
     this.navigationInterceptor(event);
     });
@@ -37,10 +37,10 @@ export class AppComponent {
   }
 // tslint:disable-next-line: use-life-cycle-interface
   ngOnInit () {
-    this.newService.login.subscribe(data => this.Repdata = data);
+    this.newService.login(user).subscribe(data => this.Repdata = data);
   }
 
-  onSave = function(user, isValid: boolean){
+  onSave = function(user, isValid: boolean) {
     user.mode = this.valbutton;
     this.newService.signup(user).subscribe( data => { alert(data.data); this.ngOnInit(); }, error => this.errorMessage = error);
   };

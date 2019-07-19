@@ -180,7 +180,7 @@
 	-webkit-transform: translateZ(0);
 	-ms-transform: translateZ(0);
 	transform: translateZ(0);
-	-webkit-mask-image: -webkit-radial-gradient(circle,#fff 100%,#000 100%);
+	mask-image: -webkit-radial-gradient(circle,#fff 100%,#000 100%);
 }
 .waves-button,.waves-button-input,.waves-button:hover,.waves-button:visited {
 	white-space: nowrap;
