@@ -18,7 +18,7 @@
 			    <div class="col-5 offset-2">
 
 			    	<div class="md-form md-bg form-lg">
-					  <input mdbValidate name="mobile" type="tel" id="form-bg-lg" class="form-control form-control-lg" type="text" mdbInput [(ngModel)]="mobile" #input="ngModel" required pattern="[^ @]*@[^ @]*">
+					  <input mdbValidate name="mobile" type="tel" id="form-bg-lg" class="form-control form-control-lg" type="text" mdbInput [(ngModel)]="mobile" #input="ngModel" required pattern="[6789][0-9]{9}">
 					  <label for="form-bg-lg">Mobile</label>
 					  <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)">Input invalid</mdb-error>
 					<mdb-success *ngIf="input.valid && (input.dirty || input.touched)">Input valid</mdb-success>

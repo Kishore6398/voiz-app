@@ -1,7 +1,11 @@
 import { Component  } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonService } from './common.service';
 
-
+import { FormGroup, FormControl, Validators, FormsModule } from '@angular/forms';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
+import { NavigationCancel, Event, NavigationEnd, NavigationError, NavigationStart } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,14 +13,53 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'app';
-  constructor(private router: Router) {
-  	
+  repdata;
+  valbutton = 'save';
+  constructor(private _loadingBar: SlimLoadingBarService, private router: Router, private newService: CommonService) { 
+    this.router.events.subscribe((event: Event) => {
+    this.navigationInterceptor(event);
+    });
+   }
+
+  private navigationInterceptor(event: Event): void {
+    if (event instanceof NavigationStart) {
+      this._loadingBar.start();
+    }
+    if (event instanceof NavigationEnd) {
+      this._loadingBar.complete();
+    }
+    if (event instanceof NavigationCancel) {
+      this._loadingBar.stop();
+    }
+    if (event instanceof NavigationError) {
+      this._loadingBar.stop();
+    }
   }
+// tslint:disable-next-line: use-life-cycle-interface
+  ngOnInit () {
+    this.newService.login.subscribe(data => this.Repdata = data);
+  }
+
+  onSave = function(user, isValid: boolean){
+    user.mode = this.valbutton;
+    this.newService.signup(user).subscribe( data => { alert(data.data); this.ngOnInit(); }, error => this.errorMessage = error);
+  };
+
+  edit = function(cred) {
+    this.id = cred._id;
+    this.email = cred.email;
+    this.password = cred.password;
+    this.valbutton = 'Update';
+  };
+  delete = function(id) {
+    this.newService.deleteUser(id).subscribe( data => { alert(data.data); this.ngOnInit(); }, error => this.errorMessage = error);
+  };
   fn() {
-    var s=this.router.url.toString().split("/");
-    if(s[1]=="")
-    return true;
-    else 
-    return false;
+    const s = this.router.url.toString().split('/');
+    if (s[1] === '') {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

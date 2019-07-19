@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { CommonService } from './common.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,7 @@ import { BroadbandComponent } from './broadband/broadband.component';
 import { ShopComponent } from './shop/shop.component';
 import { CustomersupportComponent } from './customersupport/customersupport.component';
 import { PaybillComponent } from './paybill/paybill.component';
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 
 @NgModule({
   declarations: [
@@ -39,12 +42,15 @@ import { PaybillComponent } from './paybill/paybill.component';
   ],
   imports: [
     BrowserModule,
+// tslint:disable-next-line: deprecation
+    HttpModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SlimLoadingBarModule
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
