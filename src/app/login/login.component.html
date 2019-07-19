@@ -29,3 +29,14 @@
             </div>
         </div>
                 </form>
+<form [formGroup]="loginForm">
+    <div class="md-form">
+        <input mdbInput mdbValidate type="email" id="form8" class="form-control" formControlName="email">
+        <label for="form8">Email validator</label>
+        <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)">
+            <span *ngIf="input.errors.required">Email is required</span>
+            <span *ngIf="input.errors.email">This email address is not valid</span>
+        </mdb-error>
+        <mdb-success *ngIf="input.valid && (input.dirty || input.touched)">Input valid</mdb-success>
+    </div>
+</form>

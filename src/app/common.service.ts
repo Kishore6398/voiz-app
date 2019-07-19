@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions} from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
@@ -9,13 +9,12 @@ import 'rxjs/add/operator/do';
   providedIn: 'root'
 })
 export class CommonService {
-  user: any;
   constructor(private http: Http) { }
-  login(user: any) {
+  login(user) {
 // tslint:disable-next-line: deprecation
     return this.http.post('http://localhost:8080/api/login/', user).map((response: Response) => response.json());
   }
-  signup(user: any) {
+  signup(user) {
 // tslint:disable-next-line: deprecation
     return this.http.post('http://localhost:8080/api/signup/', user).map((response: Response) => response.json());
   }

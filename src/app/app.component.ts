@@ -12,7 +12,6 @@ import { NavigationCancel, Event, NavigationEnd, NavigationError, NavigationStar
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
   Repdata;
   valbutton = 'save';
   constructor(private _loadingBar: SlimLoadingBarService, private router: Router, private newService: CommonService) {
@@ -36,24 +35,7 @@ export class AppComponent {
     }
   }
 // tslint:disable-next-line: use-life-cycle-interface
-  ngOnInit () {
-    this.newService.login(user).subscribe(data => this.Repdata = data);
-  }
-
-  onSave = function(user, isValid: boolean) {
-    user.mode = this.valbutton;
-    this.newService.signup(user).subscribe( data => { alert(data.data); this.ngOnInit(); }, error => this.errorMessage = error);
-  };
-
-  edit = function(cred) {
-    this.id = cred._id;
-    this.email = cred.email;
-    this.password = cred.password;
-    this.valbutton = 'Update';
-  };
-  delete = function(id) {
-    this.newService.deleteUser(id).subscribe( data => { alert(data.data); this.ngOnInit(); }, error => this.errorMessage = error);
-  };
+  ngOnInit () {  }
   fn() {
     const s = this.router.url.toString().split('/');
     if (s[1] === '') {
