@@ -12,10 +12,10 @@ export class CommonService {
   constructor(private http: Http) { }
   login(user) {
 // tslint:disable-next-line: deprecation
-    return this.http.post('http://localhost:8080/api/login/', user).map((response: Response) => response.json());
+    return this.http.post('http://localhost:8080/login/', user).map((response: Response) => response.json());
   }
   signup(user) {
 // tslint:disable-next-line: deprecation
-    return this.http.post('http://localhost:8080/api/signup/', user).map((response: Response) => response.json());
+    return this.http.post('http://localhost:8080/signup/', user).map((response: Response) => response.json());
   }
 }

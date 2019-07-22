@@ -12,8 +12,6 @@ import { NavigationCancel, Event, NavigationEnd, NavigationError, NavigationStar
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  Repdata;
-  valbutton = 'save';
   constructor(private _loadingBar: SlimLoadingBarService, private router: Router, private newService: CommonService) {
     this.router.events.subscribe((event: Event) => {
     this.navigationInterceptor(event);

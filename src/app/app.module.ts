@@ -21,6 +21,7 @@ import { ShopComponent } from './shop/shop.component';
 import { CustomersupportComponent } from './customersupport/customersupport.component';
 import { PaybillComponent } from './paybill/paybill.component';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
     MDBBootstrapModule.forRoot(),
     FormsModule,
     AppRoutingModule,
-    SlimLoadingBarModule
+    SlimLoadingBarModule,
+    ReactiveFormsModule
   ],
   providers: [CommonService],
   bootstrap: [AppComponent]
