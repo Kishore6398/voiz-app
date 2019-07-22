@@ -6,18 +6,16 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
+  login: FormGroup;
   constructor(private fb: FormBuilder) {
-    this.createForm();
    }
 
   ngOnInit() {
-
-  }
-  createForm() {
-    this.loginForm = this.fb.group({
-      username: ['', (Validators.required, Validators.pattern('[^ @]*@[^ @]*'))],
-      pass: ['', (Validators.required, Validators.pattern('[0-9a-zA-Z]{8,16}'))]
+    this.login = new FormGroup({
+      user: new FormControl(null, Validators.required),
+      pass: new FormControl(null, Validators.required)
     });
   }
+
+  get onBlur() { return this.login.get('onBlur'); }
 }

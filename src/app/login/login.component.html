@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="login">
         <div class="card col-lg-4 offset-4 mt-2 mb-2">
             <div class="card-body mx-4">
                 <div class="text-center">
@@ -7,14 +7,14 @@
                     </h3>
                 </div>
                 <div class="md-form md-outline">
-                   <input mdbInput mdbValidate name="email" type="email" class="form-control" [(ngModel)]="email" #input="ngModel" required pattern="[^ @]*@[^ @]*">
-								  <label for="email">Email </label>
-								  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
-								  <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)">valid</mdb-success>
+                   <input mdbInput mdbValidate type="text" id="email" class="form-control" formControlName="user">
+                    <label for="email">Email </label>
+                    <mdb-error *ngIf="login['user'].invalid && (login['user'].dirty ||login['user'].touched)">Input invalid</mdb-error>
+                    <mdb-success *ngIf="login['user'].valid && (login['user'].dirty ||login['user'].touched)">valid</mdb-success>
                   </div>
                 <div class="md-form pb-3 md-outline">
-                   <input mdbInput mdbValidate name="password" type="password" class="form-control" [(ngModel)]="password" #input="ngModel" required pattern="[0-9a-zA-Z]{8,16}">
-              	  <label for="form2">Password </label>
+                   <input mdbInput mdbValidate id="pass" type="password" class="form-control" formControlName="pass">
+              	  <label for="pass">Password </label>
               	  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
               	  <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
                   </div>
