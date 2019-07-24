@@ -9,8 +9,8 @@
                 <div class="md-form md-outline">
                    <input mdbInput mdbValidate type="text" id="email" class="form-control" formControlName="user">
                     <label for="email">Email </label>
-                    <mdb-error *ngIf="login['user'].invalid && (login['user'].dirty ||login['user'].touched)">Input invalid</mdb-error>
-                    <mdb-success *ngIf="login['user'].valid && (login['user'].dirty ||login['user'].touched)">valid</mdb-success>
+                    <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
+                    <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)">valid</mdb-success>
                   </div>
                 <div class="md-form pb-3 md-outline">
                    <input mdbInput mdbValidate id="pass" type="password" class="form-control" formControlName="pass">
