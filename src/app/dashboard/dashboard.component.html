@@ -31,43 +31,9 @@
       <div class="col-md-9 col-lg-9 col-xl-9">
           <div class="tab-content">
             <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
-              <form>
-                <div class="card col-lg-4 offset-4 mt-2 mb-2">
-                  <div class="card-body mx-4">
-                    <div class="text-center">
-                      <h3 class="dark-grey-text mb-5">
-                        <strong>Log In</strong>
-                      </h3>
-                    </div>
-                    <div class="md-form md-outline">
-                      <input mdbInput mdbValidate name="email" type="email" id="form8" class="form-control" [(ngModel)]="email"
-                        #input="ngModel" required pattern="[^ @]*@[^ @]*">
-                      <label for="form2">Email </label>
-                      <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
-                      <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
-                    </div>
-                    <div class="md-form pb-3 md-outline">
-                      <input mdbInput mdbValidate name="password" type="password" class="form-control" [(ngModel)]="password"
-                        #input="ngModel" required pattern="[0-9a-zA-Z]{8,16}">
-                      <label for="form2">Password </label>
-                      <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
-                      <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
-                    </div>
-                    <div class="text-center mb-3">
-                      <button type="submit"
-                        class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Log
-                        in</button>
-                    </div>
-                  </div>
-                  <div class="modal-footer mx-5 pt-3 mb-1">
-                    <p class="font-small grey-text d-flex justify-content-end">Not a member?
-                      <a routerLink="/signup" class="blue-text ml-1"> Sign Up</a>
-                    </p>
-                  </div>
-                </div>
-              </form>
-          
-          
+            <!--/.your content here-->
+
+              
             </div>
             <!--/.Panel 1-->
           
