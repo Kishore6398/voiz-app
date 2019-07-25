@@ -33,7 +33,7 @@
 </div>
 <div class="col-md-9 col-lg-9 col-xl-9">
     <div class="tab-content">
-      <div class="tab-pane fade in show active" id="panel100" role="tabpanel">
+      <div class="tab-pane fade in show active" id="panel101" role="tabpanel">
         <form>
           <div class="card col-lg-4 offset-4 mt-2 mb-2">
             <div class="card-body mx-4">
@@ -54,6 +54,8 @@
                   <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
                   <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
                   </div>
+                  <!-- Material unchecked -->
+                  <mdb-checkbox>Material unchecked</mdb-checkbox>
                 <div class="text-center mb-3">
                     <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Log in</button>
                 </div>
@@ -71,17 +73,43 @@
       <!--/.Panel 1-->
 
       <!--Panel 2-->
-      <div class="tab-pane fade" id="panel101" role="tabpanel">
+      <div class="tab-pane fade" id="panel102" role="tabpanel">
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
-          reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
-          porro voluptate odit minima.</p>
-
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <!--/.Panel 2-->
 
       <!--Panel 3-->
-      <div class="tab-pane fade" id="panel102" role="tabpanel">
+      <div class="tab-pane fade" id="panel103" role="tabpanel">
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
           reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
@@ -91,7 +119,7 @@
       <!--/.Panel 3-->
 
       <!--Panel 4-->
-      <div class="tab-pane fade" id="panel103" role="tabpanel">
+      <div class="tab-pane fade" id="panel104" role="tabpanel">
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
           reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
