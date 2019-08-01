@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -28,7 +27,6 @@ import { NavbarComponent } from './navbar/navbar.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    NavigationComponent,
     FooterComponent,
     LoginComponent,
     SignupComponent,
@@ -56,5 +54,5 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   providers: [CommonService],
   bootstrap: [AppComponent]
-})
+}) 
 export class AppModule { }
