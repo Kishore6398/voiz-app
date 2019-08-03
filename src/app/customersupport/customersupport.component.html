@@ -1,39 +1,40 @@
-<!-- Grid row -->
 <div class="row">
-
-  <!-- Grid column -->
-  <div class="col-md-3 col-lg-3 col-xl-3">
-    <div rounded="true" class="">
-    <ul class="nav md-pills nav-justified pills-primary btn btn-lg tabs-default">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#panel100" role="tab">Bill Payment</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#panel101" role="tab">Generate Invoice </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#panel101" role="tab">Download Invoice </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#panel102" role="tab">Inquiry</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#panel103" role="tab">Feedback</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#panel103" role="tab">Complient</a>
-      </li>
-    </ul>
+  <div class="">
+  <div class="sidebar-fixed">
+  
+    <a class="logo-wrapper waves-effect">
+      <img src="../../../../assets/img/angular-mdb.png" class="img-fluid" alt="UserName">
+    </a>
+  
+    <div class="list-group list-group-flush">
+  
+      <a class="list-group-item list-group-item-action waves-effect active" data-toggle="tab" href="#panel101" role="tab">
+        <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon>Bill Payment
+      </a>
+      <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel102" role="tab">
+        <mdb-icon fas icon="user" class="mr-3"></mdb-icon>generate Invoice
+      </a>
+      <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel103" role="tab">
+        <mdb-icon fas icon="table" class="mr-3"></mdb-icon>Download Invoice
+      </a>
+      <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel104" role="tab">
+        <mdb-icon far icon="map" class="mr-3"></mdb-icon>Inquiry
+      </a>
+      <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel105" role="tab">
+        <mdb-icon fas icon="exclamation" class="mr-3"></mdb-icon>Feedback
+      </a>
+      <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel106" role="tab">
+        <mdb-icon fas icon="exclamation" class="mr-3"></mdb-icon>Complaint
+      </a>
+  
+    </div>
   </div>
 </div>
-<div class="col-md-9 col-lg-9 col-xl-9">
-    <!-- Tab panels -->
+<div class="col-lg-9 col-md-9 col-sm-9">
     <div class="tab-content">
-
-      <!--Panel 1-->
-      <div class="tab-pane fade in show active" id="panel100" role="tabpanel">
+      <div class="tab-pane fade in show active" id="panel101" role="tabpanel">
         <form>
-        <div class="card col-lg-4 offset-4 mt-2 mb-2">
+          <div class="card col-lg-4 col-md-8 col-sm-9 mt-2 mb-2">
             <div class="card-body mx-4">
                 <div class="text-center">
                     <h3 class="dark-grey-text mb-5">
@@ -43,13 +44,13 @@
                 <div class="md-form md-outline">
                    <input mdbInput mdbValidate name="email" type="email" id="form8" class="form-control" [(ngModel)]="email" #input="ngModel" required pattern="[^ @]*@[^ @]*">
                   <label for="form2">Email </label>
-                  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
+                  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"></mdb-error>
                   <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
                   </div>
                 <div class="md-form pb-3 md-outline">
                    <input mdbInput mdbValidate name="password" type="password" class="form-control" [(ngModel)]="password" #input="ngModel" required pattern="[0-9a-zA-Z]{8,16}">
                   <label for="form2">Password </label>
-                  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
+                  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"></mdb-error>
                   <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
                   </div>
                 <div class="text-center mb-3">
@@ -61,28 +62,51 @@
                     <a routerLink="/signup" class="blue-text ml-1"> Sign Up</a>
                 </p>
             </div>
-        </div>
-                </form>
+          </div>
+        </form>
 
 
       </div>
       <!--/.Panel 1-->
 
       <!--Panel 2-->
-      <div class="tab-pane fade" id="panel101" role="tabpanel">
+      <div class="tab-pane fade" id="panel102" role="tabpanel">
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
-          reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
-          porro voluptate odit minima.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
-          reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
-          porro voluptate odit minima.</p>
-
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <!--/.Panel 2-->
 
       <!--Panel 3-->
-      <div class="tab-pane fade" id="panel102" role="tabpanel">
+      <div class="tab-pane fade" id="panel103" role="tabpanel">
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
           reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
@@ -92,7 +116,7 @@
       <!--/.Panel 3-->
 
       <!--Panel 4-->
-      <div class="tab-pane fade" id="panel103" role="tabpanel">
+      <div class="tab-pane fade" id="panel104" role="tabpanel">
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
           reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione

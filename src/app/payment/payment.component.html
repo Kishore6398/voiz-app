@@ -1,0 +1,176 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<body>
+<div></div>
+<div class="row">
+    <div class="col-md-3 col-lg-3 col-xl-3">
+        <div class="sidebar ">
+                <div class="pt-3 pb-3 pl-2">
+                        <strong style="font-size: 20px">Make your payment now using</strong>
+                    </div>
+            <div class="list-group list-group-flush">
+
+                <a class="list-group-item list-group-item-action waves-effect active" data-toggle="tab" href="#panel1" role="tab">
+                    <mdb-icon fas icon="credit-card" class="mr-3"></mdb-icon>Credit Card
+                </a>
+                <div></div>
+                <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel2" role="tab">
+                    <mdb-icon fas icon="digital-tachograph" class="mr-3"></mdb-icon>Debit Card
+                </a>
+                <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel3" role="tab">
+                    <mdb-icon fas icon="wallet" class="mr-3"></mdb-icon>Paytm
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-9 col-lg-9 col-xl-9">
+        <div class="tab-content">
+            <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
+                <!--/.your content here-->
+                <form>
+                    <div class="card col-lg-7 mx-auto col-md-8 col-sm-12 mt-2 mb-2">
+                        <div class="card-body mx-4">
+                            <div class="text-center">
+                                <h3 class="dark-grey-text mb-5">
+                                    <strong>Payment</strong>
+                                </h3>
+                            </div>
+                            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+                            <div class="md-form md-outline">
+                                <input mdbInput mdbValidate name="name" type="text" id="name" class="form-control" [(ngModel)]="name" #input="ngModel" required pattern="[a-zA-Z]{5,15}" >
+                                <label for="email">Name on card </label>
+                                <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                                <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                            </div>
+                            <div class="md-form md-outline">
+                                <input mdbInput mdbValidate name="cardno" type="tel" id="cardno" class="form-control" [(ngModel)]="cardno" #input="ngModel" required pattern="[1-9]{4}-?[0-9]{4}-?[0-9]{4}-?[0-9]{4}">
+                                <label for="form2">Credit Card number </label>
+                                <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                                <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                            </div>
+                            <div class="md-form md-outline">
+                                <input mdbInput mdbValidate name="expyear" id="expyear" type="text" class="form-control" [(ngModel)]="expyear" #input="ngModel" required pattern="[2][0-9]{3}">
+                                <label for="form2">Exp Year </label>
+                                <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                                <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                            </div>
+                            
+                            <div class="md-form md-outline">
+                                    <input mdbInput mdbValidate name="ccv" id="ccv" type="text" class="form-control" [(ngModel)]="ccv" #input="ngModel" required pattern="[0-9]{3,4}">
+                                    <label for="form2">CCV</label>
+                                    <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                                    <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                                </div>
+                            <div class="text-center mb-3">
+                                <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Pay now</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!--/.Panel 1-->
+
+            <!--Panel 2-->
+            <div class="tab-pane fade" id="panel2" role="tabpanel">
+                    <form>
+                            <div class="card col-lg-7 mx-auto col-md-8 col-sm-12 mt-2 mb-2">
+                                <div class="card-body mx-4">
+                                    <div class="text-center">
+                                        <h3 class="dark-grey-text mb-5">
+                                            <strong>Payment</strong>
+                                        </h3>
+                                    </div>
+                                    <label for="fname">Accepted Cards</label>
+                    <div class="icon-container">
+                      <i class="fa fa-cc-visa" style="color:navy;"></i>
+                      <i class="fa fa-cc-amex" style="color:blue;"></i>
+                      <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                      <i class="fa fa-cc-discover" style="color:orange;"></i>
+                    </div>
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate name="name" type="text" id="name" class="form-control" [(ngModel)]="name" #input="ngModel" required pattern="[a-zA-Z]{5,15}" >
+                                        <label for="email">Name on card </label>
+                                        <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                                        <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate name="cardno" type="tel" id="cardno" class="form-control" [(ngModel)]="cardno" #input="ngModel" required pattern="[1-9]{4}-?[0-9]{4}-?[0-9]{4}-?[0-9]{4}">
+                                        <label for="form2">Debit Card number </label>
+                                        <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                                        <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate name="expyear" id="expyear" type="text" class="form-control" [(ngModel)]="expyear" #input="ngModel" required pattern="[2][0-9]{3}">
+                                        <label for="form2">Exp Year </label>
+                                        <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                                        <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                                    </div>
+                                    
+                                    <div class="md-form md-outline">
+                                            <input mdbInput mdbValidate name="ccv" id="ccv" type="text" class="form-control" [(ngModel)]="ccv" #input="ngModel" required pattern="[0-9]{3,4}">
+                                            <label for="form2">CCV</label>
+                                            <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                                            <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                                        </div>
+                                    <div class="text-center mb-3">
+                                        <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Pay now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+            </div>
+
+            <!--/.Panel 2-->
+            <div class="tab-pane fade" id="panel3" role="tabpanel">
+                <form>
+                        <div class="card col-lg-7 mx-auto col-md-8 col-sm-12 mt-2 mb-2">
+                            <div class="card-body mx-4">
+                                <div class="text-center">
+                                    <h3 class="dark-grey-text mb-5">
+                                        <strong>Payment</strong>
+                                    </h3>
+                                </div>
+                <div class="icon-container">
+                    <i class="fas fa-check" style="color:green;"></i><strong>Pay using paytm wallet</strong>
+
+                </div>
+                                <div class="md-form md-outline">
+                                    <input mdbInput mdbValidate name="number" type="tel" id="number" class="form-control" [(ngModel)]="number" #input="ngModel" required pattern="[678][0-9]{9}" >
+                                    <label for="email">Phone number </label>
+                                    <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                                    <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                                </div>
+                                
+                    
+        
+                                <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate name="amt" id="amt" type="number" class="form-control" [(ngModel)]="amt" #input="ngModel" required pattern="[1-9][0-9]+">
+                                        <label for="form2">Amount</label>
+                                        <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                                        <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                                    </div>
+                                <div class="text-center mb-3">
+                                    <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Pay now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+        </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,3 +1,4 @@
+@import "../node_modules/ng2-slim-loading-bar/style.css";
 .juicy-peach-gradient {
 	background-image: -webkit-gradient(linear,left top,right top,from(#ffecd2),to(#fcb69f));
 	background-image: -webkit-linear-gradient(left,#ffecd2 0,#fcb69f 100%);
@@ -179,7 +180,7 @@
 	-webkit-transform: translateZ(0);
 	-ms-transform: translateZ(0);
 	transform: translateZ(0);
-	-webkit-mask-image: -webkit-radial-gradient(circle,#fff 100%,#000 100%);
+	mask-image: -webkit-radial-gradient(circle,#fff 100%,#000 100%);
 }
 .waves-button,.waves-button-input,.waves-button:hover,.waves-button:visited {
 	white-space: nowrap;

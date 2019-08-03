@@ -1,52 +1,62 @@
-<!--Section: Features v.3-->
-<section>
+<section class="container">
+    <h2 class="h1 py-5 font-weight-bold text-center">Broadband connection</h2>
+    <p class="px-5 mb-5 pb-3 lead grey-text text-center">Now getting a new Broadband connection is as easy as it seems!, just give us your contact number we'll contact you and let you know what you need to do to get a new broadband connection.</p>
+    <div class="row pt-2">
+        <div class="col-lg-4 col-md-6 col-sm-12 mx-auto text-center">
+            <form>
+                <div class="card mx-auto mt-2 mb-2">
+                    <div class="card-body mx-4">
+                        <div class="text-center">
+                            <h3 class="dark-grey-text mb-5">
+                                <strong>Broadband</strong>
+                            </h3>
+                        </div>
+                        <div class="md-form md-outline">
+                            <input mdbInput mdbValidate name="email" type="email" id="email" class="form-control" [(ngModel)]="email" #input="ngModel" required pattern="[^ @]*@[^ @]*">
+                            <label for="email">Email </label>
+                            <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                            <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                        </div>
+                        <div class="md-form md-outline">
+                            <input mdbInput mdbValidate name="mobile" type="tel" id="form8" class="form-control" [(ngModel)]="mobile" #input="ngModel" required pattern="[789][0-9]{9}">
+                            <label for="form2">Mobile </label>
+                            <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                            <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                        </div>
+                        <div class="md-form md-outline">
+                            <input mdbInput mdbValidate name="city" id="city" type="text" class="form-control" [(ngModel)]="city" #input="ngModel" required pattern="[a-zA-Z]{3,16}">
+                            <label for="form2">City </label>
+                            <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                            <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                        </div>
+                        <div class="md-form pb-3 md-outline">
+                            <input mdbInput mdbValidate name="address" id="address" type="text" class="form-control" [(ngModel)]="address" #input="ngModel" required pattern="[0-9a-zA-Z]{8,16}">
+                            <label for="form2">Address </label>
+                            <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                            <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                        </div>
+                        <div class="text-center mb-3">
+                            <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Get now</button>
+                        </div>
+                    </div>
 
-  <!--Section heading-->
-  <h2 class="h1 py-5 font-weight-bold text-center">Broadband connection</h2>
-  <!--Section description-->
-  <p class="px-5 mb-5 pb-3 lead grey-text text-center">Now getting a new Broadband connection is as easy as it seems!, just give us your contact number we'll contact you and let you know what you need to do to get a new broadband connection.</p>
+                </div>
+            </form>
 
-  <!--Grid row-->
-  <div class="row pt-2">
-
-    <!--Grid column-->
-    <div class="col-lg-7 text-center text-lg-left">
-      <div style="height: 90px;"></div>
-      <!--Grid row-->
-      <form>
-			  <div class="form-row text-white text-center">
-			    <div class="col-5 offset-2">
-
-			    	<div class="md-form md-bg form-lg">
-					  <input mdbValidate name="mobile" type="tel" id="form-bg-lg" class="form-control form-control-lg" type="text" mdbInput [(ngModel)]="mobile" #input="ngModel" required pattern="[^ @]*@[^ @]*">
-					  <label for="form-bg-lg">Mobile</label>
-					  <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)">Input invalid</mdb-error>
-					<mdb-success *ngIf="input.valid && (input.dirty || input.touched)">Input valid</mdb-success>
-					</div>
-			    </div>
-			    <div class="col-2">
-			      <div class="md-form form-lg">
-			        <input mdbInput type="submit" class="form-control form-control-bg btn btn-md btn-lg blue-gradient mt-2" value="Submit">
-			      </div>
-			    </div>
-			  </div>
-			</form>
-
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12 mx-auto mt-2 mb-2">
+            <!-- <img src="https://mdbootstrap.com/img/Photos/Others/screens-section.jpg" alt="" class="img-fluid z-depth-0"> -->
+            <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+                <mdb-carousel-item>
+                    <a routerLink="/"><img class="d-block w-100" height="500px" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide"></a>
+                </mdb-carousel-item>
+                <mdb-carousel-item>
+                    <a routerLink="/"><img class="d-block w-100" height="500px" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide"></a>
+                </mdb-carousel-item>
+                <mdb-carousel-item>
+                    <a routerLink="/"><img class="d-block w-100" height="500px" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide"></a>
+                </mdb-carousel-item>
+            </mdb-carousel>
+        </div>
     </div>
-    <!--Grid column-->
-
-    <!--Grid column-->
-    <div class="col-lg-5">
-    	<img src="https://mdbootstrap.com/img/Photos/Others/screens-section.jpg" alt="" class="img-fluid z-depth-0">
-      <!--Grid row-->
-
-    </div>
-    <!--Grid column-->
-
-  </div>
-  <!--Grid row-->
-
 </section>
-<!--Section: Features v.3-->
-
-

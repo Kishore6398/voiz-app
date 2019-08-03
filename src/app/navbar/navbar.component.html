@@ -1,5 +1,4 @@
-<!-- 
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark blue-gradient text-white" [containerInside]="false">
+<mdb-navbar id="navbar" SideClass="navbar navbar-expand-lg navbar-dark blue-gradient text-white" [containerInside]="false">
   <mdb-navbar-brand><a class="navbar-brand text-white" href="/"><img class="img" style="height: 32px;" src="assets/images/icon.svg">&nbsp; <strong>VoizFonica</strong></a></mdb-navbar-brand>
   <links>
     <ul class="navbar-nav ml-auto">
@@ -18,19 +17,23 @@
       <li class="nav-item ">
         <a class="nav-link waves-light" routerLink="/customersupport" mdbWavesEffect><mdb-icon fas icon="envelope"></mdb-icon> Customer Support</a>
       </li>
-      <li class="nav-item dropdown" mdbDropdown dropdown>
+      <li class="nav-item ">
+          <a class="nav-link waves-light" mdbWavesEffect>
+            <select>
+              <option value="volvo">Chennai</option>
+              <option value="saab">Bangalore</option>
+              <option value="opel">Mumbai</option>
+            </select></a>
+        </li>
+      <!---<li class="nav-item dropdown" mdbDropdown dropdown>
         <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-          <mdb-icon fas icon="map-marker-alt"></mdb-icon>Location<span class="caret"></span></a>
+          <mdb-icon fas icon="map-marker-alt"></mdb-icon>{{ Location }}<span class="caret"></span></a>
         <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary text-white" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Chennai</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Mumbai</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Bangalore</a>
+          <a class="dropdown-item waves-light" value="Chennai" mdbWavesEffect ng-model="Location">Chennai</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect value="Chennai" ng-model="Location" >Mumbai</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect value="Chennai" ng-model="Location" >Bangalore</a>
         </div>
-      </li>
+      </li>-->
     </ul>
   </links>
-</mdb-navbar> -->
-
-<div>
-  Loading...
-</div>
+</mdb-navbar>

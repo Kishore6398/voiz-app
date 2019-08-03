@@ -11,20 +11,23 @@ import { PostpaidComponent } from './postpaid/postpaid.component';
 import { BroadbandComponent } from './broadband/broadband.component';
 import { PaybillComponent } from './paybill/paybill.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PaymentComponent } from './payment/payment.component';
+
 
 const routes: Routes = [
-  {path:'signup', component : SignupComponent},
-  {path:'login', component : LoginComponent},
-  {path:'shop', component : ShopComponent},
-  {path:'customersupport', component : CustomersupportComponent},
-  {path:'recharge', component : RechargeComponent},
-  {path:'home', component : HomeComponent},
-  {path:'prepaid', component : PrepaidComponent},
-  {path:'postpaid', component : PostpaidComponent},
-  {path:'broadband', component : BroadbandComponent},
-  {path:'paybill', component : PaybillComponent},
-  {path:'dashboard', component : DashboardComponent},
-  {path:'signup', component : SignupComponent}
+  {path: 'signup', component : SignupComponent},
+  {path: 'login', component : LoginComponent},
+  {path: 'shop', component : ShopComponent},
+  {path: 'customersupport', component : CustomersupportComponent},
+  {path: 'recharge', component : RechargeComponent},
+  {path: 'home', component : HomeComponent},
+  {path: 'prepaid', component : PrepaidComponent},
+  {path: 'postpaid', component : PostpaidComponent},
+  {path: 'broadband', component : BroadbandComponent},
+  {path: 'paybill', component : PaybillComponent},
+  {path: 'dashboard', component : DashboardComponent},
+  {path: 'signup', component : SignupComponent},
+  {path: 'payment', component : PaymentComponent}
 
 ];
 
