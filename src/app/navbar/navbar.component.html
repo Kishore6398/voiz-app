@@ -17,13 +17,16 @@
       <li class="nav-item ">
         <a class="nav-link waves-light" routerLink="/customersupport" mdbWavesEffect><mdb-icon fas icon="envelope"></mdb-icon> Customer Support</a>
       </li>
-      <li class="nav-item ">
-          <a class="nav-link waves-light" mdbWavesEffect>
-            <select>
-              <option value="volvo">Chennai</option>
-              <option value="saab">Bangalore</option>
-              <option value="opel">Mumbai</option>
-            </select></a>
+     <!--  <li class="nav-item">
+          <mdb-select [options]="optionsSelect" [multiple]="true" placeholder="Choose your option" label="Location"></mdb-select>
+          <label><mdb-icon fas icon="globe"></mdb-icon>Location</label>
+        </li> -->
+        <li class="nav-item">
+          <select class="browser-default custom-select dropdown dropdown-info">
+            <option class="dropdown-item" value="Bangalore">Bangalore</option>
+            <option class="dropdown-item" value="Chennai" selected="">Chennai</option>
+            <option class="dropdown-item" value="Mumbai">Mumbai</option>
+          </select>
         </li>
       <!---<li class="nav-item dropdown" mdbDropdown dropdown>
         <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
