@@ -23,6 +23,7 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PaymentComponent } from './payment/payment.component';
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { PaymentComponent } from './payment/payment.component';
     CustomersupportComponent,
     PaybillComponent,
     NavbarComponent,
-    PaymentComponent
+    PaymentComponent,
+    FaqComponent
 
   ],
   imports: [
