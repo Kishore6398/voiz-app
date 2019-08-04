@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PaymentComponent } from './payment/payment.component';
 import { FaqComponent } from './faq/faq.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { FaqComponent } from './faq/faq.component';
     PaybillComponent,
     NavbarComponent,
     PaymentComponent,
-    FaqComponent
+    FaqComponent,
+    FeedbackComponent
 
   ],
   imports: [
