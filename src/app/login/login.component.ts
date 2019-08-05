@@ -21,4 +21,6 @@ export class LoginComponent implements OnInit {
 get passwordInput() { return this.loginForm.get('passwordInput'); }
 
 get mobileInput() { return this.loginForm.get('mobileInput'); }
+
+
 }

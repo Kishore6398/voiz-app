@@ -26,6 +26,7 @@ import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.comp
 import { FaqComponent } from './faq/faq.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { PlansComponent } from './plans/plans.component';
+import { LoginService } from './login.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,10 @@ import { PlansComponent } from './plans/plans.component';
     SlimLoadingBarModule,
     ReactiveFormsModule
   ],
-  providers: [CommonService],
+  providers: [
+  CommonService,
+  LoginService
+  ],
   bootstrap: [AppComponent]
 }) 
 export class AppModule { }
