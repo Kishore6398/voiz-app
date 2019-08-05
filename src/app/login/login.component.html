@@ -1,26 +1,49 @@
-<form [formGroup]="loginForm" >
-    <div class="card col-lg-4 col-md-4 col-sm-12 mx-auto mt-2 mb-2">
-        <div class="card-body mx-4">
+   <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-12 mt-2 mb-2">
+        <div class="col-lg-10 col-md-10 col-sm-12 mx-auto mt-5 pt-1">
+        <div class="card card-cascade card-rounded text-white purple-gradient">
+            <div class="card-body mx-auto my-auto">
+                <h2 class="text-center">
+                    Best Offers
+                </h2>
+                <div class="card-body text-center">
+                    <p class="text-center">
+                        Unlimited Local Calls and Data at 399
+                        Grab your offers here
+                    </p>
+                    <button class="text-center text-white btn btn-lg btn-rounded btn-floating peach-gradient">
+                        Grab Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    <div class="card col-lg-4 col-md-4 col-sm-12 ml-5 mt-2 mb-2">
+        <div class="card-body">
             <div class="text-center">
                 <h3 class="dark-grey-text mb-5">
                     <strong>Log In</strong>
                 </h3>
             </div>
-            <div class="md-form md-outline">
-                <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="mobileInput" pattern="[6789][0-9]{9}">
-                <label for="mobile">Mobile </label>
-                <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty ||mobileInput.touched)"> </mdb-error>
-                <mdb-success *ngIf="mobileInput.valid && (mobileInput.dirty ||mobileInput.touched)"> </mdb-success>
-            </div>
-            <div class="md-form pb-3 md-outline">
-                <input mdbInput mdbValidate id="password" type="password" class="form-control" formControlName="passwordInput">
-                <label for="password">Password </label>
-                <mdb-error *ngIf="passwordInput.invalid && (passwordInput.dirty ||passwordInput.touched)"> </mdb-error>
-                <mdb-success *ngIf="passwordInput.valid && (passwordInput.dirty ||passwordInput.touched)"> </mdb-success>
-            </div>
-            <div class="text-center mb-3">
-                <button type="submit" [disabled]='mobileInput.invalid || passwordInput.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white">Log in</button>
-            </div>
+            <form [formGroup]="loginForm" >
+                <div class="md-form md-outline">
+                    <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="mobileInput" pattern="[6789][0-9]{9}">
+                    <label for="mobile">Mobile </label>
+                    <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty ||mobileInput.touched)"> </mdb-error>
+                    <mdb-success *ngIf="mobileInput.valid && (mobileInput.dirty ||mobileInput.touched)"> </mdb-success>
+                </div>
+                <div class="md-form pb-3 md-outline">
+                    <input mdbInput mdbValidate id="password" type="password" class="form-control" formControlName="passwordInput" pattern="[0-9a-zA-Z]{8,16}">
+                    <label for="password">Password </label>
+                    <mdb-error *ngIf="passwordInput.invalid && (passwordInput.dirty ||passwordInput.touched)"> </mdb-error>
+                    <mdb-success *ngIf="passwordInput.valid && (passwordInput.dirty ||passwordInput.touched)"> </mdb-success>
+                </div>
+                <div class="text-center mb-3">
+                    <button type="submit" [disabled]='mobileInput.invalid || passwordInput.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white">Log in</button>
+                </div>
+            </form>
         </div>
         <div class="modal-footer mx-5 pt-3 mb-1">
             <p class="font-small grey-text d-flex justify-content-end">New member?
@@ -28,4 +51,4 @@
             </p>
         </div>
     </div>
-</form>
+  </div>
