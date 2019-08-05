@@ -32,12 +32,12 @@
                 <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)&& password == repassword"></mdb-success>
             </div>
             <div class="text-center mb-3">
-                <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Sign up</button>
+                <button type="submit" routerLink="/home" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Sign up</button>
             </div>
         </div>
         <div class="modal-footer mx-5 pt-3 mb-1">
             <p class="font-small grey-text d-flex justify-content-end">Already a member?
-                <a href="#" class="blue-text ml-1"> Log In</a>
+                <a routerLink="/login" class="blue-text ml-1"> Log In</a>
             </p>
         </div>
     </div>

@@ -21,7 +21,7 @@
                 <mdb-success *ngIf="input.valid && (input.dirty || input.touched)"></mdb-success>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 md-form form-lg">
-                <input mdbInput mdbBtn routerLink="/payment" type="submit" size="lg" rounded="true" gradient="blue" class="form-control form-control-lg text-white mt-0" value="Pay bill">
+                <input mdbInput mdbBtn routerLink="/prepaidrecharge" type="submit" size="lg" rounded="true" gradient="blue" class="form-control form-control-lg text-white mt-0" value="Pay bill">
             </div>
             <div class="col-lg-2 col-md-2"></div>
         </div>
@@ -36,17 +36,20 @@
                         <mdb-icon fas icon="mobile-alt" size="3x" class="cyan-text pr-3" aria-hidden="true"></mdb-icon>
                     </mdb-card-text>
                 </mdb-card-body>
-                <mdb-card-footer class="blue-gradient"> <a routerLink="/recharge" class="text-white"> Recharge </a></mdb-card-footer>
+                <mdb-card-footer class="blue-gradient"> <a routerLink="/prepaidrecharge" class="text-white">Prepaid Recharge </a>
+                </mdb-card-footer>
             </mdb-card>
         </div>
+
         <div class="col-md col-sm mx-auto">
             <mdb-card class="mb-4 text-center text-white" borderColor="border-info" style="height:30px;" style="max-width: 20rem">
                 <mdb-card-body class="text-center offset-2">
                     <mdb-card-text>
-                        <mdb-icon fas icon="sim-card" size="3x" class="cyan-text pr-3" aria-hidden="true"></mdb-icon>
+                        <mdb-icon fas icon="credit-card" size="3x" class="cyan-text pr-3" aria-hidden="true"></mdb-icon>
                     </mdb-card-text>
                 </mdb-card-body>
-                <mdb-card-footer class="blue-gradient"> <a routerLink="/prepaid" class="text-white"> Prepaid connection </a></mdb-card-footer>
+                <mdb-card-footer class="blue-gradient"> <a routerLink="/paybill" class="text-white">Postpaid Bill Payment</a>
+                </mdb-card-footer>
             </mdb-card>
         </div>
 
@@ -57,7 +60,20 @@
                         <mdb-icon fas icon="sim-card" size="3x" class="cyan-text pr-3" aria-hidden="true"></mdb-icon>
                     </mdb-card-text>
                 </mdb-card-body>
-                <mdb-card-footer class="blue-gradient"> <a routerLink="/postpaid" class="text-white"> Postpaid connection </a></mdb-card-footer>
+                <mdb-card-footer class="blue-gradient"> <a routerLink="/prepaid" class="text-white"> Prepaid connection
+                    </a></mdb-card-footer>
+            </mdb-card>
+        </div>
+
+        <div class="col-md col-sm mx-auto">
+            <mdb-card class="mb-4 text-center text-white" borderColor="border-info" style="height:30px;" style="max-width: 20rem">
+                <mdb-card-body class="text-center offset-2">
+                    <mdb-card-text>
+                        <mdb-icon fas icon="sim-card" size="3x" class="cyan-text pr-3" aria-hidden="true"></mdb-icon>
+                    </mdb-card-text>
+                </mdb-card-body>
+                <mdb-card-footer class="blue-gradient"> <a routerLink="/postpaid" class="text-white"> Postpaid
+                        connection </a></mdb-card-footer>
             </mdb-card>
         </div>
 
@@ -68,17 +84,8 @@
                         <mdb-icon fas icon="wifi" size="3x" class="cyan-text pr-3" aria-hidden="true"></mdb-icon>
                     </mdb-card-text>
                 </mdb-card-body>
-                <mdb-card-footer class="blue-gradient"> <a routerLink="/broadband" class="text-white"> Home Broadband </a></mdb-card-footer>
-            </mdb-card>
-        </div>
-        <div class="col-md col-sm mx-auto">
-            <mdb-card class="mb-4 text-center text-white" borderColor="border-info" style="height:30px;" style="max-width: 20rem">
-                <mdb-card-body class="text-center offset-2">
-                    <mdb-card-text>
-                        <mdb-icon fas icon="credit-card" size="3x" class="cyan-text pr-3" aria-hidden="true"></mdb-icon>
-                    </mdb-card-text>
-                </mdb-card-body>
-                <mdb-card-footer class="blue-gradient"> <a routerLink="/paybill" class="text-white"> Pay bill </a></mdb-card-footer>
+                <mdb-card-footer class="blue-gradient"> <a routerLink="/broadband" class="text-white"> Home Broadband
+                    </a></mdb-card-footer>
             </mdb-card>
         </div>
     </div>

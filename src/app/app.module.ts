@@ -23,6 +23,9 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PaymentComponent } from './payment/payment.component';
+import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.component';
+import { FaqComponent } from './faq/faq.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +43,10 @@ import { PaymentComponent } from './payment/payment.component';
     CustomersupportComponent,
     PaybillComponent,
     NavbarComponent,
-    PaymentComponent
-
+    PaymentComponent,
+    PrepaidrechargeComponent,
+    FaqComponent,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,
