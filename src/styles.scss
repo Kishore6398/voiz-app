@@ -1,4 +1,7 @@
 @import "../node_modules/ng2-slim-loading-bar/style.css";
+.btn-rounded {
+    border-radius: 10em;
+}
 .juicy-peach-gradient {
 	background-image: -webkit-gradient(linear,left top,right top,from(#ffecd2),to(#fcb69f));
 	background-image: -webkit-linear-gradient(left,#ffecd2 0,#fcb69f 100%);
