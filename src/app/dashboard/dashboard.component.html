@@ -1,21 +1,21 @@
 <div class="row">
-    <div class="col-md-3 col-lg-3 col-xl-3 flex-column">
-        <div class="sidebar pl-2 pr-2">
+    <div class="col-md-3 col-lg-3 col-xl-3">
+        <div class="sidebar ">
             <div class="pt-3 pb-3 pl-2">
-                <div class="logo-wrapper mx-auto">
-                    <h2 class="strong">
-                    Hi User!
-                    </h2>
-                </div>
+                <strong style="font-size: 20px">Hi Kishore</strong>
             </div>
-            <div class="list-group list-group-flush  nav nav-pills">
+            <div class="list-group list-group-flush">
+
                 <a class="list-group-item list-group-item-action waves-effect active" data-toggle="tab" href="#panel1" role="tab">
                     <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon>Dashboard
                 </a>
                 <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel2" role="tab">
                     <mdb-icon fas icon="user" class="mr-3"></mdb-icon>Profile
                 </a>
+
+
             </div>
+
         </div>
     </div>
     <div class="col-md-9 col-lg-9 col-xl-9">
@@ -24,39 +24,28 @@
                 <!--/.your content here-->
 
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-12 mb-4">   
-                            <div class="card card-cascade narrower mt-5 mb-4 card-ecommerce">
-                                <div class="card-header purple-gradient text-white"><h3 class="text-white mb-2">Call Usage</h3></div>      
-                                   <div style="display: block">
-                                      <canvas mdbChart
-                                          [chartType]="chartType"
-                                          [datasets]="CallDataset"
-                                          [labels]="CallLabel"
-                                          [colors]="CallColors"
-                                          [options]="CallOptions"
-                                          [legend]="true"
-                                          (chartHover)="CallHovered($event)"
-                                          (chartClick)="CallClicked($event)">
-                                      </canvas>
-                                    </div>
-                                  </div>
-                                </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12">
-                         <div class="card card-cascade narrower mt-5 mb-4 card-ecommerce">
-                                <div class="card-header purple-gradient text-white"><h3 class="text-white mb-2">Data Usage</h3></div>
-                                    <div style="display: block;">
-                                  <canvas mdbChart
-                                      [chartType]="chartType"
-                                      [datasets]="DataDataset"
-                                      [labels]="DataLabel"
-                                      [colors]="DataColors"
-                                      [options]="DataOptions"
-                                      [legend]="true"
-                                      (chartHover)="DataHovered($event)"
-                                      (chartClick)="DataClicked($event)">
-                                  </canvas>
+                    <div class="pr-5 pl-5 pb-2">
+                        <div class="card border-primary mt-4 mb-5" style="width: 25rem;">
+                            <div class="card-header">Voice Usage</div>
+                            <div class="card-body ">
+                                <h5 class="card-title text-dark">Rupees Used
+                                    <div class="text-primary">21.0</div>
+                                </h5>
+                                <p class="card-text">Your current voice balance is as shown for this month till date.</p>
                             </div>
-                    </div> 
+                        </div>
+                    </div>
+                    <div class="pl-5 pb-2">
+                        <div class="card border-primary mt-4 mb-5" style="width: 25rem;">
+                            <div class="card-header">Data Usage</div>
+                            <div class="card-body text-primary">
+                                <h5 class="card-title text-dark">Data Consumed
+                                    <div class="text-primary">32515 Mb</div>
+                                </h5>
+                                <p class="card-text">Your current data usage is as shown for this month till date.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="pr-5 pl-5">
@@ -141,7 +130,16 @@
 
                     </div>
                     <div class="col-md-4">
-                        <p>hi</p>
+                        <div class="col-xs-12 col-sm-9">
+                            <h4 class="blue">
+                                <span class="middle"><h4><b>John Doe</b></h4></span>
+
+                                <span class="label label-purple arrowed-in-right">
+                                    <i class="ace-icon fa fa-circle smaller-80 align-middle"></i>
+                                    online
+                                </span>
+                            </h4>
+                        </div>
                     </div>
                 </div>
             </div>

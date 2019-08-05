@@ -1,5 +1,5 @@
-<form [formGroup]="login">
-    <div class="card col-lg-4 mx-auto offset-4 mt-2 mb-2">
+<form>
+    <div class="card col-lg-4 mx-auto col-md-8 col-sm-12 mt-2 mb-2">
         <div class="card-body mx-4">
             <div class="text-center">
                 <h3 class="dark-grey-text mb-5">
@@ -7,25 +7,27 @@
                 </h3>
             </div>
             <div class="md-form md-outline">
-                <input mdbInput mdbValidate type="text" id="email" class="form-control" formControlName="user">
+                <input mdbInput mdbValidate name="email" type="email" id="email" class="form-control" [(ngModel)]="email" #input="ngModel" required pattern="[^ @]*@[^ @]*" required>
                 <label for="email">Email </label>
-                <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"></mdb-error>
+                <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
                 <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
             </div>
-            <div class="md-form pb-3 md-outline">
-                <input mdbInput mdbValidate id="pass" type="password" class="form-control" formControlName="pass">
-                <label for="pass">Password </label>
-                <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"></mdb-error>
+
+            <div class="md-form md-outline">
+                <input mdbInput mdbValidate name="password" id="password" type="password" class="form-control" [(ngModel)]="password" #input="ngModel" required pattern="[0-9a-zA-Z]{8,16}">
+                <label for="form2">Password </label>
+                <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
                 <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
             </div>
+
             <div class="text-center mb-3">
-                <button type="submit" routerLink="/dashboard" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Log in</button>
+                <button type="submit" routerLink="/dashboard" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Log In</button>
             </div>
         </div>
         <div class="modal-footer mx-5 pt-3 mb-1">
-
-            <a routerLink="/signup" class="blue-text ml-1"> Sign Up</a>
-
+            <p class="font-small grey-text d-flex justify-content-end">New member?
+                <a routerLink="/signup" class="blue-text ml-1">Signup</a>
+            </p>
         </div>
     </div>
 </form>
