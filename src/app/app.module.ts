@@ -26,6 +26,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.component';
 import { FaqComponent } from './faq/faq.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { PlansComponent } from './plans/plans.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
     PrepaidrechargeComponent,
     FaqComponent,
     FeedbackComponent,
+    PlansComponent,
   ],
   imports: [
     BrowserModule,
