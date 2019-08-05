@@ -6,16 +6,18 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  login: FormGroup;
+  loginForm: FormGroup;
   constructor(private fb: FormBuilder) {
    }
 
-  ngOnInit() {
-    this.login = new FormGroup({
-      user: new FormControl(null, Validators.required),
-      pass: new FormControl(null, Validators.required)
-    });
-  }
+ ngOnInit() {
+     this.loginForm = new FormGroup({
+       mobileInput: new FormControl(null,Validators.required),
+       passwordInput: new FormControl(null, Validators.required),       
+     });
+     console.log(this.loginForm.get('passwordInput'));
+}
+get passwordInput() { return this.loginForm.get('passwordInput'); }
 
-  get onBlur() { return this.login.get('onBlur'); }
+get mobileInput() { return this.loginForm.get('mobileInput'); }
 }

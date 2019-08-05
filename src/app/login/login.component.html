@@ -1,4 +1,4 @@
-<form [formGroup]="login">
+<form [formGroup]="loginForm" >
     <div class="card col-lg-4 mx-auto offset-4 mt-2 mb-2">
         <div class="card-body mx-4">
             <div class="text-center">
@@ -7,19 +7,19 @@
                 </h3>
             </div>
             <div class="md-form md-outline">
-                <input mdbInput mdbValidate type="text" id="email" class="form-control" formControlName="user">
-                <label for="email">Email </label>
-                <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"></mdb-error>
-                <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="mobileInput" pattern="[6789][0-9]{9}">
+                <label for="mobile">Mobile </label>
+                <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty ||mobileInput.touched)"> </mdb-error>
+                <mdb-success *ngIf="mobileInput.valid && (mobileInput.dirty ||mobileInput.touched)"> </mdb-success>
             </div>
             <div class="md-form pb-3 md-outline">
-                <input mdbInput mdbValidate id="pass" type="password" class="form-control" formControlName="pass">
-                <label for="pass">Password </label>
-                <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"></mdb-error>
-                <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                <input mdbInput mdbValidate id="password" type="password" class="form-control" formControlName="passwordInput">
+                <label for="password">Password </label>
+                <mdb-error *ngIf="passwordInput.invalid && (passwordInput.dirty ||passwordInput.touched)"> </mdb-error>
+                <mdb-success *ngIf="passwordInput.valid && (passwordInput.dirty ||passwordInput.touched)"> </mdb-success>
             </div>
             <div class="text-center mb-3">
-                <button type="submit" routerLink="/dashboard" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Log in</button>
+                <button type="submit" routerLink="/dashboard" [disabled]='mobileInput.invalid || passwordInput.invalid' class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Log in</button>
             </div>
         </div>
         <div class="modal-footer mx-5 pt-3 mb-1">
