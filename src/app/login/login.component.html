@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <form [formGroup]="loginForm" >
     <div class="card col-lg-4 mx-auto offset-4 mt-2 mb-2">
+=======
+<form>
+    <div class="card col-lg-4 mx-auto col-md-8 col-sm-12 mt-2 mb-2">
+>>>>>>> 331adc2e322a6a4245ba10f8cba6a0eb56e497e6
         <div class="card-body mx-4">
             <div class="text-center">
                 <h3 class="dark-grey-text mb-5">
@@ -7,6 +12,7 @@
                 </h3>
             </div>
             <div class="md-form md-outline">
+<<<<<<< HEAD
                 <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="mobileInput" pattern="[6789][0-9]{9}">
                 <label for="mobile">Mobile </label>
                 <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty ||mobileInput.touched)"> </mdb-error>
@@ -17,15 +23,33 @@
                 <label for="password">Password </label>
                 <mdb-error *ngIf="passwordInput.invalid && (passwordInput.dirty ||passwordInput.touched)"> </mdb-error>
                 <mdb-success *ngIf="passwordInput.valid && (passwordInput.dirty ||passwordInput.touched)"> </mdb-success>
+=======
+                <input mdbInput mdbValidate name="email" type="email" id="email" class="form-control" [(ngModel)]="email" #input="ngModel" required pattern="[^ @]*@[^ @]*" required>
+                <label for="email">Email </label>
+                <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
             </div>
+
+            <div class="md-form md-outline">
+                <input mdbInput mdbValidate name="password" id="password" type="password" class="form-control" [(ngModel)]="password" #input="ngModel" required pattern="[0-9a-zA-Z]{8,16}">
+                <label for="form2">Password </label>
+                <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+>>>>>>> 331adc2e322a6a4245ba10f8cba6a0eb56e497e6
+            </div>
+
             <div class="text-center mb-3">
+<<<<<<< HEAD
                 <button type="submit" routerLink="/dashboard" [disabled]='mobileInput.invalid || passwordInput.invalid' class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Log in</button>
+=======
+                <button type="submit" routerLink="/dashboard" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Log In</button>
+>>>>>>> 331adc2e322a6a4245ba10f8cba6a0eb56e497e6
             </div>
         </div>
         <div class="modal-footer mx-5 pt-3 mb-1">
-
-            <a routerLink="/signup" class="blue-text ml-1"> Sign Up</a>
-
+            <p class="font-small grey-text d-flex justify-content-end">New member?
+                <a routerLink="/signup" class="blue-text ml-1">Signup</a>
+            </p>
         </div>
     </div>
 </form>

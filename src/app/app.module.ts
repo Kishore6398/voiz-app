@@ -12,7 +12,6 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { RechargeComponent } from './recharge/recharge.component';
 import { PrepaidComponent } from './prepaid/prepaid.component';
 import { PostpaidComponent } from './postpaid/postpaid.component';
 import { BroadbandComponent } from './broadband/broadband.component';
@@ -36,7 +35,6 @@ import { PlansComponent } from './plans/plans.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    RechargeComponent,
     PrepaidComponent,
     PostpaidComponent,
     BroadbandComponent,

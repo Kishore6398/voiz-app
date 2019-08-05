@@ -1,34 +1,41 @@
 <mdb-navbar id="navbar" SideClass="navbar navbar-expand-lg navbar-dark blue-gradient text-white" [containerInside]="false">
-  <mdb-navbar-brand><a class="navbar-brand text-white" href="/"><img class="img" style="height: 32px;" src="assets/images/icon.svg">&nbsp; <strong>VoizFonica</strong></a></mdb-navbar-brand>
-  <links>
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link waves-light active" routerLink="/" mdbWavesEffect><mdb-icon fas icon="home"></mdb-icon> Home</a> 
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" routerLink="/shop" mdbWavesEffect><mdb-icon fas icon="shopping-bag"></mdb-icon> Shop</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" routerLink="/login" mdbWavesEffect><mdb-icon fas icon="user"></mdb-icon> My Account</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" routerLink="/signup" mdbWavesEffect><mdb-icon fas icon="sign-in-alt"></mdb-icon> Signup</a>
-      </li>
-      <li class="nav-item ">
-        <a class="nav-link waves-light" routerLink="/customersupport" mdbWavesEffect><mdb-icon fas icon="envelope"></mdb-icon> Customer Support</a>
-      </li>
-     <!--  <li class="nav-item">
+    <mdb-navbar-brand>
+        <a class="navbar-brand text-white" href="/"><img class="img" style="height: 32px;" src="assets/images/icon.svg">&nbsp; <strong>VoizFonica</strong></a>
+    </mdb-navbar-brand>
+    <links>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link waves-light active" routerLink="/" mdbWavesEffect>
+                    <mdb-icon fas icon="home"></mdb-icon> Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" routerLink="/shop" mdbWavesEffect>
+                    <mdb-icon fas icon="shopping-bag"></mdb-icon> Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" routerLink="/login" mdbWavesEffect>
+                    <mdb-icon fas icon="user"></mdb-icon> My Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" routerLink="/signup" mdbWavesEffect>
+                    <mdb-icon fas icon="sign-in-alt"></mdb-icon> Signup</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link waves-light" routerLink="/customersupport" mdbWavesEffect>
+                    <mdb-icon fas icon="envelope"></mdb-icon> Customer Support</a>
+            </li>
+            <!--  <li class="nav-item">
           <mdb-select [options]="optionsSelect" [multiple]="true" placeholder="Choose your option" label="Location"></mdb-select>
           <label><mdb-icon fas icon="globe"></mdb-icon>Location</label>
         </li> -->
-        <li class="nav-item">
-          <select class="browser-default custom-select dropdown dropdown-info">
+            <li class="nav-item pt-1">
+                <select class="browser-default custom-select dropdown dropdown-info">
             <option class="dropdown-item" value="Bangalore">Bangalore</option>
             <option class="dropdown-item" value="Chennai" selected="">Chennai</option>
             <option class="dropdown-item" value="Mumbai">Mumbai</option>
           </select>
-        </li>
-      <!---<li class="nav-item dropdown" mdbDropdown dropdown>
+            </li>
+            <!---<li class="nav-item dropdown" mdbDropdown dropdown>
         <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
           <mdb-icon fas icon="map-marker-alt"></mdb-icon>{{ Location }}<span class="caret"></span></a>
         <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary text-white" role="menu">
@@ -37,6 +44,6 @@
           <a class="dropdown-item waves-light" mdbWavesEffect value="Chennai" ng-model="Location" >Bangalore</a>
         </div>
       </li>-->
-    </ul>
-  </links>
+        </ul>
+    </links>
 </mdb-navbar>
