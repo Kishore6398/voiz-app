@@ -15,7 +15,8 @@ export class LoginComponent implements OnInit {
        mobileInput: new FormControl(null,Validators.required),
        passwordInput: new FormControl(null, Validators.required),       
      });
-     console.log(this.loginForm.get('passwordInput'));
+     //console.log(this.loginForm.get('passwordInput').value);
+     //console.log(this.loginForm.get('mobileInput'));
 }
 get passwordInput() { return this.loginForm.get('passwordInput'); }
 
