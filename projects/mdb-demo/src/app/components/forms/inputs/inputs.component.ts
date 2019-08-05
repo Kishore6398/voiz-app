@@ -7,8 +7,8 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./inputs.component.scss']
 })
 export class InputsComponent {
-  @ViewChild('input') input: ElementRef;
-  @ViewChild('rangeCloud') rangeCloud: ElementRef;
+  @ViewChild('input', { static: false }) input: ElementRef;
+  @ViewChild('rangeCloud', { static: false }) rangeCloud: ElementRef;
   range: any = 50;
   visibility: any;
   text: string;
