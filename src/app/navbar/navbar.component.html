@@ -17,15 +17,26 @@
       <li class="nav-item ">
         <a class="nav-link waves-light" routerLink="/customersupport" mdbWavesEffect><mdb-icon fas icon="envelope"></mdb-icon> Customer Support</a>
       </li>
-      <li class="nav-item dropdown" mdbDropdown dropdown>
+     <!--  <li class="nav-item">
+          <mdb-select [options]="optionsSelect" [multiple]="true" placeholder="Choose your option" label="Location"></mdb-select>
+          <label><mdb-icon fas icon="globe"></mdb-icon>Location</label>
+        </li> -->
+        <li class="nav-item">
+          <select class="browser-default custom-select dropdown dropdown-info">
+            <option class="dropdown-item" value="Bangalore">Bangalore</option>
+            <option class="dropdown-item" value="Chennai" selected="">Chennai</option>
+            <option class="dropdown-item" value="Mumbai">Mumbai</option>
+          </select>
+        </li>
+      <!---<li class="nav-item dropdown" mdbDropdown dropdown>
         <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-          <mdb-icon fas icon="map-marker-alt"></mdb-icon>Location<span class="caret"></span></a>
+          <mdb-icon fas icon="map-marker-alt"></mdb-icon>{{ Location }}<span class="caret"></span></a>
         <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary text-white" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Chennai</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Mumbai</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Bangalore</a>
+          <a class="dropdown-item waves-light" value="Chennai" mdbWavesEffect ng-model="Location">Chennai</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect value="Chennai" ng-model="Location" >Mumbai</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect value="Chennai" ng-model="Location" >Bangalore</a>
         </div>
-      </li>
+      </li>-->
     </ul>
   </links>
 </mdb-navbar>

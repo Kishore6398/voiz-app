@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-3 col-lg-3 col-xl-3">
+  <div class="">
   <div class="sidebar-fixed">
   
     <a class="logo-wrapper waves-effect">
@@ -24,18 +24,17 @@
         <mdb-icon fas icon="exclamation" class="mr-3"></mdb-icon>Feedback
       </a>
       <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel106" role="tab">
-        <mdb-icon fas icon="exclamation" class="mr-3"></mdb-icon>Complient
+        <mdb-icon fas icon="exclamation" class="mr-3"></mdb-icon>Complaint
       </a>
   
     </div>
-  
   </div>
 </div>
-<div class="col-md-9 col-lg-9 col-xl-9">
+<div class="col-lg-9 col-md-9 col-sm-9">
     <div class="tab-content">
       <div class="tab-pane fade in show active" id="panel101" role="tabpanel">
         <form>
-          <div class="card col-lg-4 offset-4 mt-2 mb-2">
+          <div class="card col-lg-4 col-md-8 col-sm-9 mt-2 mb-2">
             <div class="card-body mx-4">
                 <div class="text-center">
                     <h3 class="dark-grey-text mb-5">
@@ -45,17 +44,15 @@
                 <div class="md-form md-outline">
                    <input mdbInput mdbValidate name="email" type="email" id="form8" class="form-control" [(ngModel)]="email" #input="ngModel" required pattern="[^ @]*@[^ @]*">
                   <label for="form2">Email </label>
-                  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
+                  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"></mdb-error>
                   <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
                   </div>
                 <div class="md-form pb-3 md-outline">
                    <input mdbInput mdbValidate name="password" type="password" class="form-control" [(ngModel)]="password" #input="ngModel" required pattern="[0-9a-zA-Z]{8,16}">
                   <label for="form2">Password </label>
-                  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)">Input invalid</mdb-error>
+                  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"></mdb-error>
                   <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
                   </div>
-                  <!-- Material unchecked -->
-                  <mdb-checkbox>Material unchecked</mdb-checkbox>
                 <div class="text-center mb-3">
                     <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Log in</button>
                 </div>

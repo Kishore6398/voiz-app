@@ -1,50 +1,138 @@
-<!--Section: Features v.3-->
-<section>
-
-  <!--Section heading-->
-  <h2 class="h1 py-5 font-weight-bold text-center">Postpaid connection</h2>
-  <!--Section description-->
-  <p class="px-5 mb-5 pb-3 lead grey-text text-center">Now getting a new postpaid connection is as easy as it seems!, just give us your contact number we'll contact you and let you know what you need to do to get a new postpaid connection.</p>
-
-  <!--Grid row-->
-  <div class="row pt-2">
-
-    <!--Grid column-->
-    <div class="col-lg-5 text-center text-lg-left">
-      <img src="https://mdbootstrap.com/img/Photos/Others/screens-section.jpg" alt="" class="img-fluid z-depth-0">
-    </div>
-    <!--Grid column-->
-
-    <!--Grid column-->
-    <div class="col-lg-7">
-<div style="height: 90px;"></div>
-      <!--Grid row-->
-      <form>
-			  <div class="form-row text-white text-center">
-			    <div class="col-4 offset-2">
-
-			    	<div class="md-form md-bg form-lg">
-					  <input mdbValidate name="mobile" type="tel" id="form-bg-lg" class="form-control form-control-lg" type="text" mdbInput [(ngModel)]="mobile" #input="ngModel" required pattern="[6789][0-9]{9}">
-					  <label for="form-bg-lg">Mobile</label>
-					  <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)">Input invalid</mdb-error>
-					<mdb-success *ngIf="input.valid && (input.dirty || input.touched)"> </mdb-success>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
+	<div class="row pt-3 pb-3">
+		<div class="col-md-12 text-center">
+			<h2 class="text-primary">Postpaid Connection</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-7">
+			<h5 class="pb-4">Fill the below form to get your SIM home delivered</h5>
+			<!-- Default horizontal form -->
+			<form>
+				<!-- Grid row -->
+				<div class="form-group row">
+					<!-- Default input -->
+					<label for="inputName3" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="inputName3" placeholder="Name">
 					</div>
-			    </div>
-			    <div class="col-3">
-			      <div class="md-form form-lg">
-			        <input mdbInput mdbBtn type="submit" size="lg" rounded="true" gradient="blue" class="form-control form-control-lg text-white mt-0" value="Submit">
-			      </div>
-			    </div>
-			  </div>
+				</div>
+				<!-- Grid row -->
+				<!-- Grid row -->
+				<div class="form-group row">
+					<!-- Default input -->
+					<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+					</div>
+				</div>
+				<!-- Grid row -->
+
+				<!-- Grid row -->
+				<div class="form-group row">
+					<!-- Default input -->
+					<label for="inputMobile3" class="col-sm-2 col-form-label">Mobile</label>
+					<div class="col-sm-10">
+						<input type="tel" class="form-control" id="inputMobile3" placeholder="Mobile Number">
+					</div>
+				</div>
+				<!-- Grid row -->
+				<!-- Grid row -->
+				<div class="form-group row">
+					<!-- Default input -->
+					<label for="inputAddress3" class="col-sm-2 col-form-label">Address</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="inputAddress3" placeholder="Email">
+					</div>
+				</div>
+				<!-- Grid row -->
+				<!-- Grid row -->
+				<div class="form-group row">
+					<!-- Default input -->
+					<label for="inputCity3" class="col-sm-2 col-form-label">City</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="inputCity3" placeholder="Email">
+					</div>
+				</div>
+				<!-- Grid row -->
+				<!-- Grid row -->
+				<div class="form-group row">
+					<!-- Default input -->
+					<label for="inputPincode3" class="col-sm-2 col-form-label">Pincode</label>
+					<div class="col-sm-10">
+						<input type="number" class="form-control" id="inputPincode3" placeholder="Email">
+					</div>
+				</div>
+				<!-- Grid row -->
+				<div class="col-md-7 pt-3 pb-3">
+					<select class="browser-default custom-select custom-select-lg mb-3">
+						<option value="" disabled selected>Choose a number of your choice</option>
+						<option value="1">9956514786</option>
+						<option value="2">8956221478</option>
+						<option value="3">7896541265</option>
+						<option value="4">8966655254</option>
+						<option value="5">9962448545</option>
+					</select>
+				</div>
+
+				<!-- Grid row -->
+				<div class="form-group row">
+					<div class="col-sm-10">
+						<button type="submit" class="btn btn-secondary btn-lg">Confirm Order</button>
+					</div>
+				</div>
+				<!-- Grid row -->
 			</form>
-      <!--Grid row-->
+			<!-- Default horizontal form -->
+		</div>
+		<div class="col-md-1">
 
-    </div>
-    <!--Grid column-->
+		</div>
 
-  </div>
-  <!--Grid row-->
+		<div class="col-md-4">
+			<h5 class="pb-4">Select a pack</h5>
+			<div class="card border-secondary mb-3" style="max-width: 30rem; height: 14rem;">
+				<div class="card-header text-white bg-secondary">UNLIMITED</div>
+				<div class="card-body text-secondary">
+					<div class="row">
+						<div class="col">
+							<h6 class="card-title text-dark">Data: <span>&nbsp;50 GB with carry forward upto 200
+									GB</span></h6>
+							<h6 class="card-title text-dark">Talktime: <span>&nbsp;Unlimited</span></h6>
+							<h6 class="card-title text-dark">Validity :<span>&nbsp;1 month</span></h6>
+						</div>
 
-</section>
-<!--Section: Features v.3-->
+						<div class="col">
+							<div class="ml-3 pt-5">
+								<button type="button" class="btn btn-outline-secondary waves-effect"
+									style="font-size: 15px"><i class="fa fa-rupee"></i>499</button>
+							</div>
+						</div>
 
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="card border-secondary mb-3" style="max-width: 30rem; height: 14rem;">
+				<div class="card-header text-white bg-secondary">UNLIMITED</div>
+				<div class="card-body text-secondary">
+					<div class="row">
+						<div class="col">
+							<h6 class="card-title text-dark">Data: <span>&nbsp;100 GB with carry forward upto 200
+									GB</span></h6>
+							<h6 class="card-title text-dark">Talktime: <span>&nbsp;Unlimited</span></h6>
+							<h6 class="card-title text-dark">Validity:<span>&nbsp;1 month</span></h6>
+						</div>
+						<div class="col">
+							<div class="ml-3 pt-5">
+								<button type="button" class="btn btn-outline-secondary waves-effect"
+									style="font-size: 15px"><i class="fa fa-rupee"></i>999</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
