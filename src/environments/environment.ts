@@ -5,7 +5,9 @@
 
 export const environment = {
   production: false
+  api_url: 'https://conduit.productionready.io/api'
 };
+
 
 /*
  * In development mode, to ignore zone related error stack frames such as
