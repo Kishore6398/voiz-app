@@ -27,8 +27,8 @@
                         <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading96">
                             <h5 class="text-uppercase mb-0 py-1">
                                 <a class="white-text font-weight-bold" data-toggle="collapse" href="#collapse96" aria-expanded="true" aria-controls="collapse96">
-        How to contact customer care?
-          </a>
+            How to contact customer care?
+              </a>
                             </h5>
                         </div>
                         <div id="collapse96" class="collapse show" role="tabpanel" aria-labelledby="heading96" data-parent="#accordionEx23">
@@ -48,8 +48,8 @@
                         <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading97">
                             <h5 class="text-uppercase mb-0 py-1">
                                 <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse97" aria-expanded="false" aria-controls="collapse97">
-            How to view my current plan?
-          </a>
+                How to view my current plan?
+              </a>
                             </h5>
                         </div>
                         <div id="collapse97" class="collapse" role="tabpanel" aria-labelledby="heading97" data-parent="#accordionEx23">
@@ -69,8 +69,8 @@
                         <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading98">
                             <h5 class="text-uppercase mb-0 py-1">
                                 <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse98" aria-expanded="false" aria-controls="collapse98">
-            How to migrate from postpaid and prepaid?
-          </a>
+                How to migrate from postpaid and prepaid?
+              </a>
                             </h5>
                         </div>
                         <div id="collapse98" class="collapse" role="tabpanel" aria-labelledby="heading98" data-parent="#accordionEx23">
@@ -92,8 +92,8 @@
                         <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading97">
                             <h5 class="text-uppercase mb-0 py-1">
                                 <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse99" aria-expanded="false" aria-controls="collapse99">
-                  How to view my past payments?
-                </a>
+                      How to view my past payments?
+                    </a>
                             </h5>
                         </div>
                         <div id="collapse99" class="collapse" role="tabpanel" aria-labelledby="heading99" data-parent="#accordionEx23">
@@ -114,8 +114,8 @@
                         <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading100">
                             <h5 class="text-uppercase mb-0 py-1">
                                 <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse100" aria-expanded="false" aria-controls="collapse100">
-                      How to change my bill plans?
-                    </a>
+                          How to change my bill plans?
+                        </a>
                             </h5>
                         </div>
                         <div id="collapse100" class="collapse" role="tabpanel" aria-labelledby="heading100" data-parent="#accordionEx23">
@@ -137,8 +137,8 @@
                         <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading101">
                             <h5 class="text-uppercase mb-0 py-1">
                                 <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse101" aria-expanded="false" aria-controls="collapse101">
-                          How to view my current bill plan?
-                        </a>
+                              How to view my current bill plan?
+                            </a>
                             </h5>
                         </div>
                         <div id="collapse101" class="collapse" role="tabpanel" aria-labelledby="heading101" data-parent="#accordionEx23">
@@ -172,50 +172,47 @@
                             <strong>Contact us</strong>
                         </h5>
 
+
                         <!--Card content-->
                         <div class="card-body px-lg-5 pt-0">
 
                             <!-- Form -->
                             <form class="text-center" style="color: #757575;" action="#!">
 
-                                <!-- Name -->
-                                <div class="md-form md-outline">
+                                <form [formGroup]="customerForm">
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="text" id="materialContactFormName" class="form-control" formControlName="name" required pattern="[a-zA-Z]{5,15}">
+                                        <label for="materialContactFormName">Name</label>
+                                        <mdb-error *ngIf="name.invalid && (name.dirty ||name.touched)"> </mdb-error>
+                                        <mdb-success *ngIf="name.valid && (name.dirty ||name.touched)"> </mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="email" id="materialContactFormEmail" class="form-control" formControlName="email" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
+                                        <label for="materialContactFormEmail">E-mail</label>
+                                        <mdb-error *ngIf="email.invalid && (email.dirty ||email.touched)"> </mdb-error>
+                                        <mdb-success *ngIf="email.valid && (email.dirty ||email.touched)"> </mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="tel" id="materialRegisterFormPhone" formControlName="phonenumber" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock" required pattern="[789][0-9]{9}">
+                                        <label for="materialRegisterFormPhone">Phone number</label>
+                                        <mdb-error *ngIf="phonenumber.invalid && (phonenumber.dirty ||phonenumber.touched)"> </mdb-error>
+                                        <mdb-success *ngIf="phonenumber.valid && (phonenumber.dirty ||phonenumber.touched)"> </mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline">
+                                        <textarea mdbInput mdbValidate id="materialContactFormMessage" class="form-control md-textarea" formControlName="message" rows="3"></textarea>
+                                        <label for="materialContactFormMessage">Message</label>
+                                        <mdb-error *ngIf="message.invalid && (message.dirty ||message.touched)"> </mdb-error>
+                                        <mdb-success *ngIf="message.valid && (message.dirty ||message.touched)"> </mdb-success>
+                                    </div>
 
-                                    <input type="text" id="materialContactFormName" class="form-control">
-                                    <label for="materialContactFormName">Name</label>
+                                    <div class="text-center mb-3">
+                                        <button type="submit" routerLink="/home" [disabled]='name.invalid || email.invalid || phonenumber.invalid || message.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white">Send</button>
+                                    </div>
+                                    <!-- Form -->
 
-                                </div>
-
-                                <!-- E-mail -->
-                                <div class="md-form md-outline">
-                                    <input type="email" id="materialContactFormEmail" class="form-control">
-                                    <label for="materialContactFormEmail">E-mail</label>
-                                </div>
-                                <div class="md-form md-outline">
-
-                                    <input type="password" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
-                                    <label for="materialRegisterFormPhone">Phone number</label>
-
-
-
-
-                                </div>
-
-                                <!--Message-->
-                                <div class="md-form md-outline">
-                                    <textarea id="materialContactFormMessage" class="form-control md-textarea" rows="3"></textarea>
-                                    <label for="materialContactFormMessage">Message</label>
-                                </div>
-
-
-                                <!-- Send button -->
-                                <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Send</button>
-
+                                </form>
                             </form>
-                            <!-- Form -->
-
                         </div>
-
                     </div>
                 </div>
                 <!-- Material form contact -->
@@ -240,39 +237,36 @@
                             <!-- Form -->
                             <form class="text-center" style="color: #757575;" action="#!">
 
-                                <!-- Name -->
-                                <div class="md-form md-outline">
-
-                                    <input type="text" id="materialContactFormName" class="form-control">
-                                    <label for="materialContactFormName">Name</label>
-
-                                </div>
-
-                                <!-- E-mail -->
-                                <div class="md-form md-outline">
-                                    <input type="email" id="materialContactFormEmail" class="form-control">
-                                    <label for="materialContactFormEmail">E-mail</label>
-                                </div>
-
-                                <!-- Subject -->
-                                <span>Subject</span>
-                                <select class="mdb-select">
-                    <option value="" disabled>Choose option</option>
-                    <option value="1" selected>Feedback</option>
-                    <option value="2">Complaint</option>
-                    
-                </select>
-
-                                <!--Message-->
-                                <div class="md-form md-outline">
-                                    <textarea id="materialContactFormMessage" class="form-control md-textarea" rows="3"></textarea>
-                                    <label for="materialContactFormMessage">Message</label>
-                                </div>
-
-
-                                <!-- Send button -->
-                                <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Send</button>
-
+                                <form [formGroup]="customerfeedbackForm">
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="text" id="materialContactFormName" formControlName="fname" class="form-control" required pattern="[a-zA-Z]{5,15}">
+                                        <label for="materialContactFormName">Name</label>
+                                        <mdb-error *ngIf="fname.invalid && (fname.dirty ||fname.touched)"> </mdb-error>
+                                        <mdb-success *ngIf="fname.valid && (fname.dirty ||fname.touched)"> </mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="email" id="materialContactFormEmail" formControlName="femail" class="form-control" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
+                                        <label for="materialContactFormEmail">E-mail</label>
+                                        <mdb-error *ngIf="femail.invalid && (femail.dirty ||femail.touched)"> </mdb-error>
+                                        <mdb-success *ngIf="femail.valid && (femail.dirty ||femail.touched)"> </mdb-success>
+                                    </div>
+                                    <span>Subject</span>
+                                    <select class="mdb-select">
+                        <option value="" disabled>Choose option</option>
+                        <option value="1" selected>Feedback</option>
+                        <option value="2">Complaint</option>
+                        
+                    </select>
+                                    <div class="md-form md-outline">
+                                        <textarea mdbInput mdbValidate id="materialContactFormMessage" class="form-control md-textarea" formControlName="fmessage" rows="3"></textarea>
+                                        <label for="materialContactFormMessage">Message</label>
+                                        <mdb-error *ngIf="fmessage.invalid && (fmessage.dirty ||fmessage.touched)"> </mdb-error>
+                                        <mdb-success *ngIf="fmessage.valid && (fmessage.dirty ||fmessage.touched)"> </mdb-success>
+                                    </div>
+                                    <div class="text-center mb-3">
+                                        <button type="submit" routerLink="/home" [disabled]='fname.invalid || femail.invalid  || fmessage.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white">Send</button>
+                                    </div>
+                                </form>
                             </form>
                             <!-- Form -->
 

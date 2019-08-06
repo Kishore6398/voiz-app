@@ -7,7 +7,7 @@
                 </h3>
             </div>
             <div class="md-form md-outline">
-                <input mdbInput mdbValidate name="email" type="email" id="email" class="form-control" formControlName="emailInput" required pattern="[^ @]*@[^ @]*">
+                <input mdbInput mdbValidate name="email" type="email" id="email" class="form-control" formControlName="emailInput" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
                 <label for="email">Email </label>
                 <mdb-error *ngIf="emailInput.invalid && (emailInput.dirty ||emailInput.touched)"></mdb-error>
                 <mdb-success *ngIf="emailInput.valid && (emailInput.dirty ||emailInput.touched)"></mdb-success>
@@ -19,19 +19,19 @@
                 <mdb-success *ngIf="mobileInput.valid && (mobileInput.dirty ||mobileInput.touched)"></mdb-success>
             </div>
             <div class="md-form md-outline">
-                <input mdbInput mdbValidate name="password" id="password" type="password" class="form-control" formControlName="passwordInput" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
+                <input mdbInput mdbValidate name="passwordInput" id="passwordInput" type="password" class="form-control" formControlName="passwordInput" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
                 <label for="password">Password </label>
-                <mdb-error *ngIf="passwordInput.invalid && (passwordInput.dirty ||passwordInput.touched)"></mdb-error>
+                <mdb-error *ngIf="passwordInput.invalid && (passwordInput.dirty ||passwordInput.touched)">Password must contain atleast one uppercase and a digit</mdb-error>
                 <mdb-success *ngIf="passwordInput.valid && (passwordInput.dirty ||passwordInput.touched)"></mdb-success>
             </div>
             <div class="md-form md-outline pb-3">
-                <input mdbInput mdbValidate name="repasswordInput" id="repasswordInput" type="password" class="form-control" formControlName="repasswordInput">
+                <input mdbInput name="repasswordInput" id="repasswordInput" type="password" class="form-control" formControlName="repasswordInput" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
                 <label for="repassword">Re-enter Password </label>
-                <mdb-error *ngIf="repasswordInput.invalid && (repasswordInput.dirty ||repasswordInput.touched) && passwordInput.value!=repasswordInput.value"></mdb-error>
-                <mdb-success *ngIf="repasswordInput.valid && (repasswordInput.dirty ||repasswordInput.touched)"></mdb-success>
+                <mdb-error *ngIf="repasswordInput.touched && passwordInput.value!=repasswordInput.value">Password not matched</mdb-error>
+
             </div>
             <div class="text-center mb-3">
-                <button type="submit" routerLink="/home" [disabled]='emailInput.invalid || mobileInput.invalid || repasswordInput.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white">Sign up</button>
+                <button type="submit" routerLink="/home" [disabled]='emailInput.invalid || mobileInput.invalid || repasswordInput.invalid || passwordInput.value!=repasswordInput.value' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white">Sign up</button>
 
             </div>
         </div>

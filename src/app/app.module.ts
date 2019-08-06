@@ -14,7 +14,6 @@ import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PrepaidComponent } from './prepaid/prepaid.component';
 import { PostpaidComponent } from './postpaid/postpaid.component';
-import { BroadbandComponent } from './broadband/broadband.component';
 import { ShopComponent } from './shop/shop.component';
 import { CustomersupportComponent } from './customersupport/customersupport.component';
 import { PaybillComponent } from './paybill/paybill.component';
@@ -25,6 +24,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.component';
 import { PlansComponent } from './plans/plans.component';
 import { LoginService } from './login.service';
+import { DongleComponent } from './dongle/dongle.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,6 @@ import { LoginService } from './login.service';
     DashboardComponent,
     PrepaidComponent,
     PostpaidComponent,
-    BroadbandComponent,
     ShopComponent,
     CustomersupportComponent,
     PaybillComponent,
@@ -44,6 +43,7 @@ import { LoginService } from './login.service';
     PaymentComponent,
     PrepaidrechargeComponent,
     PlansComponent,
+    DongleComponent,
   ],
   imports: [
     BrowserModule,

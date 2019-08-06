@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BroadbandComponent } from './broadband.component';
+import { DongleComponent } from './dongle.component';
 
-describe('BroadbandComponent', () => {
-  let component: BroadbandComponent;
-  let fixture: ComponentFixture<BroadbandComponent>;
+describe('DongleComponent', () => {
+  let component: DongleComponent;
+  let fixture: ComponentFixture<DongleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BroadbandComponent ]
+      declarations: [ DongleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BroadbandComponent);
+    fixture = TestBed.createComponent(DongleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
