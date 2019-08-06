@@ -25,14 +25,14 @@
                 <mdb-success *ngIf="passwordInput.valid && (passwordInput.dirty ||passwordInput.touched)"></mdb-success>
             </div>
             <div class="md-form md-outline pb-3">
-                <input mdbInput mdbValidate name="repassword" id="repassword" type="password" class="form-control" formControlName="repasswordInput" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
+                <input mdbInput mdbValidate name="repasswordInput" id="repasswordInput" type="password" class="form-control" formControlName="repasswordInput">
                 <label for="repassword">Re-enter Password </label>
-                <mdb-error class="offset-6 text-danger" *ngIf="repasswordInput.invalid && (repasswordInput.dirty ||repasswordInput.touched) || password != repassword"> Password not matched</mdb-error>
-                <mdb-error *ngIf="repasswordInput.invalid && (repasswordInput.dirty ||repasswordInput.touched)&& password != repassword"></mdb-error>
-                <mdb-success *ngIf="repasswordInput.valid && (repasswordInput.dirty ||repasswordInput.touched) && password == repassword"></mdb-success>
+                <mdb-error *ngIf="repasswordInput.invalid && (repasswordInput.dirty ||repasswordInput.touched) && passwordInput.value!=repasswordInput.value"></mdb-error>
+                <mdb-success *ngIf="repasswordInput.valid && (repasswordInput.dirty ||repasswordInput.touched)"></mdb-success>
             </div>
             <div class="text-center mb-3">
                 <button type="submit" routerLink="/home" [disabled]='emailInput.invalid || mobileInput.invalid || repasswordInput.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white">Sign up</button>
+
             </div>
         </div>
         <div class="modal-footer mx-5 pt-3 mb-1">

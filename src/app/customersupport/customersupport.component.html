@@ -1,135 +1,263 @@
 <div class="row">
-  <div class="">
-  <div class="sidebar-fixed">
-  
-    <a class="logo-wrapper waves-effect">
-      <img src="../../../../assets/img/angular-mdb.png" class="img-fluid" alt="UserName">
-    </a>
-  
-    <div class="list-group list-group-flush">
-  
-      <a class="list-group-item list-group-item-action waves-effect active" data-toggle="tab" href="#panel101" role="tab">
-        <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon>Bill Payment
-      </a>
-      <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel102" role="tab">
-        <mdb-icon fas icon="user" class="mr-3"></mdb-icon>generate Invoice
-      </a>
-      <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel103" role="tab">
-        <mdb-icon fas icon="table" class="mr-3"></mdb-icon>Download Invoice
-      </a>
-      <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel104" role="tab">
-        <mdb-icon far icon="map" class="mr-3"></mdb-icon>Inquiry
-      </a>
-      <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel105" role="tab">
-        <mdb-icon fas icon="exclamation" class="mr-3"></mdb-icon>Feedback
-      </a>
-      <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel106" role="tab">
-        <mdb-icon fas icon="exclamation" class="mr-3"></mdb-icon>Complaint
-      </a>
-  
-    </div>
-  </div>
-</div>
-<div class="col-lg-9 col-md-9 col-sm-9">
-    <div class="tab-content">
-      <div class="tab-pane fade in show active" id="panel101" role="tabpanel">
-        <form>
-          <div class="card col-lg-4 col-md-8 col-sm-9 mt-2 mb-2">
-            <div class="card-body mx-4">
-                <div class="text-center">
-                    <h3 class="dark-grey-text mb-5">
-                        <strong>Log In</strong>
-                    </h3>
-                </div>
-                <div class="md-form md-outline">
-                   <input mdbInput mdbValidate name="email" type="email" id="form8" class="form-control" [(ngModel)]="email" #input="ngModel" required pattern="[^ @]*@[^ @]*">
-                  <label for="form2">Email </label>
-                  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"></mdb-error>
-                  <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
-                  </div>
-                <div class="md-form pb-3 md-outline">
-                   <input mdbInput mdbValidate name="password" type="password" class="form-control" [(ngModel)]="password" #input="ngModel" required pattern="[0-9a-zA-Z]{8,16}">
-                  <label for="form2">Password </label>
-                  <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"></mdb-error>
-                  <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
-                  </div>
-                <div class="text-center mb-3">
-                    <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Log in</button>
-                </div>
+    <div class="col-md-3 col-lg-3 col-xl-3">
+        <div class="sidebar ">
+            <div class="pt-3 pb-3 pl-2">
+                <strong style="font-size: 20px">Hi User</strong>
             </div>
-            <div class="modal-footer mx-5 pt-3 mb-1">
-                <p class="font-small grey-text d-flex justify-content-end">Not a member?
-                    <a routerLink="/signup" class="blue-text ml-1"> Sign Up</a>
-                </p>
+            <div class="list-group list-group-flush">
+
+                <a class="list-group-item list-group-item-action waves-effect active" data-toggle="tab" href="#panel1" role="tab">
+                    <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon>FAQ
+                </a>
+                <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel2" role="tab">
+                    <mdb-icon fas icon="user" class="mr-3"></mdb-icon>INQUIRY
+                </a>
+                <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel3" role="tab">
+                    <mdb-icon fas icon="user" class="mr-3"></mdb-icon>FEEDBACK/COMPLAINT
+                </a>
             </div>
-          </div>
-        </form>
 
-
-      </div>
-      <!--/.Panel 1-->
-
-      <!--Panel 2-->
-      <div class="tab-pane fade" id="panel102" role="tabpanel">
-
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <!--/.Panel 2-->
-
-      <!--Panel 3-->
-      <div class="tab-pane fade" id="panel103" role="tabpanel">
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
-          reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
-          porro voluptate odit minima.</p>
-
-      </div>
-      <!--/.Panel 3-->
-
-      <!--Panel 4-->
-      <div class="tab-pane fade" id="panel104" role="tabpanel">
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
-          reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
-          porro voluptate odit minima.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
-          reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
-          porro voluptate odit minima.</p>
-
-      </div>
-      <!--/.Panel 4-->
-
+        </div>
     </div>
+    <div class="col-md-9 col-lg-9 col-xl-9">
+        <div class="tab-content">
+            <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
+                <div class="accordion md-accordion accordion-1" id="accordionEx23" role="tablist">
+                    <div class="card">
+                        <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading96">
+                            <h5 class="text-uppercase mb-0 py-1">
+                                <a class="white-text font-weight-bold" data-toggle="collapse" href="#collapse96" aria-expanded="true" aria-controls="collapse96">
+        How to contact customer care?
+          </a>
+                            </h5>
+                        </div>
+                        <div id="collapse96" class="collapse show" role="tabpanel" aria-labelledby="heading96" data-parent="#accordionEx23">
+                            <div class="card-body">
+                                <div class="row my-4">
+                                    <div class="col-md-8">
 
-  </div>
-  <!-- Grid column -->
+                                        <p class="">In case you wish to contact customer care, please call us at 121 for queries/requests and 198 for complaints. Alternatively, you can write to us at 121@voizfonica.com</p>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading97">
+                            <h5 class="text-uppercase mb-0 py-1">
+                                <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse97" aria-expanded="false" aria-controls="collapse97">
+            How to view my current plan?
+          </a>
+                            </h5>
+                        </div>
+                        <div id="collapse97" class="collapse" role="tabpanel" aria-labelledby="heading97" data-parent="#accordionEx23">
+                            <div class="card-body">
+                                <div class="row my-4">
+                                    <div class="col-md-8">
+
+                                        <p class="">Simply login at voizfonica.com and go to Billing section to view your current bill.</p>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading98">
+                            <h5 class="text-uppercase mb-0 py-1">
+                                <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse98" aria-expanded="false" aria-controls="collapse98">
+            How to migrate from postpaid and prepaid?
+          </a>
+                            </h5>
+                        </div>
+                        <div id="collapse98" class="collapse" role="tabpanel" aria-labelledby="heading98" data-parent="#accordionEx23">
+                            <div class="card-body">
+                                <div class="row my-4">
+                                    <div class="col-md-8">
+
+                                        <p class="">Please visit the nearest Airtel Store with your Aadhaar number to convert the number from postpaid to prepaid. In case you do not have Aadhaar number, don’t forget to carry your Identity and Address proof with you.</p>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading97">
+                            <h5 class="text-uppercase mb-0 py-1">
+                                <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse99" aria-expanded="false" aria-controls="collapse99">
+                  How to view my past payments?
+                </a>
+                            </h5>
+                        </div>
+                        <div id="collapse99" class="collapse" role="tabpanel" aria-labelledby="heading99" data-parent="#accordionEx23">
+                            <div class="card-body">
+                                <div class="row my-4">
+                                    <div class="col-md-8">
+
+                                        <p class="">Simply login at voizfonica.com and go to Billing section >> Last Payments to view details of last 3 payments made.</p>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading100">
+                            <h5 class="text-uppercase mb-0 py-1">
+                                <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse100" aria-expanded="false" aria-controls="collapse100">
+                      How to change my bill plans?
+                    </a>
+                            </h5>
+                        </div>
+                        <div id="collapse100" class="collapse" role="tabpanel" aria-labelledby="heading100" data-parent="#accordionEx23">
+                            <div class="card-body">
+                                <div class="row my-4">
+                                    <div class="col-md-8">
+
+                                        <p class="">Simply login at voizfonica.com and go to Plan & Services >> Update Rental to change your bill plan.</p>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading101">
+                            <h5 class="text-uppercase mb-0 py-1">
+                                <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse101" aria-expanded="false" aria-controls="collapse101">
+                          How to view my current bill plan?
+                        </a>
+                            </h5>
+                        </div>
+                        <div id="collapse101" class="collapse" role="tabpanel" aria-labelledby="heading101" data-parent="#accordionEx23">
+                            <div class="card-body">
+                                <div class="row my-4">
+                                    <div class="col-md-8">
+
+                                        <p class="">Simply login at voizfonica.com and go to Plan & Services >> View Plan to view your current bill plan benefits.</p>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--Accordion wrapper-->
+
+            </div>
+            <!--/.Panel 1-->
+
+            <!--Panel 2-->
+            <div class="tab-pane fade" id="panel2" role="tabpanel">
+                <!-- Default form contact -->
+                <div class="container">
+                    <form class="text-center border border-light p-5" action="#!">
+
+                        <p class="h4 mb-4">Contact us</p>
+
+                        <!-- Name -->
+                        <input type="text" id="materialContactFormName" class="form-control mb-4" placeholder="Name">
+
+                        <!-- Email -->
+                        <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
+                        <input type="tel" name="phone" class="form-control mb-4" placeholder="Mobile Number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+
+
+                        <!-- Message -->
+                        <div class="form-group">
+                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+                        </div>
+
+
+
+                        <!-- Send button -->
+                        <button class="btn btn-info btn-block" type="submit">Send</button>
+
+                    </form>
+                    <!-- Default form contact -->
+                </div>
+
+            </div>
+
+            <!--/.Panel 2-->
+            <div class="tab-pane fade in" id="panel3" role="tabpanel">
+                <!--/.your content here-->
+                <!-- Material form contact -->
+                <div class="container">
+                    <div class="card">
+
+                        <h5 class="card-header info-color white-text text-center py-4">
+                            <strong>Contact us</strong>
+                        </h5>
+
+                        <!--Card content-->
+                        <div class="card-body px-lg-5 pt-0">
+
+                            <!-- Form -->
+                            <form class="text-center" style="color: #757575;" action="#!">
+
+                                <!-- Name -->
+                                <div class="md-form mt-3">
+                                    <input type="text" id="materialContactFormName" class="form-control">
+                                    <label for="materialContactFormName">Name</label>
+                                </div>
+
+                                <!-- E-mail -->
+                                <div class="md-form">
+                                    <input type="email" id="materialContactFormEmail" class="form-control">
+                                    <label for="materialContactFormEmail">E-mail</label>
+                                </div>
+
+                                <!-- Subject -->
+                                <span>Subject</span>
+                                <select class="mdb-select">
+                    <option value="" disabled>Choose option</option>
+                    <option value="1" selected>Feedback</option>
+                    <option value="2">Complaint</option>
+                    
+                </select>
+
+                                <!--Message-->
+                                <div class="md-form">
+                                    <textarea id="materialContactFormMessage" class="form-control md-textarea" rows="3"></textarea>
+                                    <label for="materialContactFormMessage">Message</label>
+                                </div>
+
+                                <!-- Copy -->
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="materialContactFormCopy">
+                                    <label class="form-check-label" for="materialContactFormCopy">Send me a copy of this message</label>
+                                </div>
+
+                                <!-- Send button -->
+                                <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Send</button>
+
+                            </form>
+                            <!-- Form -->
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Material form contact -->
+
+            </div>
+
+        </div>
+    </div>
 </div>

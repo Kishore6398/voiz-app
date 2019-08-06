@@ -1,152 +1,157 @@
-<div class="row">
-    <div class="col-md-3 col-lg-3 col-xl-3">
-        <div class="sidebar ">
-            <div class="pt-3 pb-3 pl-2">
-                <strong style="font-size: 20px">Hi Kishore</strong>
+<style>
+        .avatar {
+            vertical-align: middle;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+        }
+    </style>
+    <div class="row">
+        <div class="col-md-3 col-lg-3 col-xl-3">
+            <div class="sidebar ">
+                <div class="pt-3 pb-3 pl-2">
+                    <strong style="font-size: 20px">Hi Kishore</strong>
+                </div>
+                <div class="list-group list-group-flush">
+    
+                    <a class="list-group-item list-group-item-action waves-effect active" data-toggle="tab" href="#panel1"
+                        role="tab">
+                        <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon>Dashboard
+                    </a>
+                    <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel2"
+                        role="tab">
+                        <mdb-icon fas icon="user" class="mr-3"></mdb-icon>Profile
+                    </a>
+    
+    
+                </div>
+    
             </div>
-            <div class="list-group list-group-flush">
-
-                <a class="list-group-item list-group-item-action waves-effect active" data-toggle="tab" href="#panel1" role="tab">
-                    <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon>Dashboard
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel2" role="tab">
-                    <mdb-icon fas icon="user" class="mr-3"></mdb-icon>Profile
-                </a>
-
-
+        </div>
+        <div class="col-md-9 col-lg-9 col-xl-9">
+            <div class="tab-content">
+                <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
+                    <!--/.your content here-->
+    
+                    <div class="row">
+                        <div class="pr-5 pl-5 pb-2">
+                            <div class="card border-primary mt-4 mb-5" style="width: 25rem;">
+                                <div class="card-header">Voice Usage</div>
+                                <div class="card-body ">
+                                    <h5 class="card-title text-dark">Rupees Used
+                                        <div class="text-primary">21.0</div>
+                                    </h5>
+                                    <p class="card-text">Your current voice balance is as shown for this month till date.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pl-5 pb-2">
+                            <div class="card border-primary mt-4 mb-5" style="width: 25rem;">
+                                <div class="card-header">Data Usage</div>
+                                <div class="card-body text-primary">
+                                    <h5 class="card-title text-dark">Data Consumed
+                                        <div class="text-primary">32515 Mb</div>
+                                    </h5>
+                                    <p class="card-text">Your current data usage is as shown for this month till date.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="pr-5 pl-5">
+                            <div class="card border-primary mb-3" style="width: 25rem;height: 16rem">
+                                <div class="card-header">Balance</div>
+                                <div class="card-body text-primary">
+                                    <h5 class="card-title text-dark">Remaining Balance
+                                        <div class="text-primary">50.0</div>
+                                    </h5>
+                                    <p class="card-text">Your main account balance is as shown.</p>
+                                    <a routerLink="/recharge" type="button" class="btn btn-secondary">Recharge Now</a>
+                                </div>
+    
+                            </div>
+                        </div>
+                        <div class="pl-5 pb-3">
+                            <div class="card border-primary mb-3" style="width: 25rem;height: 16rem">
+                                <div class="card-header">Active Plan</div>
+                                <div class="card-body text-primary">
+                                    <h5 class="card-title text-dark">Recharge Date: <b class="text-primary">02/05/2019</b>
+                                    </h5>
+                                    <h5 class="card-title text-dark">MRP: <b class="text-primary">100</b></h5>
+                                    <h5 class="card-title text-dark">Expiry Date: <b class="text-primary">03/06/2019</b>
+                                    </h5><br>
+                                    <p class="card-text">Please recharge before the validity expires.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!--/.Panel 1-->
+    
+                <!--Panel 2-->
+                <div class="tab-pane fade" id="panel2" role="tabpanel">
+                    <div class="container-fluid">
+                        <h3 class="pt-2">Voiz Fonica Account Profile</h3>
+                        <p>Keep your profile up-to-date to help us serve your needs</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <hr>
+                            <h5>Personal details</h5><br>
+                            <table class="table table-striped">
+    
+                                <tbody class="text-left ">
+                                    <tr>
+                                        <th scope="row">Name</th>
+                                        <td>Kishore</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Phone Number</th>
+                                        <td>9845675235</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Email ID</th>
+                                        <td>user@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Date of Birth</th>
+                                        <td>03/05/2000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Gender</th>
+                                        <td>Male</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Address</th>
+                                        <td>20, Nehru Street, Kilpauk</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">State</th>
+                                        <td>Tamil Nadu</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Country</th>
+                                        <td>India</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pb-2">
+                                <a type="button" class="btn btn-secondary">Edit Profile</a>
+                            </div>
+    
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+                            <img src="assets/images/img_avatar.png" alt="Avatar" class="avatar">
+                        </div>
+                    </div>
+                </div>
+    
+                <!--/.Panel 2-->
+    
+    
             </div>
-
         </div>
     </div>
-    <div class="col-md-9 col-lg-9 col-xl-9">
-        <div class="tab-content">
-            <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
-                <!--/.your content here-->
-
-                <div class="row">
-                    <div class="pr-5 pl-5 pb-2">
-                        <div class="card border-primary mt-4 mb-5" style="width: 25rem;">
-                            <div class="card-header">Voice Usage</div>
-                            <div class="card-body ">
-                                <h5 class="card-title text-dark">Rupees Used
-                                    <div class="text-primary">21.0</div>
-                                </h5>
-                                <p class="card-text">Your current voice balance is as shown for this month till date.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pl-5 pb-2">
-                        <div class="card border-primary mt-4 mb-5" style="width: 25rem;">
-                            <div class="card-header">Data Usage</div>
-                            <div class="card-body text-primary">
-                                <h5 class="card-title text-dark">Data Consumed
-                                    <div class="text-primary">32515 Mb</div>
-                                </h5>
-                                <p class="card-text">Your current data usage is as shown for this month till date.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="pr-5 pl-5">
-                        <div class="card border-primary mb-3" style="width: 25rem;height: 16rem">
-                            <div class="card-header">Balance</div>
-                            <div class="card-body text-primary">
-                                <h5 class="card-title text-dark">Remaining Balance
-                                    <div class="text-primary">50.0</div>
-                                </h5>
-                                <p class="card-text">Your main account balance is as shown.</p>
-                                <a routerLink="/recharge" type="button" class="btn btn-secondary">Recharge Now</a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="pl-5 pb-3">
-                        <div class="card border-primary mb-3" style="width: 25rem;height: 16rem">
-                            <div class="card-header">Active Plan</div>
-                            <div class="card-body text-primary">
-                                <h5 class="card-title text-dark">Recharge Date: <b class="text-primary">02/05/2019</b></h5>
-                                <h5 class="card-title text-dark">MRP: <b class="text-primary">100</b></h5>
-                                <h5 class="card-title text-dark">Expiry Date: <b class="text-primary">03/06/2019</b></h5><br>
-                                <p class="card-text">Please recharge before the validity expires.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--/.Panel 1-->
-
-            <!--Panel 2-->
-            <div class="tab-pane fade" id="panel2" role="tabpanel">
-                <div class="container-fluid">
-                    <h3 class="pt-2">Voiz Fonica Account Profile</h3>
-                    <p>Keep your profile up-to-date to help us serve your needs</p>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 ">
-                        <hr>
-                        <h5>Personal details</h5><br>
-                        <table class="table table-striped">
-
-                            <tbody class="text-left ">
-                                <tr>
-                                    <th scope="row">Name</th>
-                                    <td>Kishore</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Phone Number</th>
-                                    <td>9845675235</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Email ID</th>
-                                    <td>user@gmail.com</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Date of Birth</th>
-                                    <td>03/05/2000</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Gender</th>
-                                    <td>Male</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Address</th>
-                                    <td>20, Nehru Street, Kilpauk</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">State</th>
-                                    <td>Tamil Nadu</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Country</th>
-                                    <td>India</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="pb-2">
-                            <a type="button" class="btn btn-secondary">Edit Profile</a>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4">
-                        <div class="col-xs-12 col-sm-9">
-                            <h4 class="blue">
-                                <span class="middle"><h4><b>John Doe</b></h4></span>
-
-                                <span class="label label-purple arrowed-in-right">
-                                    <i class="ace-icon fa fa-circle smaller-80 align-middle"></i>
-                                    online
-                                </span>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--/.Panel 2-->
-
-
-        </div>
-    </div>
-</div>
