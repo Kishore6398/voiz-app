@@ -23,8 +23,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.component';
-import { FaqComponent } from './faq/faq.component';
-import { FeedbackComponent } from './feedback/feedback.component';
 import { PlansComponent } from './plans/plans.component';
 import { LoginService } from './login.service';
 
@@ -45,13 +43,11 @@ import { LoginService } from './login.service';
     NavbarComponent,
     PaymentComponent,
     PrepaidrechargeComponent,
-    FaqComponent,
-    FeedbackComponent,
     PlansComponent,
   ],
   imports: [
     BrowserModule,
-// tslint:disable-next-line: deprecation
+    // tslint:disable-next-line: deprecation
     HttpModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
@@ -61,9 +57,9 @@ import { LoginService } from './login.service';
     ReactiveFormsModule
   ],
   providers: [
-  CommonService,
-  LoginService
+    CommonService,
+    LoginService
   ],
   bootstrap: [AppComponent]
-}) 
+})
 export class AppModule { }
