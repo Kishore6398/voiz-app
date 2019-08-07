@@ -10,15 +10,16 @@ export class SignupComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
   registerForm: FormGroup;
   ngOnInit() {
-  this.registerForm = new FormGroup({
-  	emailInput : new FormControl(null, [Validators.required, Validators.email]),
-  	mobileInput: new FormControl(null, Validators.required),
-  	passwordInput: new FormControl(null, Validators.required),
-  	repasswordInput: new FormControl(null, Validators.required),
-  });
-  //console.log(this.registerForm);
+    this.registerForm = new FormGroup({
+      nameInput: new FormControl(null, Validators.required),
+      emailInput: new FormControl(null, [Validators.required, Validators.email]),
+      mobileInput: new FormControl(null, Validators.required),
+      passwordInput: new FormControl(null, Validators.required),
+      repasswordInput: new FormControl(null, Validators.required),
+    });
+    //console.log(this.registerForm);
   }
-
+  get nameInput() { return this.registerForm.get('nameInput'); }
   get emailInput() { return this.registerForm.get('emailInput'); }
   get mobileInput() { return this.registerForm.get('mobileInput'); }
   get passwordInput() { return this.registerForm.get('passwordInput'); }

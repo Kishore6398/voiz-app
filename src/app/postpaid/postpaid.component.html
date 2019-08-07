@@ -1,70 +1,64 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="container">
-	<div class="row pt-3 pb-3">
-		<div class="col-md-12 text-center">
-			<h2 class="text-primary">Postpaid Connection</h2>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-7">
-			<h5 class="pb-4">Fill the below form to get your SIM home delivered</h5>
-			<!-- Default horizontal form -->
-			<form [formGroup]="postpaidForm">
-				<div class="card">
-					<div class="card-body">
-						<div class="md-form md-outline">
-							<input mdbInput mdbValidate type="text" id="name" class="form-control"
-								formControlName="nameInput" required pattern="[a-zA-Z]{5,15}">
-							<label for="name">Name</label>
-							<mdb-error *ngIf="nameInput.invalid && (nameInput.dirty ||nameInput.touched)"></mdb-error>
-							<mdb-success *ngIf="nameInput.valid && (nameInput.dirty ||nameInput.touched)"></mdb-success>
-						</div>
-						<div class="md-form md-outline">
-							<input mdbInput mdbValidate type="email" id="email" class="form-control"
-								formControlName="emailInput" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
-							<label for="email">Email </label>
-							<mdb-error *ngIf="emailInput.invalid && (emailInput.dirty ||emailInput.touched)">
-							</mdb-error>
-							<mdb-success *ngIf="emailInput.valid && (emailInput.dirty ||emailInput.touched)">
-							</mdb-success>
-						</div>
-						<div class="md-form md-outline">
-							<input mdbInput mdbValidate type="tel" id="mobile" class="form-control"
-								formControlName="mobileInput" required pattern="[789][0-9]{9}">
-							<label for="mobile">Mobile </label>
-							<mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty ||mobileInput.touched)">
-							</mdb-error>
-							<mdb-success *ngIf="mobileInput.valid && (mobileInput.dirty ||mobileInput.touched)">
-							</mdb-success>
-						</div>
+    <div class="row pt-3 pb-3">
+        <div class="col-md-12 text-center">
+            <h2 class="text-primary">Postpaid Connection</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <h5 class="pb-4">Fill the below form to get your SIM home delivered</h5>
+            <!-- Default horizontal form -->
+            <form [formGroup]="postpaidForm">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="md-form md-outline">
+                            <input mdbInput mdbValidate type="text" id="name" class="form-control" formControlName="nameInput" required pattern="[a-zA-Z]{5,15}">
+                            <label for="name">Name</label>
+                            <mdb-error *ngIf="nameInput.invalid && (nameInput.dirty ||nameInput.touched)"></mdb-error>
+                            <mdb-success *ngIf="nameInput.valid && (nameInput.dirty ||nameInput.touched)"></mdb-success>
+                        </div>
+                        <div class="md-form md-outline">
+                            <input mdbInput mdbValidate type="email" id="email" class="form-control" formControlName="emailInput" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
+                            <label for="email">Email </label>
+                            <mdb-error *ngIf="emailInput.invalid && (emailInput.dirty ||emailInput.touched)">
+                            </mdb-error>
+                            <mdb-success *ngIf="emailInput.valid && (emailInput.dirty ||emailInput.touched)">
+                            </mdb-success>
+                        </div>
+                        <div class="md-form md-outline">
+                            <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="mobileInput" required pattern="[789][0-9]{9}">
+                            <label for="mobile">Mobile </label>
+                            <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty ||mobileInput.touched)">
+                            </mdb-error>
+                            <mdb-success *ngIf="mobileInput.valid && (mobileInput.dirty ||mobileInput.touched)">
+                            </mdb-success>
+                        </div>
 
-						<div class="md-form md-outline">
-							<input mdbInput mdbValidate type="text" id="address" class="form-control"
-								formControlName="addressInput" required pattern="[a-zA-Z0-9\,\.]{5,100}">
-							<label for="address">Address </label>
-							<mdb-error *ngIf="addressInput.invalid && (addressInput.dirty ||addressInput.touched)">
-							</mdb-error>
-							<mdb-success *ngIf="addressInput.valid && (addressInput.dirty ||addressInput.touched)">
-							</mdb-success>
-						</div>
-						<div class="md-form md-outline">
-							<input mdbInput mdbValidate type="text" id="city" class="form-control"
-								formControlName="cityInput" required pattern="[a-zA-Z]{3,15}">
-							<label for="mobile">City </label>
-							<mdb-error *ngIf="cityInput.invalid && (cityInput.dirty ||cityInput.touched)"></mdb-error>
-							<mdb-success *ngIf="cityInput.valid && (cityInput.dirty ||cityInput.touched)"></mdb-success>
-						</div>
-						<div class="md-form md-outline">
-							<input mdbInput mdbValidate type="" id="pincode" class="form-control"
-								formControlName="pincodeInput" required pattern="[0-9]{6}">
-							<label for="pincode">Pincode </label>
-							<mdb-error *ngIf="pincodeInput.invalid && (pincodeInput.dirty ||pincodeInput.touched)">
-							</mdb-error>
-							<mdb-success *ngIf="pincodeInput.valid && (pincodeInput.dirty ||pincodeInput.touched)">
-							</mdb-success>
-						</div>
-						<div class="col-md-8 pt-3 pb-3">
-							<select class="browser-default custom-select custom-select-lg mb-3">
+                        <div class="md-form md-outline">
+                            <input mdbInput mdbValidate type="text" id="address" class="form-control" formControlName="addressInput" required pattern="[0-9 a-z A-Z]*\,?[a-zA-Z\s]+\,?\s?[a-zA-Z]+">
+                            <label for="address">Address </label>
+                            <mdb-error *ngIf="addressInput.invalid && (addressInput.dirty ||addressInput.touched)">
+                            </mdb-error>
+                            <mdb-success *ngIf="addressInput.valid && (addressInput.dirty ||addressInput.touched)">
+                            </mdb-success>
+                        </div>
+                        <div class="md-form md-outline">
+                            <input mdbInput mdbValidate type="text" id="city" class="form-control" formControlName="cityInput" required pattern="[a-zA-Z]{3,15}">
+                            <label for="mobile">City </label>
+                            <mdb-error *ngIf="cityInput.invalid && (cityInput.dirty ||cityInput.touched)"></mdb-error>
+                            <mdb-success *ngIf="cityInput.valid && (cityInput.dirty ||cityInput.touched)"></mdb-success>
+                        </div>
+                        <div class="md-form md-outline">
+                            <input mdbInput mdbValidate type="" id="pincode" class="form-control" formControlName="pincodeInput" required pattern="[1-9][0-9]{5}">
+                            <label for="pincode">Pincode </label>
+                            <mdb-error *ngIf="pincodeInput.invalid && (pincodeInput.dirty ||pincodeInput.touched)">
+                            </mdb-error>
+                            <mdb-success *ngIf="pincodeInput.valid && (pincodeInput.dirty ||pincodeInput.touched)">
+                            </mdb-success>
+                        </div>
+                        <div class="col-md-8 pt-3 pb-3">
+                            <select class="browser-default custom-select custom-select-lg mb-3">
 								<option value="" disabled selected>Choose a number of your choice</option>
 								<option value="1">9956514786</option>
 								<option value="2">8956221478</option>
@@ -72,67 +66,63 @@
 								<option value="4">8966655254</option>
 								<option value="5">9962448545</option>
 							</select>
-							
-						</div>
 
-						<div class="text-center mb-3">
-							<button type="submit" routerLink="/payment"
-								[disabled]='nameInput.invalid || emailInput.invalid || mobileInput.invalid || addressInput.invalid || cityInput.invalid || pincodeInput.invalid'
-								class="btn btn-secondary btn-block">Submit</button>
+                        </div>
 
-						</div>
-					</div>
-				</div>
-			</form>
-			<!-- Default horizontal form -->
-		</div>
-		<div class="col-md-1">
+                        <div class="text-center mb-3">
+                            <button type="submit" routerLink="/payment" [disabled]='nameInput.invalid || emailInput.invalid || mobileInput.invalid || addressInput.invalid || cityInput.invalid || pincodeInput.invalid' class="btn btn-secondary btn-block">Submit</button>
 
-		</div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- Default horizontal form -->
+        </div>
+        <div class="col-md-1">
 
-		<div class="col-md-4">
-			<h5 class="pb-4">Select a pack</h5>
-			<div class="card border-secondary mb-3" style="max-width: 30rem; height: 14rem;">
-				<div class="card-header text-white bg-secondary">UNLIMITED</div>
-				<div class="card-body text-secondary">
-					<div class="row">
-						<div class="col">
-							<h6 class="card-title text-dark">Data: <span>&nbsp;50 GB with carry forward upto 200
+        </div>
+
+        <div class="col-md-4">
+            <h5 class="pb-4">Select a pack</h5>
+            <div class="card border-secondary mb-3" style="max-width: 30rem; height: 14rem;">
+                <div class="card-header text-white bg-secondary">UNLIMITED</div>
+                <div class="card-body text-secondary">
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="card-title text-dark">Data: <span>&nbsp;50 GB with carry forward upto 200
 									GB</span></h6>
-							<h6 class="card-title text-dark">Talktime: <span>&nbsp;Unlimited</span></h6>
-							<h6 class="card-title text-dark">Validity :<span>&nbsp;1 month</span></h6>
-						</div>
+                            <h6 class="card-title text-dark">Talktime: <span>&nbsp;Unlimited</span></h6>
+                            <h6 class="card-title text-dark">Validity :<span>&nbsp;1 month</span></h6>
+                        </div>
 
-						<div class="col">
-							<div class="ml-3 pt-5">
-								<button type="button" class="btn btn-outline-secondary waves-effect"
-									style="font-size: 15px"><i class="fa fa-rupee"></i>499</button>
-							</div>
-						</div>
+                        <div class="col">
+                            <div class="ml-3 pt-5">
+                                <button type="button" class="btn btn-outline-secondary waves-effect" style="font-size: 15px"><i class="fa fa-rupee"></i>499</button>
+                            </div>
+                        </div>
 
-					</div>
-				</div>
-			</div>
-			<br>
-			<div class="card border-secondary mb-3" style="max-width: 30rem; height: 14rem;">
-				<div class="card-header text-white bg-secondary">UNLIMITED</div>
-				<div class="card-body text-secondary">
-					<div class="row">
-						<div class="col">
-							<h6 class="card-title text-dark">Data: <span>&nbsp;100 GB with carry forward upto 200
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card border-secondary mb-3" style="max-width: 30rem; height: 14rem;">
+                <div class="card-header text-white bg-secondary">UNLIMITED</div>
+                <div class="card-body text-secondary">
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="card-title text-dark">Data: <span>&nbsp;100 GB with carry forward upto 200
 									GB</span></h6>
-							<h6 class="card-title text-dark">Talktime: <span>&nbsp;Unlimited</span></h6>
-							<h6 class="card-title text-dark">Validity:<span>&nbsp;1 month</span></h6>
-						</div>
-						<div class="col">
-							<div class="ml-3 pt-5">
-								<button type="button" class="btn btn-outline-secondary waves-effect"
-									style="font-size: 15px"><i class="fa fa-rupee"></i>999</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                            <h6 class="card-title text-dark">Talktime: <span>&nbsp;Unlimited</span></h6>
+                            <h6 class="card-title text-dark">Validity:<span>&nbsp;1 month</span></h6>
+                        </div>
+                        <div class="col">
+                            <div class="ml-3 pt-5">
+                                <button type="button" class="btn btn-outline-secondary waves-effect" style="font-size: 15px"><i class="fa fa-rupee"></i>999</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
