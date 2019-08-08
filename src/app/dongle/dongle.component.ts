@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dongle',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dongle.component.scss']
 })
 export class DongleComponent implements OnInit {
+  dongle2Form: FormGroup;
+  constructor(private fb: FormBuilder) {
+   }
 
-  constructor() { }
+ ngOnInit() {
+     this.dongle2Form = new FormGroup({
+       numberInput: new FormControl(null,Validators.required),
+     });
+     
+     
+}
 
-  ngOnInit() {
-  }
+get numberInput() { return this.dongle2Form.get('numberInput'); }
+
 
 }

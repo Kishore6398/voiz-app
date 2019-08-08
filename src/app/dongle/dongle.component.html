@@ -1,7 +1,8 @@
-<section class="container-fluid pl-5">
+<section class="container pl-5">
     <h2 class="h1 pt-2 font-weight-bold text-center">Dongle</h2>
     <div class="row pt-2">
-        <div class="col-lg-4 col-md-4 ml-0 pl-0 text-center">
+        <div class="col-lg-6 col-md-6 ml-0 pl-0 text-center">
+            <h4 class="pb-4">For New Dongle Connection</h4>
             <form>
                 <div class="card mt-2 mb-2">
                     <div class="card-body mx-4">
@@ -12,43 +13,49 @@
                         </div>
                         <div class="md-form md-outline">
                             <input mdbInput mdbValidate name="name" type="text" id="name" class="form-control"
-                                [(ngModel)]="name" #input="ngModel" required pattern="[A-Z][a-z]{5,15}">
+                                [(ngModel)]="name" #input="ngModel" required pattern="[a-zA-Z\s]{5,15}">
                             <label for="name">Name </label>
                             <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
                             <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
                         </div>
                         <div class="md-form md-outline">
                             <input mdbInput mdbValidate name="email" type="email" id="email" class="form-control"
-                                [(ngModel)]="email" #input="ngModel" required pattern="[^ @]*@[^ @]*">
+                                [(ngModel)]="email" #input="ngModel" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
                             <label for="email">Email </label>
                             <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
                             <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
                         </div>
                         <div class="md-form md-outline">
-                            <input mdbInput mdbValidate name="mobile" type="tel" id="form8" class="form-control"
+                            <input mdbInput mdbValidate name="mobile" type="tel" id="mobile" class="form-control"
                                 [(ngModel)]="mobile" #input="ngModel" required pattern="[789][0-9]{9}">
-                            <label for="form2">Mobile </label>
+                            <label for="mobile">Mobile </label>
+                            <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                            <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                        </div>
+                        <div class="md-form md-outline">
+                            <input mdbInput mdbValidate name="address" id="address" type="text" class="form-control"
+                                [(ngModel)]="address" #input="ngModel" required pattern="[0-9a-zA-Z]*\,?[a-zA-Z\s]+\,?\s?[a-zA-Z]+">
+                            <label for="address">Address </label>
                             <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
                             <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
                         </div>
                         <div class="md-form md-outline">
                             <input mdbInput mdbValidate name="city" id="city" type="text" class="form-control"
-                                [(ngModel)]="city" #input="ngModel" required pattern="[a-zA-Z]{3,16}">
-                            <label for="form2">City </label>
+                                [(ngModel)]="city" #input="ngModel" required pattern="[a-zA-Z]{3,15}">
+                            <label for="city">City </label>
                             <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
                             <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
                         </div>
                         <div class="md-form pb-3 md-outline">
-                            <input mdbInput mdbValidate name="address" id="address" type="text" class="form-control"
-                                [(ngModel)]="address" #input="ngModel" required pattern="[0-9a-zA-Z]{8,16}">
-                            <label for="form2">Address </label>
+                            <input mdbInput mdbValidate name="pincode" id="pincode" type="text" class="form-control"
+                                [(ngModel)]="pincode" #input="ngModel" required pattern="[1-9][0-9]{5}">
+                            <label for="pincode">Pincode </label>
                             <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
                             <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
                         </div>
                         <div class="text-center mb-3">
-                            <button type="submit" routerLink="/payment"
-                                class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Get
-                                now</button>
+                            <button type="submit" [disabled]='input.invalid'
+                                class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Submit</button>
                         </div>
                     </div>
 
@@ -57,61 +64,26 @@
 
         </div>
 
-        <div class="col-lg-4 col-md-4 pt-3 mx-auto">
-               <h4>Multi SIM Network 4G Dongle Data Card</h4>
-            <img src="./assets/images/dongle.png" class="img img-fluid pt-2">
-            <div class=" mx-auto">
-                <button type="button" class="mt-3 btn disabled btn-outline-info">Rs 2100/-</button>
-            </div>
-            <div class="card mb-3 pt-3">
-                <div class="btn-floating card-body pt-0 mb-0 pb-0">
-                    <h5 class="card-title">Product Details</h5>
-                    <div class="card-text">
-                        <ul class="list">
-                            <li>Expandable Memory Capacity: 32</li>
-                            <li>3G/4G SIM</li>
-                            <li>SMS Support</li>
-                            <li>OS: Windows</li>
-                            <li>Power Source: USB</li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
+        <div class="col-lg-1 col-md-1">
         </div>
-        <div class="col-lg-3 col-md-3 mx-auto">
-            <div class="card border-secondary mt-4" style="max-width:20rem; height: 11rem;">
-                <div class="card-header text-white amy-crisp-gradient">PACK-1</div>
-                <div class="card-body text-secondary">
-                    <div class="row">
-                        <div class="col">
-                            <h6 class="card-title text-dark">Data: <span>&nbsp;50 GB</span></h6>
+        <div class="col-lg-5 col-md-5 pt-4 mx-auto text-center">
+            <h4 class="pb-4">For Quick Recharge</h4>
+            <form [formGroup]="dongle2Form">
+                <div class="md-form md-outline">
+                    <input mdbInput mdbValidate type="tel" id="number" class="form-control"
+                        formControlName="numberInput" required pattern="[789][0-9]{9}">
+                    <label for="number">Number </label>
+                    <mdb-error *ngIf="numberInput.invalid && (numberInput.dirty ||numberInput.touched)">
+                    </mdb-error>
+                    <mdb-success *ngIf="numberInput.valid && (numberInput.dirty ||numberInput.touched)">
+                    </mdb-success>
+                </div>
+                <div class="text-center mb-3 ">
+                    <button type="submit" routerLink="/pack3" [disabled]='numberInput.invalid'
+                        class="btn btn-secondary btn-block ">Submit</button>
 
-                            <h6 class="card-title text-dark">Validity:<span>&nbsp;1 month</span></h6>
-                        </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-outline-secondary waves-effect"
-                                style="font-size: 15px"><i class="fa fa-rupee"></i>500</button>
-                        </div>
-                    </div>
                 </div>
-            </div>
-            <div class="card border-secondary " style="max-width: 20rem; height: 11rem;">
-                <div class="card-header text-white amy-crisp-gradient">PACK-2</div>
-                <div class="card-body text-secondary">
-                    <div class="row">
-                        <div class="col">
-                            <h6 class="card-title text-dark">Data: <span>&nbsp;75 GB</span></h6>
-                            <h6 class="card-title text-dark">Validity:<span>&nbsp;1 month</span></h6>
-                        </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-outline-secondary waves-effect"
-                                style="font-size: 15px"><i class="fa fa-rupee"></i>850</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
 
     </div>

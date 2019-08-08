@@ -5,15 +5,14 @@
             <h2 class="text-primary">Prepaid Connection</h2>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-7">
-            <h5 class="pb-4">Fill the below form to get your SIM home delivered</h5>
+    <div class="text-center">
+            <h5 class="pb-3">Fill the below form to get your SIM home delivered</h5>
             <!-- Default horizontal form -->
             <form [formGroup]="prepaidForm">
-                <div class="card">
-                    <div class="card-body">
+                <div class="card col-lg-8 mx-auto col-md-10 col-sm-12 mt-2 mb-2">
+                    <div class="card-body mx-6">
                         <div class="md-form md-outline">
-                            <input mdbInput mdbValidate type="text" id="name" class="form-control" formControlName="nameInput" required pattern="[a-zA-Z]{5,15}">
+                            <input mdbInput mdbValidate type="text" id="name" class="form-control" formControlName="nameInput" required pattern="[a-zA-Z\s]{5,15}">
                             <label for="name">Name</label>
                             <mdb-error *ngIf="nameInput.invalid && (nameInput.dirty ||nameInput.touched)"></mdb-error>
                             <mdb-success *ngIf="nameInput.valid && (nameInput.dirty ||nameInput.touched)"></mdb-success>
@@ -76,44 +75,5 @@
                 </div>
             </form>
             <!-- Default horizontal form -->
-        </div>
-        <div class="col-md-1 ">
-
-        </div>
-
-        <div class="col-md-4 ">
-            <h5 class="pb-4 ">Choose a recharge pack</h5>
-            <div class="card border-secondary mb-3 " style="max-width: 30rem; height: 11rem; ">
-                <div class="card-header text-white bg-secondary ">UNLIMITED</div>
-                <div class="card-body text-secondary ">
-                    <div class="row ">
-                        <div class="col ">
-                            <h6 class="card-title text-dark ">Data: <span>&nbsp;1.5 GB</span></h6>
-                            <h6 class="card-title text-dark ">Talktime: <span>&nbsp;Unlimited</span></h6>
-                            <h6 class="card-title text-dark ">Validity :<span>&nbsp;28 days</span></h6>
-                        </div>
-                        <div class="col ">
-                            <button type="button " class="btn btn-outline-secondary waves-effect " style="font-size: 15px "><i class="fa fa-rupee "></i>199</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="card border-secondary mb-3 " style="max-width: 30rem; height: 11rem; ">
-                <div class="card-header text-white bg-secondary ">UNLIMITED</div>
-                <div class="card-body text-secondary ">
-                    <div class="row ">
-                        <div class="col ">
-                            <h6 class="card-title text-dark ">Data: <span>&nbsp;1.5 GB</span></h6>
-                            <h6 class="card-title text-dark ">Talktime: <span>&nbsp;Unlimited</span></h6>
-                            <h6 class="card-title text-dark ">Validity :<span>&nbsp;90 days</span></h6>
-                        </div>
-                        <div class="col ">
-                            <button type="button " class="btn btn-outline-secondary waves-effect " style="font-size: 15px "><i class="fa fa-rupee "></i>399</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>

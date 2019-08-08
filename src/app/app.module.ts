@@ -25,6 +25,9 @@ import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.comp
 import { PlansComponent } from './plans/plans.component';
 import { LoginService } from './login.service';
 import { DongleComponent } from './dongle/dongle.component';
+import { Pack1Component } from './pack1/pack1.component';
+import { Pack2Component } from './pack2/pack2.component';
+import { Pack3Component } from './pack3/pack3.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,9 @@ import { DongleComponent } from './dongle/dongle.component';
     PrepaidrechargeComponent,
     PlansComponent,
     DongleComponent,
+    Pack1Component,
+    Pack2Component,
+    Pack3Component,
   ],
   imports: [
     BrowserModule,
