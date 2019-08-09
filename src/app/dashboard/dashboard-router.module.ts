@@ -14,7 +14,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: ProfileArticlesComponent
+        component: DashboardComponent
       }
       // {
       //   path: 'profile',

@@ -14,7 +14,7 @@ export class ShowAuthDirective implements OnInit {
   constructor(
   	private templateRef: TemplateRef<any>,
   	private userService: UserService,
-  	private viewContainer: ViewConteinerRef
+  	private viewContainer: ViewContainerRef
   	) { }
   condition: boolean;
 

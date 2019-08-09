@@ -25,9 +25,8 @@ import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.comp
 import { PlansComponent } from './plans/plans.component';
 import { LoginService } from './login.service';
 import { DongleComponent } from './dongle/dongle.component';
-import { AuthModule } from './services/auth/auth.module';
 import { ShowAuthDirective } from './navbar/show-auth.directive';
-import { AuthModule } from './login/auth.module';
+import { LoginModule } from './login/login.module';
 import { CoreModule } from './core/core.module';
  
 @NgModule({
@@ -37,7 +36,6 @@ import { CoreModule } from './core/core.module';
     FooterComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent,
     PrepaidComponent,
     PostpaidComponent,
     ShopComponent,
@@ -60,8 +58,9 @@ import { CoreModule } from './core/core.module';
     AppRoutingModule,
     SlimLoadingBarModule,
     ReactiveFormsModule,
-    AuthModule,
+    LoginModule,
     CoreModule,
+    DashboardModule
   ],
   providers: [
     CommonService,

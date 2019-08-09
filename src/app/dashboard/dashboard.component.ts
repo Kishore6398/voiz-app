@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RoutingModule, Routes, ActivatedRoute } from '@angular/router';
+import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 
 import { User, UserService, Profile } from '../core';
-import { concateMap, tap } from 'rxjs/operators';
+import { concatMap, tap } from 'rxjs/operators';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',

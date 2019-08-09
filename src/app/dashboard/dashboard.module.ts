@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardResolver } from './dashboard-resolver.service';
 import { DashboardRouterModule } from './dashboard-router.module';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 @NgModule({
   declarations: [
   	DashboardComponent,
   ],
   imports: [
     CommonModule,
-    DashboardRouterModule
+    DashboardRouterModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
   DashboardResolver

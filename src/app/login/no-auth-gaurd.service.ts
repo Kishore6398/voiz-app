@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { UserService } from '../core';
 import { map, take } from 'rxjs/operators';
 
 @Injectable()
-export class NoAuthGaurdService {
+export class NoAuthGaurd {
 
   constructor(
   	private router: Router,
@@ -14,9 +14,9 @@ export class NoAuthGaurdService {
   	) { }
 
   canActivate(
-  	route: ActivatedRouterSnapshot,
+  	route: ActivatedRouteSnapshot,
   	state: RouterStateSnapshot
   	): Observable<boolean> {
-  	return this.userService.isAuhenticated.pipe(take(1),map(isAuth => !isAuth));
+  	return this.userService.isAuthenticated.pipe(take(1),map(isAuth => !isAuth));
   }
 }

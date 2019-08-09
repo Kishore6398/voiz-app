@@ -3,12 +3,12 @@ import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot} from '@an
 import { Observable } from 'rxjs';
 
 import { Profile, ProfilesService } from '../core';
-import { catchError } from 'rxj/operators';
+import { catchError } from 'rxjs/operators';
 @Injectable()
 export class DashboardResolver implements Resolve<Profile> {
 
   constructor(
-   private router: router,
+   private router: Router,
    private profilesService: ProfilesService 
    ) { }
 
