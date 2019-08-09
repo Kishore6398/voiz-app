@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 import { PrepaidComponent } from './prepaid/prepaid.component';
 import { PostpaidComponent } from './postpaid/postpaid.component';
 import { ShopComponent } from './shop/shop.component';
@@ -25,7 +25,11 @@ import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.comp
 import { PlansComponent } from './plans/plans.component';
 import { LoginService } from './login.service';
 import { DongleComponent } from './dongle/dongle.component';
-
+import { AuthModule } from './services/auth/auth.module';
+import { ShowAuthDirective } from './navbar/show-auth.directive';
+import { AuthModule } from './login/auth.module';
+import { CoreModule } from './core/core.module';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +48,7 @@ import { DongleComponent } from './dongle/dongle.component';
     PrepaidrechargeComponent,
     PlansComponent,
     DongleComponent,
+    ShowAuthDirective,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,9 @@ import { DongleComponent } from './dongle/dongle.component';
     FormsModule,
     AppRoutingModule,
     SlimLoadingBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AuthModule,
+    CoreModule,
   ],
   providers: [
     CommonService,
