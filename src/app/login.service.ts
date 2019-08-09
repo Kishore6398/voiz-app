@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { environment } from '../environments/environment'
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  private api_url: 'http://127.0.0.1:8000/api/';
+  // private api_url = environment.api_url;
+  private api_url: 'https://127.0.0.1:8000/api/';
   httpHeader=new HttpHeaders({'content-type':'application-json'});
   constructor(private _http: HttpClient) { }
   getUsers(): Observable<any>

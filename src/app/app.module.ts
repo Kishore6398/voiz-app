@@ -23,10 +23,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.component';
 import { PlansComponent } from './plans/plans.component';
-import { LoginService } from './login.service';
 import { DongleComponent } from './dongle/dongle.component';
 import { Pack3Component } from './pack3/pack3.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from './login.service';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { HttpClientModule } from '@angular/common/http';
     PlansComponent,
     DongleComponent,
     Pack3Component,
+    PagenotfoundComponent,
   ],
   imports: [
     BrowserModule,
