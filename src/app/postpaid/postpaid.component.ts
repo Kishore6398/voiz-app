@@ -16,6 +16,7 @@ export class PostpaidComponent implements OnInit {
        nameInput: new FormControl(null,Validators.required),
        emailInput: new FormControl(null, Validators.required),  
        mobileInput: new FormControl(null,Validators.required),
+       passwordInput: new FormControl(null,Validators.required),
        addressInput: new FormControl(null,Validators.required),
        cityInput: new FormControl(null,Validators.required),
        pincodeInput: new FormControl(null,Validators.required),     
@@ -28,6 +29,7 @@ get mobileInput() { return this.postpaidForm.get('mobileInput'); }
 get addressInput() { return this.postpaidForm.get('addressInput'); }
 get cityInput() { return this.postpaidForm.get('cityInput'); }
 get pincodeInput() { return this.postpaidForm.get('pincodeInput'); }
+get passwordInput() { return this.postpaidForm.get('passwordInput'); }
 
 
 }

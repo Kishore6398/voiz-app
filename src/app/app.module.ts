@@ -23,13 +23,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.component';
 import { PlansComponent } from './plans/plans.component';
-import { LoginService } from './login.service';
 import { DongleComponent } from './dongle/dongle.component';
-import { Pack1Component } from './pack1/pack1.component';
-import { Pack2Component } from './pack2/pack2.component';
 import { Pack3Component } from './pack3/pack3.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ApiService } from './api.service';
+import { LoginService } from './login.service';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -49,9 +48,8 @@ import { ApiService } from './api.service';
     PrepaidrechargeComponent,
     PlansComponent,
     DongleComponent,
-    Pack1Component,
-    Pack2Component,
     Pack3Component,
+    PagenotfoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +62,7 @@ import { ApiService } from './api.service';
     SlimLoadingBarModule,
     ReactiveFormsModule,
     HttpClientModule
+
   ],
   providers: [
     CommonService,

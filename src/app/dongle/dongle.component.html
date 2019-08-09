@@ -33,6 +33,13 @@
                             <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
                         </div>
                         <div class="md-form md-outline">
+                            <input mdbInput mdbValidate name="password" type="text" id="password" class="form-control"
+                                [(ngModel)]="password" #input="ngModel" required pattern="[0-9a-zA-Z]{8,16}">
+                            <label for="password">Create Password</label>
+                            <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
+                            <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                        </div>
+                        <div class="md-form md-outline">
                             <input mdbInput mdbValidate name="address" id="address" type="text" class="form-control"
                                 [(ngModel)]="address" #input="ngModel" required pattern="[0-9a-zA-Z]*\,?[a-zA-Z\s]+\,?\s?[a-zA-Z]+">
                             <label for="address">Address </label>

@@ -33,7 +33,12 @@
                             <mdb-success *ngIf="mobileInput.valid && (mobileInput.dirty ||mobileInput.touched)">
                             </mdb-success>
                         </div>
-
+                        <div class="md-form md-outline">
+                            <input mdbInput mdbValidate id="password" type="password" class="form-control" formControlName="passwordInput" pattern="[0-9a-zA-Z]{8,16}">
+                            <label for="password">Create Password </label>
+                            <mdb-error *ngIf="passwordInput.invalid && (passwordInput.dirty ||passwordInput.touched)"> </mdb-error>
+                            <mdb-success *ngIf="passwordInput.valid && (passwordInput.dirty ||passwordInput.touched)"> </mdb-success>
+                        </div>
                         <div class="md-form md-outline">
                             <input mdbInput mdbValidate type="text" id="address" class="form-control" formControlName="addressInput" required pattern="[0-9 a-z A-Z]*\,?[a-zA-Z\s]+\,?\s?[a-zA-Z]+">
                             <label for=" address ">Address </label>
@@ -56,19 +61,10 @@
                             <mdb-success *ngIf="pincodeInput.valid && (pincodeInput.dirty ||pincodeInput.touched)">
                             </mdb-success>
                         </div>
-                        <div class="col-md-8 pt-3 pb-3 ">
-                            <select class="browser-default custom-select custom-select-lg mb-3 ">
-								<option value=" " disabled selected>Choose a number of your choice</option>
-								<option value="1 ">9956514786</option>
-								<option value="2 ">8956221478</option>
-								<option value="3 ">7896541265</option>
-								<option value="4 ">8966655254</option>
-								<option value="5 ">9962448545</option>
-							</select>
-                        </div>
+                        
 
                         <div class="text-center mb-3 ">
-                            <button type="submit " routerLink="/payment " [disabled]='nameInput.invalid || emailInput.invalid || mobileInput.invalid || addressInput.invalid || cityInput.invalid || pincodeInput.invalid' class="btn btn-secondary btn-block ">Submit</button>
+                            <button type="submit " routerLink="" [disabled]='nameInput.invalid || emailInput.invalid || mobileInput.invalid || addressInput.invalid || cityInput.invalid || pincodeInput.invalid' class="btn btn-secondary btn-block ">Submit</button>
 
                         </div>
                     </div>

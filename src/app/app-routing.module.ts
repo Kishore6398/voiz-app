@@ -12,9 +12,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.component';
 import { DongleComponent } from './dongle/dongle.component';
-import { Pack1Component } from './pack1/pack1.component';
-import { Pack2Component } from './pack2/pack2.component';
 import { Pack3Component } from './pack3/pack3.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   { path: 'signup', component: SignupComponent },
@@ -30,9 +29,8 @@ const routes: Routes = [
   { path: 'payment', component: PaymentComponent },
   { path: 'prepaidrecharge', component: PrepaidrechargeComponent },
   { path: 'dongle', component: DongleComponent },
-  { path: 'pack1', component: Pack1Component },
-  { path: 'pack2', component: Pack2Component },
   { path: 'pack3', component: Pack3Component },
+  { path: '**', component: PagenotfoundComponent },
 ];
 
 @NgModule({
