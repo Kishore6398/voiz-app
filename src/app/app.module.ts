@@ -46,8 +46,6 @@ import { HttpClientModule } from '@angular/common/http';
     PrepaidrechargeComponent,
     PlansComponent,
     DongleComponent,
-    Pack1Component,
-    Pack2Component,
     Pack3Component,
   ],
   imports: [
