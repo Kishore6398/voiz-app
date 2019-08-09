@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { LoginService } from '../login.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

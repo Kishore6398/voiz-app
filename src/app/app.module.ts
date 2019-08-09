@@ -26,6 +26,7 @@ import { PlansComponent } from './plans/plans.component';
 import { LoginService } from './login.service';
 import { DongleComponent } from './dongle/dongle.component';
 import { Pack3Component } from './pack3/pack3.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,8 @@ import { Pack3Component } from './pack3/pack3.component';
     PrepaidrechargeComponent,
     PlansComponent,
     DongleComponent,
+    Pack1Component,
+    Pack2Component,
     Pack3Component,
   ],
   imports: [
@@ -56,7 +59,8 @@ import { Pack3Component } from './pack3/pack3.component';
     FormsModule,
     AppRoutingModule,
     SlimLoadingBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [
     CommonService,
