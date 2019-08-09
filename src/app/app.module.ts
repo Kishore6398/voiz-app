@@ -28,6 +28,8 @@ import { DongleComponent } from './dongle/dongle.component';
 import { Pack1Component } from './pack1/pack1.component';
 import { Pack2Component } from './pack2/pack2.component';
 import { Pack3Component } from './pack3/pack3.component';
+import {HttpClientModule} from '@angular/common/http';
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
@@ -60,11 +62,12 @@ import { Pack3Component } from './pack3/pack3.component';
     FormsModule,
     AppRoutingModule,
     SlimLoadingBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     CommonService,
-    LoginService
+    LoginService,ApiService
   ],
   bootstrap: [AppComponent]
 })
