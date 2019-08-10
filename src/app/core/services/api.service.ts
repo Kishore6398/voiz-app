@@ -12,33 +12,27 @@ export class ApiService {
     private http: HttpClient,
     private jwtService: JwtService
   ) {}
-
+  API_URL = 'http://127.0.0.1:8000/api';
   private formatErrors(error: any) {
     return  throwError(error.error);
   }
 
   get(path: string, params: HttpParams = new HttpParams()): Observable<any> {
-    return this.http.get(`${environment.api_url}${path}`, { params })
+    return this.http.get(this.API_URL, { params })
       .pipe(catchError(this.formatErrors));
   }
 
   put(path: string, body: Object = {}): Observable<any> {
-    return this.http.put(
-      `${environment.api_url}${path}`,
+    return this.http.put(this.API_URL,
       JSON.stringify(body)
     ).pipe(catchError(this.formatErrors));
   }
 
   post(path: string, body: Object = {}): Observable<any> {
-    return this.http.post(
-      `${environment.api_url}${path}`,
-      JSON.stringify(body)
-    ).pipe(catchError(this.formatErrors));
+    return this.http.post(this.API_URL,JSON.stringify(body)).pipe(catchError(this.formatErrors));
   }
 
   delete(path): Observable<any> {
-    return this.http.delete(
-      `${environment.api_url}${path}`
-    ).pipe(catchError(this.formatErrors));
+    return this.http.delete(this.API_URL).pipe(catchError(this.formatErrors));
   }
 }
