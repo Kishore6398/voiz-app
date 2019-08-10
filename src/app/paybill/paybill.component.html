@@ -18,31 +18,31 @@
     <div class="col-lg-7">
       <div style="height: 20px;"></div>
       <!--Grid row-->
-      <form>
+      <form [formGroup]="paybillForm">
         <div class="form-row text-white text-center">
           <div class="col-md-4">
 
             <div class="md-form md-bg form-lg">
-              <input mdbValidate name="mobile" type="tel" id="form-bg-lg" class="form-control form-control-lg"
-                type="text" mdbInput [(ngModel)]="mobile" #input="ngModel" required pattern="[6789][0-9]{9}">
+              <input mdbValidate type="tel" id="mobile" class="form-control form-control-lg"
+                 mdbInput formControlName="mobileInput" required pattern="[6789][0-9]{9}">
               <label for="form-bg-lg">Mobile</label>
-              <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)"></mdb-error>
-              <mdb-success *ngIf="input.valid && (input.dirty || input.touched)"> </mdb-success>
+              <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty || mobileInput.touched)"></mdb-error>
+              <mdb-success *ngIf="mobileInput.valid && (mobileInput.dirty || mobileInput.touched)"> </mdb-success>
             </div>
           </div>
           <div class="col-md-4">
               <div class="md-form md-bg form-lg">
-                <input mdbValidate name="amount" type="number" id="form-bg-lg" class="form-control form-control-lg"
-                  mdbInput [(ngModel)]="amount" #input="ngModel" required pattern="[0-9]{2,4}">
+                <input mdbValidate type="text" id="amount" class="form-control form-control-lg"
+                  mdbInput formControlName="amountInput" required pattern="[0-9]{2,4}">
                 <label for="form-bg-lg">Amount</label>
-                <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)"></mdb-error>
-                <mdb-success *ngIf="input.valid && (input.dirty || input.touched)"> </mdb-success>
+                <mdb-error *ngIf="amountInput.invalid && (amountInput.dirty || amountInput.touched)"></mdb-error>
+                <mdb-success *ngIf="amountInput.valid && (amountInput.dirty || amountInput.touched)"> </mdb-success>
               </div>
           </div>
           
           <div class="col-md-3">
             <div class="md-form form-lg">
-              <input mdbInput mdbBtn routerLink="/payment" type="submit" size="lg" rounded="true" gradient="blue"
+              <input mdbInput mdbBtn routerLink="/payment" [disabled]='mobileInput.invalid || amountInput.invalid' type="submit" size="lg" rounded="true" gradient="blue"
                 class="form-control form-control-lg text-white mt-0" value="Submit">
             </div>
           </div>

@@ -1,12 +1,12 @@
 <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
     <mdb-carousel-item>
-        <a routerLink="/"><img class="d-block w-100" style="height: 300px;" src="./assets/images/car1.png" alt="First slide"></a>
+        <a routerLink="/"><img class="d-block w-100" style="height: 300px;" src="./assets/images/1.png" alt="First slide"></a>
     </mdb-carousel-item>
     <mdb-carousel-item>
-        <a routerLink="/"><img class="d-block w-100" style="height: 300px;" src="./assets/images/car2.jpg" alt="Second slide"></a>
+        <a routerLink="/"><img class="d-block w-100" style="height: 300px;" src="./assets/images/2.png" alt="Second slide"></a>
     </mdb-carousel-item>
     <mdb-carousel-item>
-        <a routerLink="/"><img class="d-block w-100" style="height: 300px;" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide"></a>
+        <a routerLink="/"><img class="d-block w-100" style="height: 300px;" src="./assets/images/3.png" alt="Third slide"></a>
     </mdb-carousel-item>
 </mdb-carousel>
 
@@ -15,13 +15,13 @@
         <div class="form-row">
             <div class="col-lg-2 col-md-2"></div>
             <div class="col-lg-5 col-md-5 col-sm-9 md-form form-lg md-outline">
-                <input mdbInput mdbValidate name="email" type="tel" id="form8" class="form-control form-control-lg mt-1" [(ngModel)]="email" #input="ngModel" required pattern="[6789][0-9]{9}">
-                <label for="form2">Mobile </label>
+                <input mdbInput mdbValidate name="mobile" type="tel" id="mobile" class="form-control form-control-lg mt-1" [(ngModel)]="mobile" #input="ngModel" required pattern="[6789][0-9]{9}">
+                <label for="mobile">Mobile </label>
                 <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)"> </mdb-error>
                 <mdb-success *ngIf="input.valid && (input.dirty || input.touched)"></mdb-success>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 md-form form-lg">
-                <input mdbInput mdbBtn routerLink="/prepaidrecharge" type="submit" size="lg" rounded="true" gradient="blue" class="form-control form-control-lg text-white mt-0" value="Pay bill">
+                <input mdbInput mdbBtn routerLink="/prepaidrecharge" [disabled]='input.invalid' type="submit" size="lg" rounded="true" gradient="blue" class="form-control form-control-lg text-white mt-0" value="Pay bill">
             </div>
             <div class="col-lg-2 col-md-2"></div>
         </div>

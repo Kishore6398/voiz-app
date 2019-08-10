@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { LoginService } from '../login.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,16 +9,32 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  User=[];
+  selected_user={username:'',mobile:'',email:'',password:''};
+  constructor(private fb: FormBuilder, private login: LoginService) {
    }
-
+   
  ngOnInit() {
      this.loginForm = new FormGroup({
        mobileInput: new FormControl(null,Validators.required),
        passwordInput: new FormControl(null, Validators.required),       
      });
-     //console.log(this.loginForm.get('passwordInput').value);
-     //console.log(this.loginForm.get('mobileInput'));
+     this.login.getUsers().subscribe(data=>(this.User=data));     
+}
+
+select(id){
+  this.login.getUserDetails(id).subscribe(data=>(this.selected_user=data));
+}
+create(User){
+  this.login.createUser(User).subscribe(data=>(this.User=data));
+}
+update(User)
+{
+  this.login.UpdateUser(User).subscribe(data=>(this.User[this.User.map(function(x){return x.id;}).indexOf(data.id)]=data));
+}
+
+delete(User){
+  this.login.deleteUser(User).subscribe(data=>(this.User.splice(this.User.map(function(x){return x.id;}).indexOf(data.id),1),this.selected_user={username:'',mobile:'',email:'',password:''}));
 }
 get passwordInput() { return this.loginForm.get('passwordInput'); }
 

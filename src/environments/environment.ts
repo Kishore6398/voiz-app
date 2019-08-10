@@ -4,8 +4,9 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
-  api_url: 'https://conduit.productionready.io/api'
+
+  production: false,
+  api_url : 'https://127.0.0.1:8000'
 };
 
 
