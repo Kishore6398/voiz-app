@@ -61,6 +61,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
   ],
   providers: [
     CommonService,
+    LoginService,ApiService
   ],
   bootstrap: [AppComponent]
 })
