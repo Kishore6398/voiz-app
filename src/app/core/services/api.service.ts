@@ -12,7 +12,7 @@ export class ApiService {
     private http: HttpClient,
     private jwtService: JwtService
   ) {}
-  API_URL = 'http://127.0.0.1:8000/api';
+  API_URL = 'http://127.0.0.1:8000/api/';
   private formatErrors(error: any) {
     return  throwError(error.error);
   }
