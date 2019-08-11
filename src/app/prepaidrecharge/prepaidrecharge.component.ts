@@ -28,6 +28,7 @@ export class PrepaidrechargeComponent implements OnInit,OnDestroy {
 ngOnDestroy()
   {
   this.data.amount = this.amount;
+  this.data.mobile=this.mobile;
   }
 get amountInput() { return this.prepaidrechargeForm.get('amountInput'); }
 

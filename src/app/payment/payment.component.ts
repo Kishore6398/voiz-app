@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { DataService } from '../data.service';
+import { ApiService } from '../api.service';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -11,9 +12,13 @@ export class PaymentComponent implements OnInit {
   dpayform: FormGroup;
   ppayform: FormGroup;
   amount:any;
+  mobile:any;
+  recharge=[];
+  rechargedetails;
 
-
-  constructor(private fb: FormBuilder,private data:DataService) {
+  constructor(private fb: FormBuilder,private data:DataService,private apiService:ApiService) {
+    this.rechargedetails={id: -1, mobile:'', amount:''};//1
+    this.getrecharge();
   }
 
   ngOnInit() {
@@ -37,7 +42,9 @@ export class PaymentComponent implements OnInit {
       amt: new FormControl(null, Validators.required),
     });
     this.amount = this.data.amount;
-
+    this.mobile=this.data.mobile;
+console.log(this.amount);
+console.log(this.mobile);
   }
   get name() { return this.payform.get('name'); }
   get cardno() { return this.payform.get('cardno'); }
@@ -51,4 +58,10 @@ export class PaymentComponent implements OnInit {
   get damt() { return this.dpayform.get('damt'); }
   get pnumber() { return this.ppayform.get('pnumber'); }
   get amt() { return this.ppayform.get('amt'); }
+  getrecharge(){
+    this.apiService.getrecharge().subscribe(data => (this.recharge = data));
+  }
+  createrecharge(){
+    this.apiService.addaccount(this.rechargedetails).subscribe(data => this.getrecharge());
+  }
 }

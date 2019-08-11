@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {Plans} from './planapp';
 import {Login} from './loginapp';
 import {Inquiry} from './inquiryapp';
+import {Recharge} from './rechargeapp';
 @Injectable({
   providedIn: 'root'
 })
@@ -28,6 +29,11 @@ export class ApiService {
      headers:this.httpHeaders 
     })
   }
+  getrecharge(): Observable<Recharge[]>{
+    return this.http.get<Recharge[]>(this.baseURL + 'api/recharge/',{
+     headers:this.httpHeaders 
+    })
+  }
 
   addaccount(login):Observable<Login[]>{
     const body={name:login.name,phone:login.phone,email:login.email,password:login.password};
@@ -36,5 +42,9 @@ export class ApiService {
   addinquiry(inquiry):Observable<Inquiry[]>{
     const body={name:inquiry.name,phone:inquiry.phone,email:inquiry.email,message:inquiry.message};
     return this.http.post<Inquiry[]>(this.baseURL+'api/inquiry/',body,{headers:this.httpHeaders});
+  }
+  addrecharge(recharge):Observable<Recharge[]>{
+    const body={mobile:recharge.mobile,amount:recharge.amount};
+    return this.http.post<Recharge[]>(this.baseURL+'api/recharge/',body,{headers:this.httpHeaders});
   }
 }
