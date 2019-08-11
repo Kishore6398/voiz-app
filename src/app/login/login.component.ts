@@ -9,7 +9,7 @@ import { LoginService } from '../login.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  User=[];
+  User: any;
   selected_user={username:'',mobile:'',email:'',password:''};
   constructor(private fb: FormBuilder, private login: LoginService) {
    }
@@ -22,6 +22,9 @@ export class LoginComponent implements OnInit {
      this.login.getUsers().subscribe(data=>(this.User=data));     
 }
 
+getusershere() {
+  this.login.getUsers().subscribe(data => (this.User = data));
+}
 select(id){
   this.login.getUserDetails(id).subscribe(data=>(this.selected_user=data));
 }
