@@ -1,6 +1,8 @@
 export interface Profile {
-  username: string;
-  bio: string;
-  image: string;
-  following: boolean;
+    username: string;
+	mobile: string;
+	active_plan: string;
+	user_type: string;
+	dob: string;
+	last_login: string;
 }

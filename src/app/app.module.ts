@@ -57,7 +57,6 @@ import { DongleComponent } from './dongle/dongle.component';
   ],
   providers: [
     CommonService,
-    LoginService,ApiService
   ],
   bootstrap: [AppComponent]
 })
