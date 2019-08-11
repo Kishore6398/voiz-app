@@ -12,7 +12,7 @@
             <div class="col-md-4">
               <div class="md-form md-bg form-lg">
                 <input mdbInput mdbValidate type="tel" id="mobile" class="form-control form-control-lg"
-                  formControlName="mobileInput" required pattern="[6789][0-9]{9}">
+                  formControlName="mobileInput" [(ngModel)]="mobile" required pattern="[6789][0-9]{9}">
                 <label for="form-bg-lg">Mobile</label>
                 <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty || mobileInput.touched)"></mdb-error>
                 <mdb-success *ngIf="mobileInput.valid && (mobileInput.dirty || mobileInput.touched)"> </mdb-success>
@@ -21,7 +21,7 @@
             <div class="col-md-4">
               <div class="md-form md-bg form-lg">
                 <input mdbValidate type="text" id="form-bg-lg" class="form-control form-control-lg"
-                  mdbInput formControlName="amountInput" required pattern="[0-9]{2,4}">
+                  mdbInput formControlName="amountInput" [(ngModel)]="amount" required pattern="[0-9]{2,4}">
                 <label for="form-bg-lg">Amount</label>
                 <mdb-error *ngIf="amountInput.invalid && (amountInput.dirty || amountInput.touched)"></mdb-error>
                 <mdb-success *ngIf="amountInput.valid && (amountInput.dirty || amountInput.touched)"> </mdb-success>
@@ -48,13 +48,15 @@
     <div class="row mx-auto" >
 
       <div class="card-deck pl-5" >
+
         <div class="card border-secondary mb-3" style="width: 30rem;" *ngFor="let plan of plans">
           <div class="card-header text-white bg-secondary">DATA</div>
           <div class="card-body">
+  
             <h5 class="card-title text-dark">Name:<span>&nbsp; {{plan.planname}} </span></h5>
             <h5 class="card-title text-dark">Desc: <span>&nbsp;{{plan.plandes}}</span></h5>
             <h5 class="card-title text-dark">Validity: <span>&nbsp;{{plan.planduration}}</span></h5>
-            <button type="button" class="btn btn-outline-secondary waves-effect" style="font-size: 15px"><i
+            <button type="button" class="btn btn-outline-secondary waves-effect" style="font-size: 15px" (click)="amt(plan.planprice)"><i
                 class="fa fa-rupee"></i>{{plan.planprice}}</button>
           </div>
         </div>
