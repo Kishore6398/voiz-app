@@ -26,7 +26,7 @@ get amountInput() { return this.prepaidrechargeForm.get('amountInput'); }
 get mobileInput() { return this.prepaidrechargeForm.get('mobileInput'); }
 
 getPlans(){
-  this.apiService.getPlans().subscribe(data => (this.plans = data));
+  //this.apiService.getPlans().subscribe(data => (this.plans = data));
 }
 }
 

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Plans} from './planapp';
-import {Login} from './loginapp';
+import {Dongle} from './dongleapp';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,21 +9,15 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
   private baseURL="http://localhost:8000/";
-  httpHeaders=new HttpHeaders({'content-type':'application/json'});
+  httpHeaders=new HttpHeaders({'Content-Type':'application/json'});
 
-  getPlans(): Observable<Plans[]>{
-    return this.http.get<Plans[]>(this.baseURL + 'plans/',{
+  getDongle(): Observable<Dongle[]>{
+    return this.http.get<Dongle[]>(this.baseURL + 'api/plans/',{
      headers:this.httpHeaders 
     })
   }
-  getlogin(): Observable<Login[]>{
-      return this.http.get<Login[]>(this.baseURL + 'api/login/',{
-       headers:this.httpHeaders 
-      })
-  }
+ 
+ 
 
-  addaccount(login):Observable<Login[]>{
-    const body={name:login.name,phone:login.phone,email:login.email,password:login.password};
-    return this.http.post<Login[]>(this.baseURL+'api/login/',body,{headers:this.httpHeaders});
-  }
+ 
 }

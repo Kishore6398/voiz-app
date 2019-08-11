@@ -1,11 +1,11 @@
 import { Component  } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from './common.service';
-
 import { FormGroup, FormControl, Validators, FormsModule } from '@angular/forms';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 import { NavigationCancel, Event, NavigationEnd, NavigationError, NavigationStart } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
