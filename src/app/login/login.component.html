@@ -17,15 +17,6 @@
                 </div>
             </div>
         </div>
-        <div class="col">
-            <p *ngFor="let user of User" (click)="select(User.id)">
-                {{ user.username }}
-                {{ user.mobile }}
-                {{ user.email }}
-                {{ user.password }}
-            </p>
-
-        </div>
     </div>
 
     <div class="card col-lg-4 col-md-4 col-sm-12 ml-5 mt-2 mb-2">
@@ -33,6 +24,7 @@
             <div class="text-center">
                 <h3 class="dark-grey-text mb-5">
                     <strong>Log In</strong>
+
                 </h3>
             </div>
             <form [formGroup]="loginForm">
