@@ -6,7 +6,7 @@
 export const environment = {
 
   production: false,
-  api_url : 'https://127.0.0.1:8000'
+  api_url : 'https://localhost:8000'
 };
 
 

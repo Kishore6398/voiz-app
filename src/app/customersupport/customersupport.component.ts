@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { ApiService } from '../api.service';
 @Component({
   selector: 'app-customersupport',
   templateUrl: './customersupport.component.html',
-  styleUrls: ['./customersupport.component.scss']
+  styleUrls: ['./customersupport.component.scss'],
+  providers: [ApiService]
 })
 export class CustomersupportComponent implements OnInit {
+  inquiry=[];
+  inquirydetails;
   customerForm: FormGroup;
   customerfeedbackForm: FormGroup;
-
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private apiService:ApiService) { 
+    this.inquirydetails={id: -1, name:'', phone:'', email:'', message:''};//1
+    this.getinquiry();
+  }
 
   ngOnInit() {
     this.customerForm = new FormGroup({
@@ -40,4 +46,10 @@ export class CustomersupportComponent implements OnInit {
 
 
   get fmessage() { return this.customerfeedbackForm.get('fmessage'); }
+  getinquiry(){
+    this.apiService.getinquiry().subscribe(data => (this.inquiry = data));
+  }
+  createinquiry(){
+    this.apiService.addinquiry(this.inquirydetails).subscribe(data => this.getinquiry());
+  }
 }

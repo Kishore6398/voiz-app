@@ -73,6 +73,12 @@
                                     <mdb-error *ngIf="ccv.invalid && (ccv.dirty ||ccv.touched)"> </mdb-error>
                                     <mdb-success *ngIf="ccv.valid && (ccv.dirty ||ccv.touched)"></mdb-success>
                                 </div>
+                                <div class="md-form md-outline">
+                                    <input mdbInput mdbValidate name="camt" id="camt" type="number" [(ngModel)]="amount" class="form-control" formControlName="camt" pattern="[1-9][0-9]+">
+                                    <label for="form4">Amount</label>
+                                    <mdb-error *ngIf="camt.invalid && (camt.dirty ||camt.touched)"> </mdb-error>
+                                    <mdb-success *ngIf="camt.valid && (camt.dirty ||camt.touched)"></mdb-success>
+                                </div>
                                 <div class="text-center mb-3">
                                     <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white" [disabled]="name.invalid || cardno.invalid || ccv.invalid || expyear.invalid">Pay now</button>
                                 </div>
@@ -125,6 +131,12 @@
                                     <mdb-error *ngIf="dccv.invalid && (dccv.dirty ||dccv.touched)"> </mdb-error>
                                     <mdb-success *ngIf="dccv.valid && (dccv.dirty ||dccv.touched)"></mdb-success>
                                 </div>
+                                <div class="md-form md-outline">
+                                    <input mdbInput mdbValidate name="damt" id="damt" type="number"  [(ngModel)]="amount" class="form-control" formControlName="damt" pattern="[1-9][0-9]+">
+                                    <label for="form4">Amount</label>
+                                    <mdb-error *ngIf="damt.invalid && (damt.dirty ||damt.touched)"> </mdb-error>
+                                    <mdb-success *ngIf="damt.valid && (damt.dirty ||damt.touched)"></mdb-success>
+                                </div>
                                 <div class="text-center mb-3">
                                     <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white" [disabled]="dname.invalid || dcardno.invalid || dccv.invalid || dexpyear.invalid">Pay now</button>
                                 </div>
@@ -157,7 +169,7 @@
 
 
                                 <div class="md-form md-outline">
-                                    <input mdbInput mdbValidate name="amt" id="amt" type="number" class="form-control" formControlName="amt" pattern="[1-9][0-9]+">
+                                    <input mdbInput mdbValidate name="amt" id="amt" type="number"  [(ngModel)]="amount" class="form-control" formControlName="amt" pattern="[1-9][0-9]+">
                                     <label for="form4">Amount</label>
                                     <mdb-error *ngIf="amt.invalid && (amt.dirty ||amt.touched)"> </mdb-error>
                                     <mdb-success *ngIf="amt.valid && (amt.dirty ||amt.touched)"></mdb-success>
