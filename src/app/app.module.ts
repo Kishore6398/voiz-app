@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { DashboardModule } from './dashboard/dashboard.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { PrepaidComponent } from './prepaid/prepaid.component';
 import { PostpaidComponent } from './postpaid/postpaid.component';
 import { ShopComponent } from './shop/shop.component';
@@ -24,8 +24,6 @@ import { PaymentComponent } from './payment/payment.component';
 import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.component';
 import { PlansComponent } from './plans/plans.component';
 import { DongleComponent } from './dongle/dongle.component';
-import { Pack3Component } from './pack3/pack3.component';
-import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -44,8 +42,6 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     PrepaidrechargeComponent,
     PlansComponent,
     DongleComponent,
-    Pack3Component,
-    PagenotfoundComponent,
 
   ],
   imports: [

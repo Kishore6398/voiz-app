@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { User, UserService } from '../core';
+
 
 @Component({
   selector: 'app-navbar',
@@ -14,16 +14,12 @@ export class NavbarComponent implements OnInit {
 	    { value: '2', label: 'Option 2' },
 	    { value: '3', label: 'Option 3' },
 	  ];
-  constructor(private userService: UserService) { }
-  currentUser: User;
+  constructor() { }
+
   ngOnInit() {
     this.testForm = new FormGroup({
       testSelect: new FormControl('1')
     });
-    this.userService.currentUser.subscribe(
-      (userData) => {
-        this.currentUser = userData;
-      }
-    );
-  }
+
+}
 }
