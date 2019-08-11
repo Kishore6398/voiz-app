@@ -4,9 +4,9 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false,
-  api_url: 'http://127.0.0.1:8000/'
+
 };
+
 
 /*
  * In development mode, to ignore zone related error stack frames such as
