@@ -24,6 +24,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.component';
 import { PlansComponent } from './plans/plans.component';
 import { DongleComponent } from './dongle/dongle.component';
+import { Pack3Component } from './pack3/pack3.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { DongleComponent } from './dongle/dongle.component';
     PrepaidrechargeComponent,
     PlansComponent,
     DongleComponent,
+    Pack3Component,
+    PagenotfoundComponent,
 
   ],
   imports: [
