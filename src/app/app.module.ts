@@ -24,6 +24,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.component';
 import { PlansComponent } from './plans/plans.component';
 import { DongleComponent } from './dongle/dongle.component';
+import { LoginService } from './login.service';
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,7 @@ import { DongleComponent } from './dongle/dongle.component';
     FormsModule,
     AppRoutingModule,
     SlimLoadingBarModule,
-
+    ReactiveFormsModule,
   ],
   providers: [
     CommonService,
