@@ -8,6 +8,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit {
+  rdate=new Date()
   payform: FormGroup;
   dpayform: FormGroup;
   ppayform: FormGroup;
@@ -45,6 +46,7 @@ export class PaymentComponent implements OnInit {
     this.mobile=this.data.mobile;
 console.log(this.amount);
 console.log(this.mobile);
+console.log(this.rdate);
   }
   get name() { return this.payform.get('name'); }
   get cardno() { return this.payform.get('cardno'); }
@@ -63,7 +65,7 @@ console.log(this.mobile);
   }
   createrecharge(){
     console.log(this.amount)
-    this.apiService.addrecharge(this.amount,this.mobile).subscribe(data => this.getrecharge());
+    this.apiService.addrecharge(this.amount,this.mobile,this.rdate).subscribe(data => this.getrecharge());
   
   }
 }
