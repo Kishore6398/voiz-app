@@ -49,7 +49,7 @@ export class ApiService {
   }
 
   addaccount(login):Observable<Login[]>{
-    const body={name:login.name,phone:login.phone,email:login.email,password:login.password};
+    const body={username:login.username,phone:login.phone,email:login.email,password:login.password};
     return this.http.post<Login[]>(this.baseURL+'api/login/',body,{headers:this.httpHeaders});
   }
   addinquiry(inquiry):Observable<Inquiry[]>{

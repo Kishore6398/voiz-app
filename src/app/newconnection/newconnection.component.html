@@ -33,7 +33,7 @@
                             <div class="card col-lg-8 mx-auto col-md-10 col-sm-12 mt-2 mb-2">
                                 <div class="card-body mx-6">
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="text" id="name" class="form-control" formControlName="nameInput" required pattern="[a-zA-Z\s]{5,15}">
+                                        <input mdbInput mdbValidate type="text" id="name" class="form-control" formControlName="nameInput" required pattern="[a-zA-Z\s]{5,25}">
                                         <label for="name">Name</label>
                                         <mdb-error *ngIf="nameInput.invalid && (nameInput.dirty ||nameInput.touched)"></mdb-error>
                                         <mdb-success *ngIf="nameInput.valid && (nameInput.dirty ||nameInput.touched)"></mdb-success>
@@ -56,7 +56,7 @@
                                     </div>
 
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="text" id="address" class="form-control" formControlName="addressInput" required pattern="[0-9 a-z A-Z]*\,?[a-zA-Z\s]+\,?\s?[a-zA-Z]+">
+                                        <input mdbInput mdbValidate type="text" id="address" class="form-control" formControlName="addressInput" required pattern="[0-9 a-z A-Z]*\,?[a-zA-Z\s]{6,30}\,?\s?[a-zA-Z]{4,25}">
                                         <label for=" address ">Address </label>
                                         <mdb-error *ngIf="addressInput.invalid && (addressInput.dirty ||addressInput.touched) ">
                                         </mdb-error>
@@ -133,7 +133,7 @@
                                     </div>
 
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="text" id="address" class="form-control" formControlName="faddressInput" required pattern="[0-9 a-z A-Z]*\,?[a-zA-Z\s]+\,?\s?[a-zA-Z]+">
+                                        <input mdbInput mdbValidate type="text" id="address" class="form-control" formControlName="faddressInput" required pattern="[0-9 a-z A-Z]*\,?[a-zA-Z\s]{6,30}\,?\s?[a-zA-Z]{4,25}">
                                         <label for=" address ">Address </label>
                                         <mdb-error *ngIf="addressInput.invalid && (addressInput.dirty ||addressInput.touched) ">
                                         </mdb-error>

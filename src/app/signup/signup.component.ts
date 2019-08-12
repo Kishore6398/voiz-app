@@ -12,7 +12,7 @@ export class SignupComponent implements OnInit {
   login = [];
   logindetails;
   constructor(private fb: FormBuilder, private apiService: ApiService) {
-    this.logindetails = { id: -1, name: '', phone: '', email: '', password: '' };//1
+    this.logindetails = { id: -1, username: '', phone: '', email: '', password: '' };//1
     //this.getlogin();
   }
   registerForm: FormGroup;
