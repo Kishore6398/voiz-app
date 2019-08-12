@@ -1,7 +1,6 @@
 import { Component  } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from './common.service';
-
 import { FormGroup, FormControl, Validators, FormsModule } from '@angular/forms';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';

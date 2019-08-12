@@ -12,8 +12,6 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { PrepaidComponent } from './prepaid/prepaid.component';
-import { PostpaidComponent } from './postpaid/postpaid.component';
 import { ShopComponent } from './shop/shop.component';
 import { CustomersupportComponent } from './customersupport/customersupport.component';
 import { PaybillComponent } from './paybill/paybill.component';
@@ -24,8 +22,13 @@ import { PaymentComponent } from './payment/payment.component';
 import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.component';
 import { PlansComponent } from './plans/plans.component';
 import { DongleComponent } from './dongle/dongle.component';
-import { LoginService } from './login.service';
+import { Pack3Component } from './pack3/pack3.component';
+import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
+import { LoginService } from './login.service';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { NewconnectionComponent } from './newconnection/newconnection.component';
+import { DisplayComponent } from './display/display.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +37,7 @@ import { ApiService } from './api.service';
     FooterComponent,
     LoginComponent,
     SignupComponent,
-    PrepaidComponent,
-    PostpaidComponent,
+    DashboardComponent,
     ShopComponent,
     CustomersupportComponent,
     PaybillComponent,
@@ -44,11 +46,13 @@ import { ApiService } from './api.service';
     PrepaidrechargeComponent,
     PlansComponent,
     DongleComponent,
-
+    Pack3Component,
+    PagenotfoundComponent,
+    NewconnectionComponent,
+    DisplayComponent,
   ],
   imports: [
     BrowserModule,
-    // tslint:disable-next-line: deprecation
     HttpModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
@@ -56,10 +60,13 @@ import { ApiService } from './api.service';
     AppRoutingModule,
     SlimLoadingBarModule,
     ReactiveFormsModule,
+    HttpClientModule,
+
   ],
   providers: [
     CommonService,
-    LoginService,ApiService
+    LoginService,
+    ApiService
   ],
   bootstrap: [AppComponent]
 })

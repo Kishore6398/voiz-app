@@ -9,7 +9,28 @@
     background-image: -o-linear-gradient(left, #ffecd2 0, #fcb69f 100%);
     background-image: linear-gradient(to right, #ffecd2 0, #fcb69f 100%);
 }
-
+.gradone {
+    background-image: linear-gradient(to right bottom, #fb0686, #e8008c, #d20091, #bc0295, #a40f97);
+}
+.gradtwo {
+    background-image: linear-gradient(to left top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    
+}
+.gradthree {
+background-image: linear-gradient(to right bottom, #066aff, #00a3ff, #00c7ea, #00e087, #a8eb12);
+    
+}
+.gradfour {
+background-image: linear-gradient(to right bottom, #ff0631, #f80055, #e40077, #c40094, #9715ac);
+    
+}
+.gradfive {
+background-image: linear-gradient(to right top, #ff0218, #fd003e, #f4005a, #e40073, #d01f87, #c046ae, #a463cd, #807be2, #32a2ff, #00c4ff, #00e2ff, #5ffbf1);   
+}
+.gradsix {
+background-image: linear-gradient( 135deg, #3C8CE7 10%, #00EAFF 100%);
+    
+}
 .young-passion-gradient {
     background-image: -webkit-gradient(linear, left top, right top, from(#ff8177), color-stop(0, #ff867a), color-stop(21%, #ff8c7f), color-stop(52%, #f99185), color-stop(78%, #cf556c), to(#b12a5b));
     background-image: -webkit-linear-gradient(left, #ff8177 0, #ff867a 0, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);

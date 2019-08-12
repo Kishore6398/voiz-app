@@ -181,32 +181,32 @@
 
                                 <form [formGroup]="customerForm">
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="text" id="materialContactFormName" class="form-control" formControlName="name" required pattern="[a-zA-Z]{5,15}">
+                                        <input mdbInput mdbValidate type="text" id="materialContactFormName" class="form-control" formControlName="name" [(ngModel)]="inquirydetails.name" required pattern="[a-zA-Z]{5,15}">
                                         <label for="materialContactFormName">Name</label>
                                         <mdb-error *ngIf="name.invalid && (name.dirty ||name.touched)"> </mdb-error>
                                         <mdb-success *ngIf="name.valid && (name.dirty ||name.touched)"> </mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="email" id="materialContactFormEmail" class="form-control" formControlName="email" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
+                                        <input mdbInput mdbValidate type="email" id="materialContactFormEmail" class="form-control" formControlName="email" [(ngModel)]="inquirydetails.email"required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
                                         <label for="materialContactFormEmail">E-mail</label>
                                         <mdb-error *ngIf="email.invalid && (email.dirty ||email.touched)"> </mdb-error>
                                         <mdb-success *ngIf="email.valid && (email.dirty ||email.touched)"> </mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="tel" id="materialRegisterFormPhone" formControlName="phonenumber" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock" required pattern="[789][0-9]{9}">
+                                        <input mdbInput mdbValidate type="tel" id="materialRegisterFormPhone" formControlName="phonenumber" [(ngModel)]="inquirydetails.phone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock" required pattern="[789][0-9]{9}">
                                         <label for="materialRegisterFormPhone">Phone number</label>
                                         <mdb-error *ngIf="phonenumber.invalid && (phonenumber.dirty ||phonenumber.touched)"> </mdb-error>
                                         <mdb-success *ngIf="phonenumber.valid && (phonenumber.dirty ||phonenumber.touched)"> </mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <textarea mdbInput mdbValidate id="materialContactFormMessage" class="form-control md-textarea" formControlName="message" rows="3"></textarea>
+                                        <textarea mdbInput mdbValidate id="materialContactFormMessage" class="form-control md-textarea" formControlName="message" [(ngModel)]="inquirydetails.message" rows="3"></textarea>
                                         <label for="materialContactFormMessage">Message</label>
                                         <mdb-error *ngIf="message.invalid && (message.dirty ||message.touched)"> </mdb-error>
                                         <mdb-success *ngIf="message.valid && (message.dirty ||message.touched)"> </mdb-success>
                                     </div>
 
                                     <div class="text-center mb-3">
-                                        <button type="submit" routerLink="/home" [disabled]='name.invalid || email.invalid || phonenumber.invalid || message.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white">Send</button>
+                                        <button type="submit" routerLink="/home" [disabled]='name.invalid || email.invalid || phonenumber.invalid || message.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white" (click)="createinquiry()">Send</button>
                                     </div>
                                     <!-- Form -->
 
