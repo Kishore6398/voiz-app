@@ -8,5 +8,5 @@ export class DataService {
   constructor() { }
   mobile:any;
   amount:any;
-  pid:number;
+  pid:any;
 }

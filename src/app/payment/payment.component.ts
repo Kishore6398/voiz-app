@@ -18,7 +18,7 @@ export class PaymentComponent implements OnInit {
   ppayform: FormGroup;
   amount: any;
   mobile: any;
-  pid:number;
+  pid:any;
   recharge = [];
   rechargedetails;
 
@@ -51,8 +51,8 @@ export class PaymentComponent implements OnInit {
     this.amount = this.data.amount;
     this.mobile = this.data.mobile;
     this.pid=this.data.pid;
-    console.log(this.amount);
-    console.log(this.mobile);
+    //console.log(this.amount);
+    //console.log(this.mobile);
 console.log(this.rdate2);
 console.log(this.rdate3);
 console.log(this.pid);
@@ -73,7 +73,11 @@ console.log(this.pid);
     this.apiService.getrecharge().subscribe(data => (this.recharge = data));
   }
   createrecharge() {
+    console.log("payent")
     console.log(this.amount)
-    this.apiService.addrecharge(this.amount,this.mobile,this.rdate3,this.pid).subscribe(data => this.getrecharge());
+    console.log(this.mobile)
+    console.log(this.pid)
+    this.apiService.addrecharge(this.mobile,this.amount,this.rdate3,this.pid).subscribe(data => this.getrecharge());
+    alert("Payment Successful")
   }
 }

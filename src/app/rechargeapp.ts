@@ -3,4 +3,5 @@ export interface Recharge{
     mobile:string;
     amount:number;
     rdate:any;
+    pid:any;
 }
