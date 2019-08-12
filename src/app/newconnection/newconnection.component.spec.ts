@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostpaidComponent } from './postpaid.component';
+import { NewconnectionComponent } from './newconnection.component';
 
-describe('PostpaidComponent', () => {
-  let component: PostpaidComponent;
-  let fixture: ComponentFixture<PostpaidComponent>;
+describe('NewconnectionComponent', () => {
+  let component: NewconnectionComponent;
+  let fixture: ComponentFixture<NewconnectionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostpaidComponent ]
+      declarations: [ NewconnectionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PostpaidComponent);
+    fixture = TestBed.createComponent(NewconnectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

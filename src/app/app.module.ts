@@ -12,8 +12,6 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { PrepaidComponent } from './prepaid/prepaid.component';
-import { PostpaidComponent } from './postpaid/postpaid.component';
 import { ShopComponent } from './shop/shop.component';
 import { CustomersupportComponent } from './customersupport/customersupport.component';
 import { PaybillComponent } from './paybill/paybill.component';
@@ -29,6 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { LoginService } from './login.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { NewconnectionComponent } from './newconnection/newconnection.component';
+import { DisplayComponent } from './display/display.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +38,6 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    PrepaidComponent,
-    PostpaidComponent,
     ShopComponent,
     CustomersupportComponent,
     PaybillComponent,
@@ -50,6 +48,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     DongleComponent,
     Pack3Component,
     PagenotfoundComponent,
+    NewconnectionComponent,
+    DisplayComponent,
   ],
   imports: [
     BrowserModule,

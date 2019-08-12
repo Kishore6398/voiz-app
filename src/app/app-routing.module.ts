@@ -5,8 +5,6 @@ import { LoginComponent } from './login/login.component';
 import { ShopComponent } from './shop/shop.component';
 import { CustomersupportComponent } from './customersupport/customersupport.component';
 import { HomeComponent } from './home/home.component';
-import { PrepaidComponent } from './prepaid/prepaid.component';
-import { PostpaidComponent } from './postpaid/postpaid.component';
 import { PaybillComponent } from './paybill/paybill.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PaymentComponent } from './payment/payment.component';
@@ -14,6 +12,7 @@ import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.comp
 import { DongleComponent } from './dongle/dongle.component';
 import { Pack3Component } from './pack3/pack3.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { NewconnectionComponent } from './newconnection/newconnection.component';
 
 const routes: Routes = [
   { path: 'signup', component: SignupComponent },
@@ -21,8 +20,6 @@ const routes: Routes = [
   { path: 'shop', component: ShopComponent },
   { path: 'customersupport', component: CustomersupportComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'prepaid', component: PrepaidComponent },
-  { path: 'postpaid', component: PostpaidComponent },
   { path: 'paybill', component: PaybillComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'signup', component: SignupComponent },
@@ -30,7 +27,9 @@ const routes: Routes = [
   { path: 'prepaidrecharge', component: PrepaidrechargeComponent },
   { path: 'dongle', component: DongleComponent },
   { path: 'pack3', component: Pack3Component },
+  { path: 'connect', component: NewconnectionComponent },
   { path: '**', component: PagenotfoundComponent },
+
 ];
 
 @NgModule({
