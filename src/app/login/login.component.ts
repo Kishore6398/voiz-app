@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   User: any;
   selected_user={username:'',mobile:'',email:'',password:''};
   constructor(private fb: FormBuilder, private apiService:ApiService) {
-    this.getlogin();
+   // this.getlogin();
    }
    
  ngOnInit() {
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
         
 }
 
-getusershere() {
+/*getusershere() {
   this.login.getUsers().subscribe(data => (this.User = data));
 }
 select(id){
@@ -48,5 +48,5 @@ get passwordInput() { return this.loginForm.get('passwordInput'); }
 
 get mobileInput() { return this.loginForm.get('mobileInput'); }
 
-
+*/
 }

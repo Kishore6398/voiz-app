@@ -16,7 +16,6 @@ export class PrepaidComponent implements OnInit {
        nameInput: new FormControl(null,Validators.required),
        emailInput: new FormControl(null, Validators.required),  
        mobileInput: new FormControl(null,Validators.required),
-       passwordInput: new FormControl(null,Validators.required),
        addressInput: new FormControl(null,Validators.required),
        cityInput: new FormControl(null,Validators.required),
        pincodeInput: new FormControl(null,Validators.required),     
@@ -29,7 +28,6 @@ get mobileInput() { return this.prepaidForm.get('mobileInput'); }
 get addressInput() { return this.prepaidForm.get('addressInput'); }
 get cityInput() { return this.prepaidForm.get('cityInput'); }
 get pincodeInput() { return this.prepaidForm.get('pincodeInput'); }
-get passwordInput() { return this.prepaidForm.get('passwordInput'); }
 
 
 }
