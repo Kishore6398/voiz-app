@@ -16,9 +16,9 @@ export class PaymentComponent implements OnInit {
   payform: FormGroup;
   dpayform: FormGroup;
   ppayform: FormGroup;
-  amount:any;
-  mobile:any;
-  recharge=[];
+  amount: any;
+  mobile: any;
+  recharge = [];
   rechargedetails;
 
   constructor(private fb: FormBuilder,private data:DataService,private apiService:ApiService,private datepipe:DatePipe) {
@@ -48,9 +48,9 @@ export class PaymentComponent implements OnInit {
       amt: new FormControl(null, Validators.required),
     });
     this.amount = this.data.amount;
-    this.mobile=this.data.mobile;
-console.log(this.amount);
-console.log(this.mobile);
+    this.mobile = this.data.mobile;
+    console.log(this.amount);
+    console.log(this.mobile);
 console.log(this.rdate2);
 console.log(this.rdate3);
   }
@@ -66,12 +66,11 @@ console.log(this.rdate3);
   get damt() { return this.dpayform.get('damt'); }
   get pnumber() { return this.ppayform.get('pnumber'); }
   get amt() { return this.ppayform.get('amt'); }
-  getrecharge(){
+  getrecharge() {
     this.apiService.getrecharge().subscribe(data => (this.recharge = data));
   }
-  createrecharge(){
+  createrecharge() {
     console.log(this.amount)
     this.apiService.addrecharge(this.amount,this.mobile,this.rdate3).subscribe(data => this.getrecharge());
-  
   }
 }
