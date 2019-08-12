@@ -80,7 +80,7 @@
                                     <mdb-success *ngIf="camt.valid && (camt.dirty ||camt.touched)"></mdb-success>
                                 </div>
                                 <div class="text-center mb-3">
-                                    <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white" [disabled]="name.invalid || cardno.invalid || ccv.invalid || expyear.invalid">Pay now</button>
+                                    <button type="submit" (click)="createrecharge()" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white" [disabled]="name.invalid || cardno.invalid || ccv.invalid || expyear.invalid">Pay now</button>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +177,7 @@
                                     <mdb-success *ngIf="amt.valid && (amt.dirty ||amt.touched)"></mdb-success>
                                 </div>
                                 <div class="text-center mb-3">
-                                    <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white" [disabled]="pnumber.invalid || amt.invalid">Pay now</button>
+                                    <button type="submit" (click)="createrecharge()" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white" [disabled]="pnumber.invalid || amt.invalid">Pay now</button>
                                 </div>
                             </div>
                         </div>
