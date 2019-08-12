@@ -56,8 +56,8 @@ export class ApiService {
     const body={name:inquiry.name,phone:inquiry.phone,email:inquiry.email,message:inquiry.message};
     return this.http.post<Inquiry[]>(this.baseURL+'api/inquiry/',body,{headers:this.httpHeaders});
   }
-  addrecharge(x,y,z):Observable<Recharge[]>{
-    const body={mobile:x,amount:y,rdate:z};
+  addrecharge(x,y,z,id):Observable<Recharge[]>{
+    const body={mobile:x,amount:y,rdate:z,pid:id};
     return this.http.post<Recharge[]>(this.baseURL+'api/recharge/',body,{headers:this.httpHeaders});
   }
 }
