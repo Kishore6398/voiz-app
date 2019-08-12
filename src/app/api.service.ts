@@ -19,7 +19,7 @@ export class ApiService {
 
 
   getDongle(): Observable<Dongle[]>{
-    return this.http.get<Dongle[]>(this.baseURL + 'api/plans/',{
+    return this.http.get<Dongle[]>(this.baseURL + 'api/dongleplans/',{
      headers:this.httpHeaders 
     })
   }
