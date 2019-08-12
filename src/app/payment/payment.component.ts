@@ -62,6 +62,8 @@ console.log(this.mobile);
     this.apiService.getrecharge().subscribe(data => (this.recharge = data));
   }
   createrecharge(){
-    this.apiService.addaccount(this.rechargedetails).subscribe(data => this.getrecharge());
+    console.log(this.amount)
+    this.apiService.addrecharge(this.amount,this.mobile).subscribe(data => this.getrecharge());
+  
   }
 }
