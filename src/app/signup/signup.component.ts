@@ -31,10 +31,10 @@ export class SignupComponent implements OnInit {
   get mobileInput() { return this.registerForm.get('mobileInput'); }
   get passwordInput() { return this.registerForm.get('passwordInput'); }
   get repasswordInput() { return this.registerForm.get('repasswordInput') }
-  /*getlogin(){
+  getlogin(){
     this.apiService.getlogin().subscribe(data => (this.login = data));
   }
   createaccount(){
     this.apiService.addaccount(this.logindetails).subscribe(data => this.getlogin());
-  }*/
+  }
 }
