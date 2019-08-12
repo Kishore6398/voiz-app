@@ -25,7 +25,7 @@ import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.comp
 import { PlansComponent } from './plans/plans.component';
 import { DongleComponent } from './dongle/dongle.component';
 import { Pack3Component } from './pack3/pack3.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { LoginService } from './login.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
@@ -53,7 +53,6 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
   ],
   imports: [
     BrowserModule,
-    // tslint:disable-next-line: deprecation
     HttpModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
@@ -61,7 +60,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     AppRoutingModule,
     SlimLoadingBarModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
 
   ],
   providers: [
