@@ -11,13 +11,14 @@ import { PaymentComponent } from './payment/payment.component';
 import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.component';
 import { DongleComponent } from './dongle/dongle.component';
 import { Pack3Component } from './pack3/pack3.component';
-//import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { NewconnectionComponent } from './newconnection/newconnection.component';
 import { Submit1Component } from './submit1/submit1.component';
 import { Submit2Component } from './submit2/submit2.component';
 import { Submit3Component } from './submit3/submit3.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'shop', component: ShopComponent },
@@ -34,7 +35,7 @@ const routes: Routes = [
   { path: 'submit1', component: Submit1Component },
   { path: 'submit2', component: Submit2Component },
   { path: 'submit3', component: Submit3Component },
- // { path: '**', component: PagenotfoundComponent },
+ { path: '**', component: PagenotfoundComponent },
   
 
 ];
