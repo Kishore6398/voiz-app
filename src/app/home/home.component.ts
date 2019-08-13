@@ -8,7 +8,7 @@ import { DataService } from '../data.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit,OnDestroy {
-  mobile: any;
+    mobile: any;
     constructor(private data:DataService) {  }
   
     ngOnInit() {

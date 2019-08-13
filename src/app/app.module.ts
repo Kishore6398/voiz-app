@@ -20,15 +20,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PrepaidrechargeComponent } from './prepaidrecharge/prepaidrecharge.component';
-import { PlansComponent } from './plans/plans.component';
 import { DongleComponent } from './dongle/dongle.component';
 import { Pack3Component } from './pack3/pack3.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { LoginService } from './login.service';
-import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+//import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { NewconnectionComponent } from './newconnection/newconnection.component';
 import { DisplayComponent } from './display/display.component';
+import { Submit1Component } from './submit1/submit1.component';
+import { Submit2Component } from './submit2/submit2.component';
+import { Submit3Component } from './submit3/submit3.component';
 
 @NgModule({
   declarations: [
@@ -44,12 +46,14 @@ import { DisplayComponent } from './display/display.component';
     NavbarComponent,
     PaymentComponent,
     PrepaidrechargeComponent,
-    PlansComponent,
     DongleComponent,
     Pack3Component,
-    PagenotfoundComponent,
+    //PagenotfoundComponent,
     NewconnectionComponent,
     DisplayComponent,
+    Submit1Component,
+    Submit2Component,
+    Submit3Component,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,7 @@ import { DisplayComponent } from './display/display.component';
   providers: [
     CommonService,
     LoginService,
-    ApiService
+    ApiService,
   ],
   bootstrap: [AppComponent]
 })
