@@ -49,15 +49,15 @@ export class ApiService {
   }
 
   addaccount(login):Observable<Login[]>{
-    const body={name:login.name,phone:login.phone,email:login.email,password:login.password};
+    const body={username:login.username,phone:login.phone,email:login.email,password:login.password};
     return this.http.post<Login[]>(this.baseURL+'api/login/',body,{headers:this.httpHeaders});
   }
   addinquiry(inquiry):Observable<Inquiry[]>{
     const body={name:inquiry.name,phone:inquiry.phone,email:inquiry.email,message:inquiry.message};
     return this.http.post<Inquiry[]>(this.baseURL+'api/inquiry/',body,{headers:this.httpHeaders});
   }
-  addrecharge(x,y,z):Observable<Recharge[]>{
-    const body={mobile:x,amount:y,rdate:z};
+  addrecharge(x,y,z,id):Observable<Recharge[]>{
+    const body={mobile:x,amount:y,rdate:z,pid:id};
     return this.http.post<Recharge[]>(this.baseURL+'api/recharge/',body,{headers:this.httpHeaders});
   }
 }

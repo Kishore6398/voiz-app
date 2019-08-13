@@ -47,18 +47,30 @@
                                 "input": "node_modules/angular-bootstrap-md/scss/mdb-free.scss"
                             },
                             {
+                                "input": "node_modules/chart.js/dist/Chart.min.css"
+                            },
+                            {
                                 "input": "src/styles.scss"
                             }
 
                         ],
                         "scripts": [{
-                                "input": "node_modules/chart.js/dist/Chart.js"
+                                "input": "node_modules/chart.js/dist/Chart.min.js"
                             },
                             {
                                 "input": "node_modules/hammerjs/hammer.min.js"
                             },
                             {
                                 "input": "src/assets/js/compiled.min.js"
+                            },
+                            {
+                                "input": "src/assets/js/chart.min.js"
+                            },
+                            {
+                                "input": "node_modules/jquery/dist/jquery.min.js"
+                            },
+                            {
+                                "input": "node_modules/easy-pie-chart/dist/angular.easypiechart.min.js"
                             }
                         ]
                     },

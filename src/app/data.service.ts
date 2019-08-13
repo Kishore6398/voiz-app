@@ -8,4 +8,5 @@ export class DataService {
   constructor() { }
   mobile:any;
   amount:any;
+  pid:any;
 }
