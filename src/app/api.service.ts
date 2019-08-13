@@ -9,7 +9,7 @@ import {Plans} from './planapp';
 import {Login} from './loginapp';
 import {Inquiry} from './inquiryapp';
 import {Recharge} from './rechargeapp';
-
+import {Feedback} from './feedback';
 @Injectable({
   providedIn: 'root'
 })
@@ -87,5 +87,16 @@ export class ApiService {
   addrecharge(x,y,z,id):Observable<Recharge[]>{
     const body={mobile:x,amount:y,rdate:z,pid:id};
     return this.http.post<Recharge[]>(this.baseURL+'api/recharge/',body,{headers:this.httpHeaders});
+  }
+
+
+  getfeedback(): Observable<Feedback[]>{
+    return this.http.get<Feedback[]>(this.baseURL + 'api/feedback/',{
+     headers:this.httpHeaders 
+    })
+  }
+  addfeedback(feedback):Observable<Feedback[]>{
+    const body={fname:feedback.fname,femail:feedback.femail,fsubject:feedback.fsubject,fmessage:feedback.fmessage};
+    return this.http.post<Feedback[]>(this.baseURL+'api/feedback/',body,{headers:this.httpHeaders});
   }
 }
