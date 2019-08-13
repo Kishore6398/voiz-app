@@ -3,7 +3,7 @@
     <div class="row pt-2">
         <div class="col-lg-6 col-md-6 ml-0 pl-0 text-center">
             <h4 class="pb-4">For New Dongle Connection</h4>
-            <form>
+            <form [formGroup]="dongle1Form">
                 <div class="card mt-2 mb-2">
                     <div class="card-body mx-4">
                         <div class="text-center">
@@ -12,51 +12,55 @@
                             </h3>
                         </div>
                         <div class="md-form md-outline">
-                            <input mdbInput mdbValidate name="name" type="text" id="name" class="form-control"
-                                [(ngModel)]="name" #input="ngModel" required pattern="[a-zA-Z\s]{5,15}">
-                            <label for="name">Name </label>
-                            <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
-                            <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                            <input mdbInput mdbValidate type="text" id="name" class="form-control" formControlName="nameInput" [(ngModel)]="form3details.name" required pattern="[a-zA-Z\s]{5,15}">
+                            <label for="name">Name</label>
+                            <mdb-error *ngIf="nameInput.invalid && (nameInput.dirty ||nameInput.touched)"></mdb-error>
+                            <mdb-success *ngIf="nameInput.valid && (nameInput.dirty ||nameInput.touched)"></mdb-success>
                         </div>
                         <div class="md-form md-outline">
-                            <input mdbInput mdbValidate name="email" type="email" id="email" class="form-control"
-                                [(ngModel)]="email" #input="ngModel" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
+                            <input mdbInput mdbValidate type="email" id="email" class="form-control" formControlName="emailInput" [(ngModel)]="form3details.email" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
                             <label for="email">Email </label>
-                            <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
-                            <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                            <mdb-error *ngIf="emailInput.invalid && (emailInput.dirty ||emailInput.touched)">
+                            </mdb-error>
+                            <mdb-success *ngIf="emailInput.valid && (emailInput.dirty ||emailInput.touched)">
+                            </mdb-success>
                         </div>
                         <div class="md-form md-outline">
-                            <input mdbInput mdbValidate name="mobile" type="tel" id="mobile" class="form-control"
-                                [(ngModel)]="mobile" #input="ngModel" required pattern="[789][0-9]{9}">
+                            <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="mobileInput" [(ngModel)]="form3details.mobile" required pattern="[789][0-9]{9}">
                             <label for="mobile">Mobile </label>
-                            <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
-                            <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                            <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty ||mobileInput.touched)">
+                            </mdb-error>
+                            <mdb-success *ngIf="mobileInput.valid && (mobileInput.dirty ||mobileInput.touched)">
+                            </mdb-success>
                         </div>
-                        
+
                         <div class="md-form md-outline">
-                            <input mdbInput mdbValidate name="address" id="address" type="text" class="form-control"
-                                [(ngModel)]="address" #input="ngModel" required pattern="[0-9a-zA-Z]*\,?[a-zA-Z\s]+\,?\s?[a-zA-Z]+">
-                            <label for="address">Address </label>
-                            <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
-                            <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                            <input mdbInput mdbValidate type="text" id="address" class="form-control" formControlName="addressInput" [(ngModel)]="form3details.address" required pattern="[0-9 a-z A-Z]*\,?[a-zA-Z\s]{6,30}\,?\s?[a-zA-Z]{4,25}">
+                            <label for=" address ">Address </label>
+                            <mdb-error *ngIf="addressInput.invalid && (addressInput.dirty ||addressInput.touched) ">
+                            </mdb-error>
+                            <mdb-success *ngIf="addressInput.valid && (addressInput.dirty ||addressInput.touched) ">
+                            </mdb-success>
                         </div>
-                        <div class="md-form md-outline">
-                            <input mdbInput mdbValidate name="city" id="city" type="text" class="form-control"
-                                [(ngModel)]="city" #input="ngModel" required pattern="[a-zA-Z]{3,15}">
-                            <label for="city">City </label>
-                            <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
-                            <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                        <div class="md-form md-outline ">
+                            <input mdbInput mdbValidate type="text " id="city" class="form-control" formControlName="cityInput" [(ngModel)]="form3details.city" required pattern="[a-zA-Z]{3,15}">
+                            <label for="mobile">City </label>
+                            <mdb-error *ngIf="cityInput.invalid && (cityInput.dirty ||cityInput.touched)"></mdb-error>
+                            <mdb-success *ngIf="cityInput.valid && (cityInput.dirty ||cityInput.touched)"></mdb-success>
                         </div>
-                        <div class="md-form pb-3 md-outline">
-                            <input mdbInput mdbValidate name="pincode" id="pincode" type="text" class="form-control"
-                                [(ngModel)]="pincode" #input="ngModel" required pattern="[1-9][0-9]{5}">
+                        <div class="md-form md-outline ">
+                            <input mdbInput mdbValidate type="tel " id="pincode" class="form-control" formControlName="pincodeInput" [(ngModel)]="form3details.pincode" required pattern="[1-9][0-9]{5}">
                             <label for="pincode">Pincode </label>
-                            <mdb-error *ngIf="input.invalid && (input.dirty ||input.touched)"> </mdb-error>
-                            <mdb-success *ngIf="input.valid && (input.dirty ||input.touched)"></mdb-success>
+                            <mdb-error *ngIf="pincodeInput.invalid && (pincodeInput.dirty ||pincodeInput.touched)">
+                            </mdb-error>
+                            <mdb-success *ngIf="pincodeInput.valid && (pincodeInput.dirty ||pincodeInput.touched)">
+                            </mdb-success>
                         </div>
-                        <div class="text-center mb-3">
-                            <button type="submit" [disabled]='input.invalid'
-                                class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white">Submit</button>
+
+
+                        <div class="text-center mb-3 ">
+                            <button type="submit" routerLink="/submit3" [disabled]='nameInput.invalid || emailInput.invalid || mobileInput.invalid || addressInput.invalid || cityInput.invalid || pincodeInput.invalid' class="btn btn-secondary btn-block" (click)="createform3()">Submit</button>
+
                         </div>
                     </div>
 
