@@ -4,7 +4,7 @@ import { LoginService } from '../login.service';
 import { ApiService } from '../api.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
-
+import { Errors, UserService } from '../core';
 interface TokenObj{
   token: string;
 }
@@ -18,13 +18,19 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   User: any;
+  errors: any;
+  authType: String = '';
+  title: String = '';
+  isSubmitting = false;
+  authForm: FormGroup;
   selected_user={username:'',mobile:'',email:'',password:''};
   constructor(
     private fb: FormBuilder, 
     private apiService:ApiService,
     private Login:LoginService,
     private Cookie: CookieService,
-    private router: Router) {
+    private router: Router,
+    private userService: UserService) {
    // this.getlogin();
    }
    
@@ -33,19 +39,34 @@ export class LoginComponent implements OnInit {
        mobileInput: new FormControl(null,Validators.required),
        passwordInput: new FormControl(null, Validators.required),       
      });
-     const token=this.Cookie.get('usr_token');
-     if(token){
-       this.router.navigate(['/dashboard']);
-     }
+    //  const token=this.Cookie.get('usr_token');
+    //  if(token){
+    //    this.router.navigate(['/dashboard']);
+    //  } else {
+    //    this.router.navigate(['/login']);
+    //  }
 }
 
-onSubmit(): void {
-  console.log(this.loginForm.value);
-  this.Login.LoginUser(this.loginForm.value).subscribe(
-    (data: TokenObj) =>{
-      this.Cookie.set('usr_token', data.token);
-      console.log('user authenticated successfully');
-      this.router.navigate(['/dashboard]']);
+// onSubmit(): void {
+//   console.log(this.loginForm.value);
+//   this.Login.LoginUser(this.loginForm.value).subscribe(
+//     (data: TokenObj) =>{
+//       this.Cookie.set('usr_token', data.token);
+//       console.log('user authenticated successfully');
+//       this.router.navigate(['/dashboard']);
+//     }
+//   );
+// }
+submitForm() {
+  this.errors = {errors: {}};
+
+  const credentials = this.loginForm.value;
+  this.userService
+  .attemptAuth(this.authType, credentials)
+  .subscribe(
+    data => this.router.navigateByUrl('/'),
+    err => {
+      this.errors = err;
     }
   );
 }

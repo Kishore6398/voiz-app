@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../../environments/environment';
 import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 import { Observable ,  throwError } from 'rxjs';
 
@@ -11,7 +12,7 @@ export class ApiService {
     private http: HttpClient,
     private jwtService: JwtService
   ) {}
-  private api_url:string = 'http://127.0.0.1:8000/api/'
+    api_url:string= 'http://127.0.0.1:8000/api/';
   private formatErrors(error: any) {
     return  throwError(error.error);
   }

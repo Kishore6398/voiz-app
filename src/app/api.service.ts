@@ -24,9 +24,6 @@ export class ApiService {
     })
   }
  
- 
-
-
   getPlans(): Observable<Plans[]>{
     return this.http.get<Plans[]>(this.baseURL + 'api/plans/',{
      headers:this.httpHeaders 
@@ -47,7 +44,11 @@ export class ApiService {
      headers:this.httpHeaders 
     })
   }
-
+  registerUser(data): Observable<Login[]>
+  {
+    const body={'username': data.nameInput,'phone':data.mobileInput,'email':data.emailInput,'password':data.passwordInput};
+    return this.http.post<Login[]>(this.baseURL+'api/profile/',body,{headers: this.httpHeaders});
+  }
   addaccount(login):Observable<Login[]>{
     const body={name:login.name,phone:login.phone,email:login.email,password:login.password};
     return this.http.post<Login[]>(this.baseURL+'api/login/',body,{headers:this.httpHeaders});

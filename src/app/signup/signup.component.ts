@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +12,10 @@ import { ApiService } from '../api.service';
 export class SignupComponent implements OnInit {
   login = [];
   logindetails;
-  constructor(private fb: FormBuilder, private apiService: ApiService) {
+  constructor(
+    private fb: FormBuilder,
+    private apiService: ApiService,
+    private router: Router ) {
     this.logindetails = { id: -1, name: '', phone: '', email: '', password: '' };//1
     //this.getlogin();
   }
@@ -36,5 +40,15 @@ export class SignupComponent implements OnInit {
   }
   createaccount() {
     this.apiService.addaccount(this.logindetails).subscribe(data => this.getlogin());
+  }
+
+  onSubmit(): void {
+    this.apiService.registerUser(this.registerForm.value).subscribe(
+      data => {
+        console.log(data);
+        this.router.navigate(['/login']);
+      },
+      error => console.log(error),
+    );
   }
 }

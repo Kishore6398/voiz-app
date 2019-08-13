@@ -31,6 +31,8 @@ import { NewconnectionComponent } from './newconnection/newconnection.component'
 import { DisplayComponent } from './display/display.component';
 import { CoreModule } from './core/core.module';
 import { CookieService } from 'ngx-cookie-service';
+import { LogoutComponent } from './logout/logout.component';
+import { AuthModule } from './auth/auth.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +53,7 @@ import { CookieService } from 'ngx-cookie-service';
     PagenotfoundComponent,
     NewconnectionComponent,
     DisplayComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,7 @@ import { CookieService } from 'ngx-cookie-service';
     ReactiveFormsModule,
     HttpClientModule,
     CoreModule,
+    AuthModule
 
   ],
   providers: [
