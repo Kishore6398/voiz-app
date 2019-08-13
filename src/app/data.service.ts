@@ -6,7 +6,9 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   constructor() { }
-  mobile:any;
-  amount:any;
-  pid:any;
+  mobile: any;
+  amount: any;
+  pid: any;
+  dongledata: any;
+
 }

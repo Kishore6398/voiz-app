@@ -7,28 +7,28 @@ import { DatePipe } from '@angular/common';
   selector: 'app-payment',
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.scss'],
-  providers:[DatePipe]
+  providers: [DatePipe]
 })
 export class PaymentComponent implements OnInit {
-  rdate=new Date()
-  rdate2=Date.now()
-  rdate3:any;
+  rdate = new Date()
+  rdate2 = Date.now()
+  rdate3: any;
   payform: FormGroup;
   dpayform: FormGroup;
   ppayform: FormGroup;
   amount: any;
   mobile: any;
-  pid:any;
+  pid: any;
   recharge = [];
   rechargedetails;
 
-  constructor(private fb: FormBuilder,private data:DataService,private apiService:ApiService,private datepipe:DatePipe) {
-    this.rechargedetails={id: -1, mobile:'', amount:''};//1
+  constructor(private fb: FormBuilder, private data: DataService, private apiService: ApiService, private datepipe: DatePipe) {
+    this.rechargedetails = { id: -1, mobile: '', amount: '' };//1
     this.getrecharge();
   }
 
   ngOnInit() {
-    this.rdate3=this.datepipe.transform(this.rdate2,'dd-MM-yyyy')
+    this.rdate3 = this.datepipe.transform(this.rdate2, 'dd-MM-yyyy')
     this.payform = new FormGroup({
       name: new FormControl(null, Validators.required),
       cardno: new FormControl(null, Validators.required),
@@ -50,12 +50,13 @@ export class PaymentComponent implements OnInit {
     });
     this.amount = this.data.amount;
     this.mobile = this.data.mobile;
-    this.pid=this.data.pid;
+    this.pid = this.data.pid;
+
     //console.log(this.amount);
     //console.log(this.mobile);
-console.log(this.rdate2);
-console.log(this.rdate3);
-console.log(this.pid);
+    console.log(this.rdate2);
+    console.log(this.rdate3);
+    console.log(this.pid);
   }
   get name() { return this.payform.get('name'); }
   get cardno() { return this.payform.get('cardno'); }
@@ -77,7 +78,7 @@ console.log(this.pid);
     console.log(this.amount)
     console.log(this.mobile)
     console.log(this.pid)
-    this.apiService.addrecharge(this.mobile,this.amount,this.rdate3,this.pid).subscribe(data => this.getrecharge());
+    this.apiService.addrecharge(this.mobile, this.amount, this.rdate3, this.pid).subscribe(data => this.getrecharge());
     alert("Payment Successful")
   }
 }
