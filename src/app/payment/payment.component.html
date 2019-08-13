@@ -61,7 +61,7 @@
                                     <mdb-success *ngIf="cardno.valid && (cardno.dirty ||cardno.touched)"></mdb-success>
                                 </div>
                                 <div class="md-form md-outline">
-                                    <input mdbInput mdbValidate name="expyear" id="expyear" type="text" class="form-control" formControlName="expyear" pattern="[2][0-9]{3}">
+                                    <input mdbInput mdbValidate name="expyear" id="expyear" placeholder="" type="month" class="form-control" formControlName="expyear">
                                     <label for="form2">Exp Year </label>
                                     <mdb-error *ngIf="expyear.invalid && (expyear.dirty ||expyear.touched)"> </mdb-error>
                                     <mdb-success *ngIf="expyear.valid && (expyear.dirty ||expyear.touched)"></mdb-success>
@@ -119,7 +119,7 @@
                                     <mdb-success *ngIf="dcardno.valid && (dcardno.dirty ||dcardno.touched)"></mdb-success>
                                 </div>
                                 <div class="md-form md-outline">
-                                    <input mdbInput mdbValidate name="dexpyear" id="dexpyear" type="text" class="form-control" formControlName="dexpyear" pattern="[2][0-9]{3}">
+                                    <input mdbInput mdbValidate name="dexpyear" id="dexpyear" placeholder="" type="month" class="form-control" formControlName="dexpyear">
                                     <label for="form3">Exp Year </label>
                                     <mdb-error *ngIf="dexpyear.invalid && (dexpyear.dirty ||dexpyear.touched)"> </mdb-error>
                                     <mdb-success *ngIf="dexpyear.valid && (dexpyear.dirty ||dexpyear.touched)"></mdb-success>

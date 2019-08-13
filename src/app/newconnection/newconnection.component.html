@@ -36,7 +36,7 @@
                                         <mdb-success *ngIf="nameInput.valid && (nameInput.dirty ||nameInput.touched)"></mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="email" id="email" class="form-control" formControlName="emailInput" [(ngModel)]="form1details.email" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
+                                        <input mdbInput mdbValidate type="email" id="email" class="form-control" formControlName="emailInput" [(ngModel)]="form1details.email" required pattern="[a-zA-Z0-9\.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
                                         <label for="email">Email </label>
                                         <mdb-error *ngIf="emailInput.invalid && (emailInput.dirty ||emailInput.touched)">
                                         </mdb-error>
@@ -44,7 +44,7 @@
                                         </mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="mobileInput" [(ngModel)]="form1details.mobile" required pattern="[789][0-9]{9}">
+                                        <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="mobileInput" [(ngModel)]="form1details.mobile" required pattern="[6789][0-9]{9}">
                                         <label for="mobile">Mobile </label>
                                         <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty ||mobileInput.touched)">
                                         </mdb-error>
@@ -53,7 +53,7 @@
                                     </div>
 
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="text" id="address" class="form-control" formControlName="addressInput" [(ngModel)]="form1details.address" required pattern="[0-9 a-z A-Z]*\,?[a-zA-Z\s]{6,30}\,?\s?[a-zA-Z]{4,25}">
+                                        <input mdbInput mdbValidate type="text" id="address" class="form-control" formControlName="addressInput" [(ngModel)]="form1details.address" required pattern="[0-9 a-z A-Z\.\/]*\,?[a-zA-Z\s]{4,30}\,?\s?[a-zA-Z]{4,25}">
                                         <label for=" address ">Address </label>
                                         <mdb-error *ngIf="addressInput.invalid && (addressInput.dirty ||addressInput.touched) ">
                                         </mdb-error>
@@ -130,7 +130,7 @@
                                     </div>
 
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="text" id="address" class="form-control" formControlName="faddressInput" [(ngModel)]="form2details.address" required pattern="[0-9 a-z A-Z]*\,?[a-zA-Z\s]{6,30}\,?\s?[a-zA-Z]{4,25}">
+                                        <input mdbInput mdbValidate type="text" id="address" class="form-control" formControlName="faddressInput" [(ngModel)]="form2details.address" required pattern="[0-9 a-z A-Z\.\/]*\,?[a-zA-Z\s]{4,30}\,?\s?[a-zA-Z]{4,25}">
                                         <label for=" address ">Address </label>
                                         <mdb-error *ngIf="faddressInput.invalid && (faddressInput.dirty ||faddressInput.touched) ">
                                         </mdb-error>
