@@ -206,7 +206,7 @@
                                     </div>
 
                                     <div class="text-center mb-3">
-                                        <button type="submit" routerLink="/home" [disabled]='name.invalid || email.invalid || phonenumber.invalid || message.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white" (click)="createinquiry()">Send</button>
+                                        <button type="submit" [disabled]='name.invalid || email.invalid || phonenumber.invalid || message.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white" (click)="createinquiry()">Send</button>
                                     </div>
                                     <!-- Form -->
 
@@ -239,32 +239,31 @@
 
                                 <form [formGroup]="customerfeedbackForm">
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="text" id="materialContactFormName" formControlName="fname" class="form-control" required pattern="[a-zA-Z]{5,15}">
+                                        <input mdbInput mdbValidate type="text" id="materialContactFormName" formControlName="fname" class="form-control"  [(ngModel)]="feedbackdetails.fname"  required pattern="[a-zA-Z]{5,15}">
                                         <label for="materialContactFormName">Name</label>
                                         <mdb-error *ngIf="fname.invalid && (fname.dirty ||fname.touched)"> </mdb-error>
                                         <mdb-success *ngIf="fname.valid && (fname.dirty ||fname.touched)"> </mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="email" id="materialContactFormEmail" formControlName="femail" class="form-control" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
+                                        <input mdbInput mdbValidate type="email" id="materialContactFormEmail" formControlName="femail" class="form-control" [(ngModel)]="feedbackdetails.femail" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
                                         <label for="materialContactFormEmail">E-mail</label>
                                         <mdb-error *ngIf="femail.invalid && (femail.dirty ||femail.touched)"> </mdb-error>
                                         <mdb-success *ngIf="femail.valid && (femail.dirty ||femail.touched)"> </mdb-success>
                                     </div>
-                                    <span>Subject</span>
-                                    <select class="mdb-select">
-                        <option value="" disabled>Choose option</option>
-                        <option value="1" selected>Feedback</option>
-                        <option value="2">Complaint</option>
-                        
-                    </select>
                                     <div class="md-form md-outline">
-                                        <textarea mdbInput mdbValidate id="materialContactFormMessage" class="form-control md-textarea" formControlName="fmessage" rows="3"></textarea>
+                                        <input mdbInput mdbValidate type="text" id="materialContactFormSubject" formControlName="fsubject" class="form-control" [(ngModel)]="feedbackdetails.fsubject" required pattern="[a-zA-Z]*">
+                                        <label for="materialContactFormSubject">Subject</label>
+                                        <mdb-error *ngIf="fsubject.invalid && (fsubject.dirty ||fsubject.touched)"> </mdb-error>
+                                        <mdb-success *ngIf="fsubject.valid && (fsubject.dirty ||fsubject.touched)"> </mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline">
+                                        <textarea mdbInput mdbValidate id="materialContactFormMessage" class="form-control md-textarea" [(ngModel)]="feedbackdetails.fmessage" formControlName="fmessage" rows="3"></textarea>
                                         <label for="materialContactFormMessage">Message</label>
                                         <mdb-error *ngIf="fmessage.invalid && (fmessage.dirty ||fmessage.touched)"> </mdb-error>
                                         <mdb-success *ngIf="fmessage.valid && (fmessage.dirty ||fmessage.touched)"> </mdb-success>
                                     </div>
                                     <div class="text-center mb-3">
-                                        <button type="submit" routerLink="/home" [disabled]='fname.invalid || femail.invalid  || fmessage.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white">Send</button>
+                                        <button type="submit" [disabled]='fname.invalid || femail.invalid || fsubject.invalid  || fmessage.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white" (click)="createfeedback()">Send</button>
                                     </div>
                                 </form>
                             </form>

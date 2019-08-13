@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-customersupport',
   templateUrl: './customersupport.component.html',
@@ -9,12 +10,16 @@ import { ApiService } from '../api.service';
 })
 export class CustomersupportComponent implements OnInit {
   inquiry=[];
+  feedback=[];
   inquirydetails;
+  feedbackdetails;
   customerForm: FormGroup;
   customerfeedbackForm: FormGroup;
-  constructor(private fb: FormBuilder,private apiService:ApiService) { 
+  constructor(private fb: FormBuilder,private apiService:ApiService, private router:Router) { 
     this.inquirydetails={id: -1, name:'', phone:'', email:'', message:''};//1
     this.getinquiry();
+    this.feedbackdetails={id: -1, fname:'', femail:'', fsubject:'', fmessage:''};
+    this.getfeedback();
   }
 
   ngOnInit() {
@@ -29,6 +34,7 @@ export class CustomersupportComponent implements OnInit {
     this.customerfeedbackForm = new FormGroup({
       fname: new FormControl(null, Validators.required),
       femail: new FormControl(null, Validators.required),
+      fsubject: new FormControl(null,Validators.required),
       fmessage: new FormControl(null, Validators.required),
 
     });
@@ -44,12 +50,22 @@ export class CustomersupportComponent implements OnInit {
 
   get femail() { return this.customerfeedbackForm.get('femail'); }
 
-
+  get fsubject() { return this.customerfeedbackForm.get('fsubject');}
   get fmessage() { return this.customerfeedbackForm.get('fmessage'); }
   getinquiry(){
     this.apiService.getinquiry().subscribe(data => (this.inquiry = data));
   }
   createinquiry(){
-    this.apiService.addinquiry(this.inquirydetails).subscribe(data => this.getinquiry());
+    this.apiService.addinquiry(this.inquirydetails).subscribe(data => {this.getinquiry();this.router.navigate(['/']);});
+  }
+
+  getfeedback(){
+    this.apiService.getfeedback().subscribe(data => (this.feedback = data));
+    
+  }
+  createfeedback(){
+    this.apiService.addfeedback(this.feedbackdetails).subscribe(data => {this.getfeedback();
+      this.router.navigate(['/']);
+    });
   }
 }
