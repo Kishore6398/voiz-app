@@ -29,7 +29,8 @@ import { LoginService } from './login.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { NewconnectionComponent } from './newconnection/newconnection.component';
 import { DisplayComponent } from './display/display.component';
-
+import { CoreModule } from './core/core.module';
+import { CookieService } from 'ngx-cookie-service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,12 +62,14 @@ import { DisplayComponent } from './display/display.component';
     SlimLoadingBarModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CoreModule,
 
   ],
   providers: [
     CommonService,
     LoginService,
-    ApiService
+    ApiService,
+    CookieService,
   ],
   bootstrap: [AppComponent]
 })

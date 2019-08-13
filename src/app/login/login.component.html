@@ -27,7 +27,7 @@
 
                 </h3>
             </div>
-            <form [formGroup]="loginForm">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div class="md-form md-outline">
                     <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="mobileInput" pattern="[6789][0-9]{9}">
                     <label for="mobile">Mobile </label>
@@ -41,7 +41,7 @@
                     <mdb-success *ngIf="passwordInput.valid && (passwordInput.dirty ||passwordInput.touched)"> </mdb-success>
                 </div>
                 <div class="text-center mb-3">
-                    <button type="submit" routerLink="/dashboard" [disabled]='mobileInput.invalid || passwordInput.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white">Log in</button>
+                    <button type="submit" [disabled]='mobileInput.invalid || passwordInput.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white">Log in</button>
                 </div>
             </form>
         </div>
