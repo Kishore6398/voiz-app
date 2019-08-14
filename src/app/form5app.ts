@@ -1,4 +1,4 @@
-export interface Form2{
+export interface Form5{
     id:number;
     name:string;
     email:string;
@@ -6,5 +6,5 @@ export interface Form2{
     address:string;
     city:string;
     pincode:string;
-    num:string;
+    newmob:string;
 }

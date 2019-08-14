@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-submit1',
@@ -9,10 +10,13 @@ import { ApiService } from '../api.service';
 
 })
 export class Submit1Component implements OnInit {
-  
-  constructor(private apiService: ApiService,) { 
+  number:any;
+  value:any;
+  constructor(private apiService: ApiService,private data: DataService) { 
   }
   
   ngOnInit() {
+    this.number=this.data.number;
+    this.value=this.data.value;
   }
 }
