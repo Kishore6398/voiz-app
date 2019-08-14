@@ -55,5 +55,6 @@ export class DongleComponent implements OnInit, OnDestroy {
   }
   createform3() {
     this.apiService.addform3(this.form3details).subscribe(data => this.getform3());
+  
   }
 }

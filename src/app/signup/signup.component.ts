@@ -43,6 +43,7 @@ export class SignupComponent implements OnInit {
   }
   createaccount() {
     this.apiService.addaccount(this.logindetails).subscribe(data => this.getlogin());
+    alert("Account created");
   }
 
 //   onSubmit() {
