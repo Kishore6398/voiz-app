@@ -27,7 +27,7 @@
 
                 </h3>
             </div>
-            <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div class="md-form md-outline">
                     <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="mobileInput" pattern="[6789][0-9]{9}">
                     <label for="mobile">Mobile </label>

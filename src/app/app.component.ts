@@ -1,10 +1,10 @@
 import { Component  } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonService } from './common.service';
 import { FormGroup, FormControl, Validators, FormsModule } from '@angular/forms';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 import { NavigationCancel, Event, NavigationEnd, NavigationError, NavigationStart } from '@angular/router';
+import { UserService } from './core';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,11 @@ import { NavigationCancel, Event, NavigationEnd, NavigationError, NavigationStar
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private _loadingBar: SlimLoadingBarService, private router: Router, private newService: CommonService) {
+  constructor(
+    private _loadingBar: SlimLoadingBarService,
+    private router: Router,
+    private userService: UserService
+    ) {
     this.router.events.subscribe((event: Event) => {
     this.navigationInterceptor(event);
     });
@@ -33,13 +37,8 @@ export class AppComponent {
     }
   }
 // tslint:disable-next-line: use-life-cycle-interface
-  ngOnInit () {  }
-  fn() {
-    const s = this.router.url.toString().split('/');
-    if (s[1] === '') {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  ngOnInit () { 
+    this.userService.populate();
+   }
+ 
 }

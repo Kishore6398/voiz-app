@@ -23,9 +23,12 @@ export class LoginService {
   LoginUser(formval)
   {
     const body={'phone':formval.mobileInput,'password':formval.passwordInput}
-    console.log(formval);
-    return this._http.get(this.api_url+'login/',{ headers: this.httpHeader })
+    console.log(body);
+    let cred= this._http.get(this.api_url+'login/',{ headers: this.httpHeader });
+    
+    
   }
+
   registerUser(data)
   {
     const body=JSON.stringify(data);
@@ -49,4 +52,17 @@ export class LoginService {
   {
     return this._http.delete<any>(this.api_url+'user/'+U+'/',{headers: this.httpHeader});
 }
+
+  login(user): Promise <any> {
+    let url: string = 'login/';
+    console.log(this.Cookie.get('csrftoken'));
+    return this._http.post<any>(url, user, {headers:
+                 this.httpHeader}).toPromise();
+  }
+ 
+  register(user): Promise <any>{
+    let url: string = 'profile/';
+    return this._http.post<any>(url, user, {headers:
+                this.httpHeader}).toPromise();
+  }
 }

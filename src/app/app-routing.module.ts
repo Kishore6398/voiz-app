@@ -16,6 +16,7 @@ import { NewconnectionComponent } from './newconnection/newconnection.component'
 import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
+  {path:'',component: HomeComponent, pathMatch: 'full'},
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
