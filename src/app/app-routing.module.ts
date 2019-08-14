@@ -16,7 +16,9 @@ import { Submit1Component } from './submit1/submit1.component';
 import { Submit2Component } from './submit2/submit2.component';
 import { Submit3Component } from './submit3/submit3.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { LogoutComponent } from './logout/logout.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+
 
 
 const routes: Routes = [
@@ -38,6 +40,7 @@ const routes: Routes = [
   { path: 'submit2', component: Submit2Component },
   { path: 'submit3', component: Submit3Component },
   {path: 'forgot', component: ForgotpasswordComponent },
+  {path:'logout',component:LogoutComponent},
  { path: '**', component: PagenotfoundComponent },
 ];
 

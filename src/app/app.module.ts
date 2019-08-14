@@ -32,6 +32,8 @@ import { Submit2Component } from './submit2/submit2.component';
 import { Submit3Component } from './submit3/submit3.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import {CookieService} from 'ngx-cookie-service';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     Submit3Component,
     ForgotpasswordComponent,
     PagenotfoundComponent,
+    LogoutComponent,
 
   ],
   imports: [
@@ -74,6 +77,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     CommonService,
     LoginService,
     ApiService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

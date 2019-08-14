@@ -2,7 +2,11 @@ import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { LoginService } from '../login.service';
 import { ApiService } from '../api.service';
-
+import {CookieService} from 'ngx-cookie-service';
+import {Router} from '@angular/router';
+interface TokenObj{
+  token:string;
+}
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   User: any;
   selected_user={username:'',mobile:'',email:'',password:''};
-  constructor(private fb: FormBuilder, private apiService:ApiService) {
+  constructor(private fb: FormBuilder, private apiService:ApiService,private cookieService:CookieService,private router:Router) {
    // this.getlogin();
    }
    
@@ -23,8 +27,24 @@ export class LoginComponent implements OnInit {
        mobileInput: new FormControl(null,Validators.required),
        passwordInput: new FormControl(null, Validators.required),       
      });
-        
+     const token = this.cookieService.get('usr_token');
+      if(token){
+        this.router.navigate(['/dashboard']);
 }
+ }
+onSubmit(): void{
+  //console.log(this.loginForm.value);
+  this.apiService.loginUser({username:this.loginForm.value.mobileInput,password:this.loginForm.value.passwordInput}).subscribe(
+  (data: TokenObj) => {
+  this.cookieService.set('usr_token',data.token);
+  data => this.router.navigate(['/dashboard']);
+  this.router.navigate(['/dashboard']);
+  },
+  error => console.log(error)
+  );
+  
+  }
+        
 
 /*getusershere() {
   this.login.getUsers().subscribe(data => (this.User = data));

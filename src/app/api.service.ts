@@ -12,11 +12,12 @@ import { Login } from "./loginapp";
 import { Inquiry } from "./inquiryapp";
 import { Recharge } from "./rechargeapp";
 import { Feedback } from "./feedback";
+import {CookieService} from 'ngx-cookie-service';
 @Injectable({
   providedIn: "root"
 })
 export class ApiService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private cookieService:CookieService) {}
   private baseURL = "http://localhost:8000/";
   httpHeaders = new HttpHeaders({ "Content-Type": "application/json" });
 
@@ -189,4 +190,20 @@ export class ApiService {
       headers: this.httpHeaders
     });
   }
+  loginUser(authData){
+    const body= JSON.stringify(authData);
+    return this.http.post(this.baseURL + 'auth/',body,{headers:this.httpHeaders});
+    }
+    token=this.cookieService.get('usr_token');
+    getAuthHeaders(){
+    return new HttpHeaders({
+    'content-type':'application/json',
+    Authorization:`Token${this.token}`
+    })
+    }
+    registerUser(userData){
+    console.log(userData);
+    const body =JSON.stringify(userData);
+    return this.http.post(this.baseURL + 'api/users/',body,{headers: this.httpHeaders});
+    }
 }
