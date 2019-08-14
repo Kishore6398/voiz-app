@@ -1,21 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ApiService } from '../api.service';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
+interface TokenObj {
+  token : string;
+  user_id: any;
+}
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss'],
-  providers: [ApiService]
+  providers: [ApiService, CookieService]
 })
 export class SignupComponent implements OnInit {
   login = [];
   logindetails;
-  constructor(private fb: FormBuilder, private apiService: ApiService) {
+  constructor(private fb: FormBuilder, private apiService: ApiService,private Cookie: CookieService,private router: Router) {
     this.logindetails = { id: -1, username: '', phone: '', email: '', password: '' };//1
     this.getlogin();
   }
   registerForm: FormGroup;
+  User:any;
   ngOnInit() {
     this.registerForm = new FormGroup({
       nameInput: new FormControl(null, Validators.required),
@@ -36,5 +43,20 @@ export class SignupComponent implements OnInit {
   }
   createaccount() {
     this.apiService.addaccount(this.logindetails).subscribe(data => this.getlogin());
+    alert("Account created");
   }
-}
+
+//   onSubmit() {
+//     this.apiService.RegisterUser(this.registerForm.value).subscribe(
+//       (data: TokenObj) => {
+//         this.Cookie.set('usr_token',data.token);
+//         data => this.router.navigateByUrl('/login');
+//         console.log(data.user_id);
+//         this.User = data
+//         this.router.navigateByUrl('/login')
+//       },
+//       error => console.log(error)
+//     );
+//   }
+ }
+

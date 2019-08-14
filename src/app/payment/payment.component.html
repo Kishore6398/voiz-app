@@ -145,7 +145,7 @@
                     </form>
                 </div>
 
-                <!--/.Panel 2-->
+                <!--/.Panel 3-->
                 <div class="tab-pane fade" id="panel3" role="tabpanel">
                     <form [formGroup]="ppayform">
                         <div class="card col-lg-7 mx-auto col-md-8 col-sm-12 mt-2 mb-2">
@@ -162,15 +162,28 @@
                                 <div class="md-form md-outline">
                                     <input mdbInput mdbValidate name="pnumber" type="tel" id="pnumber" class="form-control" formControlname="pnumber" pattern="[0-9]{9}">
                                     <label for="pnumber">Phone number </label>
+                                </div> 
+                                <!-- <div class="md-form md-outline">
+                                    <input mdbInput mdbValidate name="pnumber"  id="pnumber" type="tel"  class="form-control" formControlname="pnumber" required pattern="[6789][0-9]{9}">
+                                    <label for="form4">Phone number </label>
                                     <mdb-error *ngIf="pnumber.invalid && (pnumber.dirty ||pnumber.touched)"> </mdb-error>
                                     <mdb-success *ngIf="pnumber.valid && (pnumber.dirty ||pnumber.touched)"> </mdb-success>
+                                </div> -->
+
+
+
+                                <div class="md-form md-outline">
+                                    <input mdbInput mdbValidate name="mobile" type="tel" id="mobile" class="form-control" formControlName="mobileInput"  required pattern="[6789][0-9]{9}">
+                                    <label for="mobile">Mobile </label>
+                                    <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty ||mobileInput.touched)"></mdb-error>
+                                    <mdb-success *ngIf="mobileInput.valid && (mobileInput.dirty ||mobileInput.touched)"></mdb-success>
                                 </div>
 
 
 
                                 <div class="md-form md-outline">
         
-                                    <input mdbInput mdbValidate name="amt" id="amt" type="number" [(ngModel)]="amount" class="form-control" formControlName="amt" pattern="[1-9][0-9]+">
+                                    <input mdbInput mdbValidate name="amt" id="amt" type="number" [(ngModel)]="amount" class="form-control" formControlName="amt" pattern="[1-9]{1,4}">
                                     <label for="form4">Amount</label>
 
                                     <mdb-error *ngIf="amt.invalid && (amt.dirty ||amt.touched)"> </mdb-error>

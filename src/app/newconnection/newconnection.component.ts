@@ -119,12 +119,18 @@ export class NewconnectionComponent implements OnInit,OnDestroy {
     this.apiService.getform1().subscribe(data => (this.form1 = data));
   }
   createform1() {
+
+
     this.apiService.addform1(this.form1details,this.value).subscribe(data => this.getform1());
+
   }
   getform2() {
     this.apiService.getform2().subscribe(data => (this.form2 = data));
   }
   createform2() {
+
+    
+
     this.apiService.addform2(this.form2details,this.value).subscribe(data => this.getform2());
   }
   getform4() {
@@ -138,5 +144,6 @@ export class NewconnectionComponent implements OnInit,OnDestroy {
   }
   createform5() {
     this.apiService.addform5(this.form5details).subscribe(data => this.getform5());
+
   }
 }

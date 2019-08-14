@@ -12,14 +12,25 @@ import { Login } from "./loginapp";
 import { Inquiry } from "./inquiryapp";
 import { Recharge } from "./rechargeapp";
 import { Feedback } from "./feedback";
+import { CookieService } from "ngx-cookie-service";
+import { user } from './user';
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
+
 })
 export class ApiService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private Cookie: CookieService) {}
   private baseURL = "http://localhost:8000/";
   httpHeaders = new HttpHeaders({ "Content-Type": "application/json" });
-
+  token=this.Cookie.get('usr_token');
+  getAuthentication(){
+    return new HttpHeaders (
+      {
+        'content-type': 'application/json',
+        Authorization: `Token ${this.token}`
+      }
+    )
+  }
   getDongle(): Observable<Dongle[]> {
     return this.http.get<Dongle[]>(this.baseURL + "api/dongleplans/", {
       headers: this.httpHeaders
@@ -72,15 +83,27 @@ export class ApiService {
       headers: this.httpHeaders
     });
   }
+  new: any;
+  LoginUser(form) {
+    const body ={ 'username': form.mobileInput,'password': form.passwordInput }
 
+    this.new =  this.http.post(this.baseURL+'auth/',body, { headers: this.httpHeaders });
+    console.log(this.new);
+    return this.new
+  }
+  RegisterUser(form): Observable<any> {
+    const body ={ 'username': form.mobileInput,'phone': form.mobileInput,'email': form.emailInput,'password': form.passwordInput, 'first_name': form.nameInput }
+    // const body=JSON.stringify(form);
+    return this.http.post(this.baseURL+'api/profile/',body, { headers: this.httpHeaders });
+  }
   addaccount(login): Observable<Login[]> {
     const body = {
-      username: login.username,
+      username: login.phone,
       phone: login.phone,
       email: login.email,
       password: login.password
     };
-    return this.http.post<Login[]>(this.baseURL + "api/login/", body, {
+    return this.http.post<Login[]>(this.baseURL + "api/profile/", body, {
       headers: this.httpHeaders
     });
   }

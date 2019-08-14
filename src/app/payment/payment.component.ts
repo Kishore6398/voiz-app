@@ -47,7 +47,8 @@ export class PaymentComponent implements OnInit {
       damt: new FormControl(null, Validators.required),
     });
     this.ppayform = new FormGroup({
-      pnumber: new FormControl(null, Validators.required),
+      // pnumber: new FormControl(null, Validators.required),
+      mobileInput: new FormControl(null, Validators.required),
       amt: new FormControl(null, Validators.required),
     });
     this.amount = this.data.amount;
@@ -84,7 +85,8 @@ export class PaymentComponent implements OnInit {
   get dccv() { return this.dpayform.get('dccv'); }
   get dexpyear() { return this.dpayform.get('dexpyear'); }
   get damt() { return this.dpayform.get('damt'); }
-  get pnumber() { return this.ppayform.get('pnumber'); }
+  // get pnumber() { return this.ppayform.get('pnumber'); }
+  get mobileInput() { return this.ppayform.get('mobileInput'); }
   get amt() { return this.ppayform.get('amt'); }
   getrecharge() {
     this.apiService.getrecharge().subscribe(data => (this.recharge = data));

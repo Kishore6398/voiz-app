@@ -1,17 +1,17 @@
 <div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-12 mt-2 mb-2">
+    <div class="col-lg-4 col-md-4 col-sm-12 ml-5 mt-2 mb-2">
         <div class="col-lg-10 col-md-10 col-sm-12 mx-auto mt-5 pt-1">
-            <div class="card card-cascade card-rounded text-white purple-gradient">
+            <div class="card card-cascade card-rounded text-white deep-blue-gradient">
                 <div class="card-body mx-auto my-auto">
                     <h2 class="text-center">
                         Best Offers
                     </h2>
                     <div class="card-body text-center">
                         <p class="text-center">
-                            Unlimited Local Calls and Data at 399 Grab your offers here
+                            Explore the best offers of the month and recharge quickly!
                         </p>
-                        <button class="text-center text-white btn btn-lg btn-rounded btn-floating peach-gradient">
-                        Grab Now
+                        <button routerLink="/prepaidrecharge" class="text-center text-white btn btn-lg btn-rounded btn-floating pink gradient">
+                        Recharge Now
                     </button>
                     </div>
                 </div>
@@ -41,14 +41,20 @@
                     <mdb-success *ngIf="passwordInput.valid && (passwordInput.dirty ||passwordInput.touched)"> </mdb-success>
                 </div>
                 <div class="text-center mb-3">
-                    <button type="submit" routerLink="/dashboard" [disabled]='mobileInput.invalid || passwordInput.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white">Log in</button>
+                    <button type="submit" (click)="onSubmit()" [disabled]='mobileInput.invalid || passwordInput.invalid' class="btn blue-gradient btn-block rounded z-depth-1a waves-effect waves-light text-white">Log in</button>
                 </div>
+                
             </form>
         </div>
         <div class="modal-footer mx-5 pt-3 mb-1">
-            <p class="font-small grey-text d-flex justify-content-end">New member?
+                
+            <p class="font-small grey-text ">New member?
                 <a routerLink="/signup" class="blue-text ml-1">Signup</a>
+                <br>
+                <a routerLink="/forgot" class="font-small blue-text d-flex justify-content-end">Forgot password</a>
             </p>
         </div>
     </div>
 </div>
+
+
