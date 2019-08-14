@@ -25,12 +25,13 @@ import { Pack3Component } from './pack3/pack3.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { LoginService } from './login.service';
-import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { NewconnectionComponent } from './newconnection/newconnection.component';
 import { DisplayComponent } from './display/display.component';
 import { Submit1Component } from './submit1/submit1.component';
 import { Submit2Component } from './submit2/submit2.component';
 import { Submit3Component } from './submit3/submit3.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -48,12 +49,14 @@ import { Submit3Component } from './submit3/submit3.component';
     PrepaidrechargeComponent,
     DongleComponent,
     Pack3Component,
-    PagenotfoundComponent,
     NewconnectionComponent,
     DisplayComponent,
     Submit1Component,
     Submit2Component,
     Submit3Component,
+    ForgotpasswordComponent,
+    PagenotfoundComponent,
+
   ],
   imports: [
     BrowserModule,

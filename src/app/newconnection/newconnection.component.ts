@@ -67,12 +67,14 @@ export class NewconnectionComponent implements OnInit {
   }
   createform1() {
     this.apiService.addform1(this.form1details).subscribe(data => this.getform1());
+   
   }
   getform2() {
     this.apiService.getform2().subscribe(data => (this.form2 = data));
   }
   createform2() {
     this.apiService.addform2(this.form2details).subscribe(data => this.getform2());
+    
   }
   
 }
