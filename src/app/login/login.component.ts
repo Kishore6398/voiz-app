@@ -2,19 +2,29 @@ import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { LoginService } from '../login.service';
 import { ApiService } from '../api.service';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
+
+interface TokenObj {
+  token: string;
+  user_id: any;
+}
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers: [ApiService]
+  providers: [ApiService,CookieService]
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-
   User: any;
   selected_user={username:'',mobile:'',email:'',password:''};
-  constructor(private fb: FormBuilder, private apiService:ApiService) {
+  constructor(
+    private fb: FormBuilder,
+    private apiService:ApiService,
+    private Cookie:CookieService,
+    private router: Router) {
    // this.getlogin();
    }
    
@@ -23,9 +33,30 @@ export class LoginComponent implements OnInit {
        mobileInput: new FormControl(null,Validators.required),
        passwordInput: new FormControl(null, Validators.required),       
      });
-        
+      const token = this.Cookie.get('usr_token');
+      if(token){
+        this.router.navigateByUrl('/dashboard');
+      } else {
+        this.router.navigateByUrl('/login')
+      }
 }
 
+
+onSubmit(): void {
+  console.log("hi");
+      this.apiService.LoginUser(this.loginForm.value).subscribe(
+        (data: TokenObj) => {
+          this.Cookie.set('usr_token',data.token);
+          console.log("token");
+          console.log('usr_token');
+          data => this.router.navigateByUrl('/dashboard');
+          console.log(data.user_id);
+          this.User = data
+          this.router.navigateByUrl('/dashboard')
+        },
+        error => console.log(error)
+      );
+    }
 /*getusershere() {
   this.login.getUsers().subscribe(data => (this.User = data));
 }

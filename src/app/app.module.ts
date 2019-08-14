@@ -31,6 +31,8 @@ import { DisplayComponent } from './display/display.component';
 import { Submit1Component } from './submit1/submit1.component';
 import { Submit2Component } from './submit2/submit2.component';
 import { Submit3Component } from './submit3/submit3.component';
+import { LogoutComponent } from './logout/logout.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import { Submit3Component } from './submit3/submit3.component';
     Submit1Component,
     Submit2Component,
     Submit3Component,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +74,7 @@ import { Submit3Component } from './submit3/submit3.component';
     CommonService,
     LoginService,
     ApiService,
+    CookieService,
   ],
   bootstrap: [AppComponent]
 })

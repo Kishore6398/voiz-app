@@ -16,11 +16,13 @@ import { Submit1Component } from './submit1/submit1.component';
 import { Submit2Component } from './submit2/submit2.component';
 import { Submit3Component } from './submit3/submit3.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'customersupport', component: CustomersupportComponent },
   { path: 'home', component: HomeComponent },
