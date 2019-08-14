@@ -1,13 +1,19 @@
 <div class="row">
     <div class="col-md-3 col-lg-3 col-xl-3">
         <div class="sidebar pt-5">
-            <div class="list-group list-group-flush text-center">
+            <div class="list-group list-group-flush pl-3">
 
                 <a class="list-group-item list-group-item-action waves-effect active" data-toggle="tab" href="#panel1" role="tab">
                     <i class="fas fa-signal"></i>&nbsp;Prepaid Connection
                 </a>
                 <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel2" role="tab">
                     <i class="fas fa-sim-card"></i>&nbsp;Postpaid Connection
+                </a>
+                <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel3" role="tab">
+                    <i class="fas fa-sim-card"></i>&nbsp;Upgrade to Postpaid
+                </a>
+                <a class="list-group-item list-group-item-action waves-effect" data-toggle="tab" href="#panel4" role="tab">
+                    <i class="fas fa-sim-card"></i>&nbsp;Mobile Number Portability
                 </a>
             </div>
         </div>
@@ -74,9 +80,11 @@
                                         <mdb-success *ngIf="pincodeInput.valid && (pincodeInput.dirty ||pincodeInput.touched)">
                                         </mdb-success>
                                     </div>
-
-
-                                    <div class="text-center mb-3 ">
+                                    <button type="submit" class="btn btn-info" (click)="randomvalue(6000000000,9999999999)">Click Here to view your number</button>
+                                    <h4>{{ value }}</h4>
+                                   
+                                    
+                                    <div class="text-center mb-3 pt-2">
                                         <button type="submit " routerLink="/submit1" [disabled]='nameInput.invalid || emailInput.invalid || mobileInput.invalid || addressInput.invalid || cityInput.invalid || pincodeInput.invalid' class="btn btn-secondary btn-block" (click)="createform1()">Submit</button>
 
                                     </div>
@@ -151,10 +159,178 @@
                                         <mdb-success *ngIf="fpincodeInput.valid && (fpincodeInput.dirty ||fpincodeInput.touched)">
                                         </mdb-success>
                                     </div>
+                                    <button type="submit" class="btn btn-info" (click)="randomvalue(6000000000,9999999999)">Click Here to view your number</button>
+                                    <h4>{{ value }}</h4>
 
+                                    
 
                                     <div class="text-center mb-3 ">
                                         <button type="submit" routerLink="/submit2" [disabled]='fnameInput.invalid || femailInput.invalid || fmobileInput.invalid || faddressInput.invalid || fcityInput.invalid || fpincodeInput.invalid' class="btn btn-secondary btn-block" (click)="createform2()">Submit</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- Default horizontal form -->
+                    </div>
+                </div>
+
+                <!--/.Panel 2-->
+            </div>
+            <div class="tab-pane fade" id="panel3" role="tabpanel">
+                <!--Panel 2-->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <div class="container">
+                    <div class="row pt-3 pb-3">
+                        <div class="col-md-12 text-center">
+                            <h2 class="text-primary">Change from Prepaid to Postpaid</h2>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h5 class="pb-3">Fill the below form to get your SIM home delivered</h5>
+                        <!-- Default horizontal form -->
+                        <form [formGroup]="upgradeForm">
+                            <div class="card col-lg-8 mx-auto col-md-10 col-sm-12 mt-2 mb-2">
+                                <div class="card-body mx-6">
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="text" id="name" class="form-control" formControlName="anameInput" [(ngModel)]="form4details.name" required pattern="[a-zA-Z\s]{5,15}">
+                                        <label for="name">Name</label>
+                                        <mdb-error *ngIf="anameInput.invalid && (anameInput.dirty ||anameInput.touched)"></mdb-error>
+                                        <mdb-success *ngIf="anameInput.valid && (anameInput.dirty ||anameInput.touched)"></mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="email" id="email" class="form-control" formControlName="aemailInput" [(ngModel)]="form4details.email" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
+                                        <label for="email">Email </label>
+                                        <mdb-error *ngIf="aemailInput.invalid && (aemailInput.dirty ||aemailInput.touched)">
+                                        </mdb-error>
+                                        <mdb-success *ngIf="aemailInput.valid && (aemailInput.dirty ||aemailInput.touched)">
+                                        </mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="amobileInput" [(ngModel)]="form4details.mobile" required pattern="[789][0-9]{9}">
+                                        <label for="mobile">Mobile </label>
+                                        <mdb-error *ngIf="amobileInput.invalid && (amobileInput.dirty ||amobileInput.touched)">
+                                        </mdb-error>
+                                        <mdb-success *ngIf="amobileInput.valid && (amobileInput.dirty ||amobileInput.touched)">
+                                        </mdb-success>
+                                    </div>
+
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="text" id="address" class="form-control" formControlName="aaddressInput" [(ngModel)]="form4details.address" required pattern="[0-9 a-z A-Z\.\/]*\,?[a-zA-Z\s]{4,30}\,?\s?[a-zA-Z]{4,25}">
+                                        <label for=" address ">Address </label>
+                                        <mdb-error *ngIf="aaddressInput.invalid && (aaddressInput.dirty ||aaddressInput.touched) ">
+                                        </mdb-error>
+                                        <mdb-success *ngIf="aaddressInput.valid && (aaddressInput.dirty ||aaddressInput.touched) ">
+                                        </mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline ">
+                                        <input mdbInput mdbValidate type="text " id="city" class="form-control" formControlName="acityInput" [(ngModel)]="form4details.city" required pattern="[a-zA-Z]{3,15}">
+                                        <label for="city">City </label>
+                                        <mdb-error *ngIf="acityInput.invalid && (acityInput.dirty ||acityInput.touched)"></mdb-error>
+                                        <mdb-success *ngIf="acityInput.valid && (acityInput.dirty ||acityInput.touched)"></mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline ">
+                                        <input mdbInput mdbValidate type="tel " id="pincode" class="form-control" formControlName="apincodeInput" [(ngModel)]="form4details.pincode" required pattern="[1-9][0-9]{5}">
+                                        <label for="pincode">Pincode </label>
+                                        <mdb-error *ngIf="apincodeInput.invalid && (apincodeInput.dirty ||apincodeInput.touched)">
+                                        </mdb-error>
+                                        <mdb-success *ngIf="apincodeInput.valid && (apincodeInput.dirty ||apincodeInput.touched)">
+                                        </mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="tel" id="newmob" class="form-control" formControlName="anewmobInput" [(ngModel)]="form4details.newmob" required pattern="[789][0-9]{9}">
+                                        <label for="newmob">Mobile number to convert </label>
+                                        <mdb-error *ngIf="anewmobInput.invalid && (anewmobInput.dirty ||anewmobInput.touched)">
+                                        </mdb-error>
+                                        <mdb-success *ngIf="anewmobInput.valid && (anewmobInput.dirty ||anewmobInput.touched)">
+                                        </mdb-success>
+                                    </div>
+                                    
+                                    <div class="text-center mb-3 ">
+                                        <button type="submit" routerLink="/submit3" [disabled]='anameInput.invalid || aemailInput.invalid || amobileInput.invalid || aaddressInput.invalid || acityInput.invalid || apincodeInput.invalid || anewmobInput.invalid' class="btn btn-secondary btn-block" (click)="createform4()">Submit</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- Default horizontal form -->
+                    </div>
+                </div>
+
+                <!--/.Panel 2-->
+            </div>
+            <div class="tab-pane fade" id="panel4" role="tabpanel">
+                <!--Panel 2-->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <div class="container">
+                    <div class="row pt-3 pb-3">
+                        <div class="col-md-12 text-center">
+                            <h2 class="text-primary">Mobile Number Portability (MNP)</h2>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h5 class="pb-3">Fill the below form to switch to VoizFonica</h5>
+                        <!-- Default horizontal form -->
+                        <form [formGroup]="portableForm">
+                            <div class="card col-lg-8 mx-auto col-md-10 col-sm-12 mt-2 mb-2">
+                                <div class="card-body mx-6">
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="text" id="name" class="form-control" formControlName="bnameInput" [(ngModel)]="form5details.name" required pattern="[a-zA-Z\s]{5,15}">
+                                        <label for="name">Name</label>
+                                        <mdb-error *ngIf="bnameInput.invalid && (bnameInput.dirty ||bnameInput.touched)"></mdb-error>
+                                        <mdb-success *ngIf="bnameInput.valid && (bnameInput.dirty ||bnameInput.touched)"></mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="email" id="email" class="form-control" formControlName="bemailInput" [(ngModel)]="form5details.email" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
+                                        <label for="email">Email </label>
+                                        <mdb-error *ngIf="bemailInput.invalid && (bemailInput.dirty ||bemailInput.touched)">
+                                        </mdb-error>
+                                        <mdb-success *ngIf="bemailInput.valid && (bemailInput.dirty ||bemailInput.touched)">
+                                        </mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="bmobileInput" [(ngModel)]="form5details.mobile" required pattern="[789][0-9]{9}">
+                                        <label for="mobile">Mobile </label>
+                                        <mdb-error *ngIf="bmobileInput.invalid && (bmobileInput.dirty ||bmobileInput.touched)">
+                                        </mdb-error>
+                                        <mdb-success *ngIf="bmobileInput.valid && (bmobileInput.dirty ||bmobileInput.touched)">
+                                        </mdb-success>
+                                    </div>
+
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="text" id="address" class="form-control" formControlName="baddressInput" [(ngModel)]="form5details.address" required pattern="[0-9 a-z A-Z\.\/]*\,?[a-zA-Z\s]{4,30}\,?\s?[a-zA-Z]{4,25}">
+                                        <label for="address">Address </label>
+                                        <mdb-error *ngIf="baddressInput.invalid && (baddressInput.dirty ||baddressInput.touched) ">
+                                        </mdb-error>
+                                        <mdb-success *ngIf="baddressInput.valid && (baddressInput.dirty ||baddressInput.touched) ">
+                                        </mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline ">
+                                        <input mdbInput mdbValidate type="text " id="city" class="form-control" formControlName="bcityInput" [(ngModel)]="form5details.city" required pattern="[a-zA-Z]{3,15}">
+                                        <label for="city">City </label>
+                                        <mdb-error *ngIf="bcityInput.invalid && (bcityInput.dirty ||bcityInput.touched)"></mdb-error>
+                                        <mdb-success *ngIf="bcityInput.valid && (bcityInput.dirty ||bcityInput.touched)"></mdb-success>
+                                    </div>
+                                    <div class="md-form md-outline ">
+                                        <input mdbInput mdbValidate type="tel " id="pincode" class="form-control" formControlName="bpincodeInput" [(ngModel)]="form5details.pincode" required pattern="[1-9][0-9]{5}">
+                                        <label for="pincode">Pincode </label>
+                                        <mdb-error *ngIf="bpincodeInput.invalid && (bpincodeInput.dirty ||bpincodeInput.touched)">
+                                        </mdb-error>
+                                        <mdb-success *ngIf="bpincodeInput.valid && (bpincodeInput.dirty ||bpincodeInput.touched)">
+                                        </mdb-success>
+                                    </div>
+
+                                    <div class="md-form md-outline">
+                                        <input mdbInput mdbValidate type="tel" id="newmob" class="form-control" formControlName="bnewmobInput" [(ngModel)]="form5details.newmob" required pattern="[789][0-9]{9}">
+                                        <label for="newmob">Mobile number to port </label>
+                                        <mdb-error *ngIf="bnewmobInput.invalid && (bnewmobInput.dirty ||bnewmobInput.touched)">
+                                        </mdb-error>
+                                        <mdb-success *ngIf="bnewmobInput.valid && (bnewmobInput.dirty ||bnewmobInput.touched)">
+                                        </mdb-success>
+                                    </div>
+
+                                    <div class="text-center mb-3 ">
+                                        <button type="submit" routerLink="/submit3" [disabled]='bnameInput.invalid || bemailInput.invalid || bmobileInput.invalid || baddressInput.invalid || bcityInput.invalid || bpincodeInput.invalid || bnewmobInput.invalid' class="btn btn-secondary btn-block" (click)="createform5()">Submit</button>
 
                                     </div>
                                 </div>

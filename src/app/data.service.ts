@@ -10,5 +10,6 @@ export class DataService {
   amount: any;
   pid: any;
   dongledata: any;
-
+  number:any;
+  value:any;
 }

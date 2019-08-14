@@ -6,4 +6,5 @@ export interface Form1{
     address:string;
     city:string;
     pincode:string;
+    num:string;
 }
