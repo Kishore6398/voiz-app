@@ -53,6 +53,7 @@ onSubmit(): void {
     (data: TokenObj) =>{
       this.Cookie.set('usr_token', data.token);
       console.log('user authenticated successfully');
+<<<<<<< HEAD
       this.User=data.user_id;
       console.log(this.User)
       this.router.navigate(['/dashboard']);
@@ -72,6 +73,46 @@ onSubmit(): void {
 //     }
 //   );
 // }
+=======
+      this.router.navigate(['/dashboard']);
+    }
+  );
+}
+submitForm() {
+  this.errors = {errors: {}};
+
+  const credentials = this.loginForm.value;
+  this.userService
+  .attemptAuth(this.authType, credentials)
+  .subscribe(
+    data => this.router.navigateByUrl('/dashboard'),
+    err => {
+      this.errors = err;
+      console.log(err)
+    }
+  );
+}
+  LoginUser(){
+    console.log("login user");
+    const credentials = this.loginForm.value;
+    this.Login.login(credentials)
+    .then((data)=>{
+      console.log(data);
+      if(data.status==200){
+        if(data.json()['status']=='success'){
+          //this.cookieservice.put('token', data.json()['token']);
+          console.log("successfully validated");
+        }else{
+          console.log('Invalid Credentials');
+        }
+      }
+      else{
+        console.log("Some error occured")
+      }
+    })
+    
+  }
+>>>>>>> 60cf338faad14c8c458fe537c2c98991c858a3d8
 /*getusershere() {
   this.login.getUsers().subscribe(data => (this.User = data));
 }

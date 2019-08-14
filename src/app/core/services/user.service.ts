@@ -6,6 +6,7 @@ import { ApiService } from './api.service';
 import { JwtService } from './jwt.service';
 import { User } from '../models';
 import { map ,  distinctUntilChanged } from 'rxjs/operators';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Injectable()
@@ -19,7 +20,8 @@ export class UserService {
   constructor (
     private apiService: ApiService,
     private http: HttpClient,
-    private jwtService: JwtService
+    private jwtService: JwtService,
+    private Cookie: CookieService
   ) {}
 
   // Verify JWT in localstorage with server & load user's info.
@@ -40,7 +42,8 @@ export class UserService {
 
   setAuth(user: User) {
     // Save JWT sent from server in localstorage
-    this.jwtService.saveToken(user.token);
+    this.jwtService.saveToken(this.Cookie.get('usr_token'));
+    console.log('usr_token');
     // Set current user data into observable
     this.currentUserSubject.next(user);
     // Set isAuthenticated to true
@@ -58,14 +61,8 @@ export class UserService {
   data:any;
   attemptAuth(type, credentials): Observable<User> {
     const route = (type === 'login') ? '/login' : '';
-    this.data={'username':'' ,'phone':credentials.mobileInput,'password':credentials.passwordInput}
-    return this.apiService.post('login/' + route, this.data)
-      .pipe(map(
-      data => {
-        this.setAuth(data.user);
-        return data;
-      }
-    ));
+    this.data={'username':credentials.mobileInput ,'phone':credentials.mobileInput,'password':credentials.passwordInput}
+    return this.apiService.get('login/', this.data).pipe(map(data => {this.setAuth(data.username);return data;}));
   }
 
   getCurrentUser(): User {

@@ -9,11 +9,13 @@ export class JwtService {
   }
 
   saveToken(token: String) {
-    window.localStorage['usr_token'] = token;
+    token = this.Cookie.get('usr_token')
   }
 
   destroyToken() {
-    window.localStorage.removeItem('usr_token');
+    this.Cookie.delete('usr_token');
+    this.Cookie.delete('csrftoken');
+    this.Cookie.delete('session');
   }
 
 }
