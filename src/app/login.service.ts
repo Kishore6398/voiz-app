@@ -7,11 +7,11 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class LoginService {
   // private api_url = environment.api_url;
-  api_url:string= 'http://localhost:8000/api/';
+  api_url:string= 'http://localhost:8000/';
   //httpHeader = new HttpHeaders({ 'content-type': 'application/json, application/x-www-form-urlencoded, multipart/form-data, text/plain', 'Access-Control-Allow-Origin': 'SAMEORIGIN', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Methods': 'POST, GET, PUT, PATCH, OPTIONS, DELETE', 'Access-Control-Allow-Headers': 'Content-Type, Accept, X-Requested-With, remember-me' });
   httpHeader = new HttpHeaders({'content-type': 'application/json','vary': 'accept'});
   constructor(private _http: HttpClient,private Cookie:CookieService) { }
-  token=this.Cookie.get('usr_token');
+  token= this.Cookie.get('usr_token');
   getAuthentication()
   {
 
@@ -22,14 +22,14 @@ export class LoginService {
   }
   LoginUser(formval)
   {
-    const body={'phone':formval.mobileInput,'password':formval.passwordInput}
+    const body={'username':formval.mobileInput,'password':formval.passwordInput,'mobile': formval.mobileInput}
     console.log(formval);
-    return this._http.get(this.api_url+'login/',{ headers: this.httpHeader })
+    return this._http.post(this.api_url+'api/login/',{ headers: this.httpHeader })
   }
-  registerUser(data)
+  registerUser(data): Observable<any>
   {
-    const body=JSON.stringify(data);
-    return this._http.post<any>(this.api_url+'user/',body,{ headers: this.httpHeader});
+    const body={'username': data.mobileInput,'mobile':data.mobileInput,'email':data.emailInput,'password':data.passwordInput,'first_name':data.nameInput};
+    return this._http.post<any>(this.api_url+'api/profile/',body,{headers: this.httpHeader});
   }
   getUserDetails(id): Observable<any>
   {
