@@ -12,7 +12,7 @@ export class SignupComponent implements OnInit {
   login = [];
   logindetails;
   constructor(private fb: FormBuilder, private apiService: ApiService,private router:Router) {
-    this.logindetails = { id: -1, username: '', phone: '', email: '', password: '' };//1
+    this.logindetails = { id: -1, username: '', first_name: '', email: '', password: '' };//1
     this.getlogin();
   }
   registerForm: FormGroup;
@@ -36,7 +36,7 @@ export class SignupComponent implements OnInit {
   }
   onSubmit(): void{
     console.log(this.registerForm.value);
-    this.apiService.registerUser({username:this.registerForm.value.nameInput,email:this.registerForm.value.emailInput,password:this.registerForm.value.passwordInput}).subscribe(
+    this.apiService.registerUser({username:this.registerForm.value.mobileInput,email:this.registerForm.value.emailInput,password:this.registerForm.value.passwordInput,first_name:this.registerForm.value.nameInput}).subscribe(
     data=>{
     console.log(data);
     this.router.navigate(['/login']);

@@ -1,7 +1,7 @@
 export interface Login{
     id:number;
     username:string;
-    phone:number;
+    first_name:string;
     email:string;
     password:string;
 }
