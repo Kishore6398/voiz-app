@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   username:any;
   uname:any;
   firstname:any;
+  uemail:any;
   login:[];
 
 
@@ -41,6 +42,7 @@ export class LoginComponent implements OnInit {
  ngOnDestroy(){
   this.data.uname=this.uname;
   this.data.firstname=this.firstname;
+  this.data.uemail=this.uemail;
   //this.data.uname=this.User.username;
    //this.data.firstname=this.User.first_name;
    //console.log(this.data.firstname)
@@ -66,6 +68,7 @@ onSubmit(): void{
       console.log(this.User.first_name);
       this.uname=this.User.username;
       this.firstname=this.User.first_name;
+      this.uemail=this.User.email;
     },
     error => alert("User does not exists")
 

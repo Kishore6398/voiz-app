@@ -16,4 +16,5 @@ export class DataService {
   paidby:any;
   uname:any;
   firstname:any;
+  uemail:any;
 }
