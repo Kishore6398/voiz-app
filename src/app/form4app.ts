@@ -7,4 +7,5 @@ export interface Form4{
     city:string;
     pincode:string;
     newmob:string;
+    postedby:string;
 }

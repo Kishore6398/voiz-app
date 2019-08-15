@@ -4,4 +4,5 @@ export interface Recharge{
     amount:number;
     rdate:any;
     pid:any;
+    posted:any;
 }

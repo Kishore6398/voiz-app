@@ -4,4 +4,5 @@ export interface Inquiry{
     phone:number;
     email:string;
     message:string;
+    postedby:string;
 }

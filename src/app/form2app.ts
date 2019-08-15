@@ -7,4 +7,5 @@ export interface Form2{
     city:string;
     pincode:string;
     num:string;
+    postedby:string;
 }

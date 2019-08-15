@@ -4,4 +4,5 @@ export interface Feedback{
     femail:string;
     fsubject:string;
     fmessage:string;
+    postedby:string;
 }

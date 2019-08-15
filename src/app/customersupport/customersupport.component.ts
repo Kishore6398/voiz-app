@@ -59,7 +59,7 @@ export class CustomersupportComponent implements OnInit {
     this.apiService.getinquiry().subscribe(data => (this.inquiry = data));
   }
   createinquiry(){
-    this.apiService.addinquiry(this.inquirydetails).subscribe(data => {this.getinquiry();this.router.navigate(['/']);});
+    this.apiService.addinquiry(this.inquirydetails,this.uname).subscribe(data => {this.getinquiry();this.router.navigate(['/']);});
     alert("Inquiry received");
   }
 
@@ -68,7 +68,7 @@ export class CustomersupportComponent implements OnInit {
     
   }
   createfeedback(){
-    this.apiService.addfeedback(this.feedbackdetails).subscribe(data => {this.getfeedback();
+    this.apiService.addfeedback(this.feedbackdetails,this.uname).subscribe(data => {this.getfeedback();
       this.router.navigate(['/']);
     });
     alert("Feedback received");

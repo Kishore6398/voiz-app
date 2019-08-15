@@ -23,6 +23,7 @@ export class PaymentComponent implements OnInit {
   paidby:any;
   recharge = [];
   rechargedetails;
+  uname:any;
 
   constructor(private fb: FormBuilder, private data: DataService, private apiService: ApiService, private datepipe: DatePipe,private router:Router) {
     this.rechargedetails = { id: -1, mobile: '', amount: '' };//1
@@ -30,6 +31,7 @@ export class PaymentComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.uname=this.data.uname;
     this.rdate3 = this.datepipe.transform(this.rdate2, 'dd-MM-yyyy')
     this.payform = new FormGroup({
       name: new FormControl(null, Validators.required),
@@ -96,7 +98,7 @@ export class PaymentComponent implements OnInit {
     console.log(this.amount)
     console.log(this.mobile)
     console.log(this.pid)
-    this.apiService.addrecharge(this.mobile, this.amount, this.rdate3, this.pid).subscribe(data => this.getrecharge());
+    this.apiService.addrecharge(this.mobile, this.amount, this.rdate3, this.pid,this.uname).subscribe(data => this.getrecharge());
     alert("Payment Successful")
     this.router.navigate['/invoice']
   }

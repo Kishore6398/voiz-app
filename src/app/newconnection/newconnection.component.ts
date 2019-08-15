@@ -123,7 +123,7 @@ export class NewconnectionComponent implements OnInit,OnDestroy {
   createform1() {
 
 
-    this.apiService.addform1(this.form1details,this.value).subscribe(data => this.getform1());
+    this.apiService.addform1(this.form1details,this.value,this.uname).subscribe(data => this.getform1());
 
   }
   getform2() {
@@ -133,19 +133,19 @@ export class NewconnectionComponent implements OnInit,OnDestroy {
 
     
 
-    this.apiService.addform2(this.form2details,this.value).subscribe(data => this.getform2());
+    this.apiService.addform2(this.form2details,this.value,this.uname).subscribe(data => this.getform2());
   }
   getform4() {
     this.apiService.getform4().subscribe(data => (this.form4 = data));
   }
   createform4() {
-    this.apiService.addform4(this.form4details).subscribe(data => this.getform4());
+    this.apiService.addform4(this.form4details,this.uname).subscribe(data => this.getform4());
   }
   getform5() {
     this.apiService.getform5().subscribe(data => (this.form5 = data));
   }
   createform5() {
-    this.apiService.addform5(this.form5details).subscribe(data => this.getform5());
+    this.apiService.addform5(this.form5details,this.uname).subscribe(data => this.getform5());
 
   }
 }

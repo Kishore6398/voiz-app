@@ -87,7 +87,7 @@ export class ApiService {
     });
   }
 
-  addform1(form1,x): Observable<Form1[]> {
+  addform1(form1,x,y): Observable<Form1[]> {
     const body = {
       name: form1.name,
       email: form1.email,
@@ -95,13 +95,14 @@ export class ApiService {
       address: form1.address,
       city: form1.city,
       pincode: form1.pincode,
-      num:x
+      num:x,
+      postedby:y
     };
     return this.http.post<Form1[]>(this.baseURL + "api/form1/", body, {
       headers: this.httpHeaders
     });
   }
-  addform2(form2,x): Observable<Form2[]> {
+  addform2(form2,x,y): Observable<Form2[]> {
     const body = {
       name: form2.name,
       email: form2.email,
@@ -109,26 +110,28 @@ export class ApiService {
       address: form2.address,
       city: form2.city,
       pincode: form2.pincode,
-      num:x
+      num:x,
+      postedby:y
     };
     return this.http.post<Form2[]>(this.baseURL + "api/form2/", body, {
       headers: this.httpHeaders
     });
   }
-  addform3(form3): Observable<Form3[]> {
+  addform3(form3,x): Observable<Form3[]> {
     const body = {
       name: form3.name,
       email: form3.email,
       mobile: form3.mobile,
       address: form3.address,
       city: form3.city,
-      pincode: form3.pincode
+      pincode: form3.pincode,
+      postedby:x
     };
     return this.http.post<Form3[]>(this.baseURL + "api/form3/", body, {
       headers: this.httpHeaders
     });
   }
-  addform4(form4): Observable<Form4[]> {
+  addform4(form4,x): Observable<Form4[]> {
     const body = {
       name: form4.name,
       email: form4.email,
@@ -137,12 +140,13 @@ export class ApiService {
       city: form4.city,
       pincode: form4.pincode,
       newmob: form4.newmob,
+      postedby:x
     };
     return this.http.post<Form4[]>(this.baseURL + "api/form4/", body, {
       headers: this.httpHeaders
     });
   }
-  addform5(form5): Observable<Form5[]> {
+  addform5(form5,x): Observable<Form5[]> {
     const body = {
       name: form5.name,
       email: form5.email,
@@ -151,25 +155,27 @@ export class ApiService {
       city: form5.city,
       pincode: form5.pincode,
       newmob: form5.newmob,
+      postedby:x
 
     };
     return this.http.post<Form5[]>(this.baseURL + "api/form5/", body, {
       headers: this.httpHeaders
     });
   }
-  addinquiry(inquiry): Observable<Inquiry[]> {
+  addinquiry(inquiry,x): Observable<Inquiry[]> {
     const body = {
       name: inquiry.name,
       phone: inquiry.phone,
       email: inquiry.email,
-      message: inquiry.message
+      message: inquiry.message,
+      postedby:x
     };
     return this.http.post<Inquiry[]>(this.baseURL + "api/inquiry/", body, {
       headers: this.httpHeaders
     });
   }
-  addrecharge(x, y, z, id): Observable<Recharge[]> {
-    const body = { mobile: x, amount: y, rdate: z, pid: id };
+  addrecharge(x, y, z, id,postedby): Observable<Recharge[]> {
+    const body = { mobile: x, amount: y, rdate: z, pid: id,postedby:postedby };
     console.log("insiide service");
     console.log(x);
     console.log(y,z,id);
@@ -183,12 +189,13 @@ export class ApiService {
       headers: this.httpHeaders
     });
   }
-  addfeedback(feedback): Observable<Feedback[]> {
+  addfeedback(feedback,x): Observable<Feedback[]> {
     const body = {
       fname: feedback.fname,
       femail: feedback.femail,
       fsubject: feedback.fsubject,
-      fmessage: feedback.fmessage
+      fmessage: feedback.fmessage,
+      postedby:x
     };
     return this.http.post<Feedback[]>(this.baseURL + "api/feedback/", body, {
       headers: this.httpHeaders
