@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
       nameInput: new FormControl(null, Validators.required),
       emailInput: new FormControl(null, [Validators.required, Validators.email]),
       mobileInput: new FormControl(null, Validators.required),
-      passwordInput: new FormControl(null, Validators.required),
+      passwordInput: new FormControl(null, [Validators.required,Validators.minLength(5)]),
       repasswordInput: new FormControl(null, Validators.required),
     });
     console.log(this.registerForm);

@@ -34,6 +34,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import {CookieService} from 'ngx-cookie-service';
 import { LogoutComponent } from './logout/logout.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { LogoutComponent } from './logout/logout.component';
     ForgotpasswordComponent,
     PagenotfoundComponent,
     LogoutComponent,
+    InvoiceComponent,
 
   ],
   imports: [

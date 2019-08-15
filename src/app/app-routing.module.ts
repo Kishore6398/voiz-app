@@ -17,6 +17,7 @@ import { Submit2Component } from './submit2/submit2.component';
 import { Submit3Component } from './submit3/submit3.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { LogoutComponent } from './logout/logout.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'submit3', component: Submit3Component },
   {path: 'forgot', component: ForgotpasswordComponent },
   {path:'logout',component:LogoutComponent},
+  {path:'invoice',component:InvoiceComponent},
  { path: '**', component: PagenotfoundComponent },
 ];
 

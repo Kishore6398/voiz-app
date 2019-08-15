@@ -17,6 +17,7 @@ import {CookieService} from 'ngx-cookie-service';
   providedIn: "root"
 })
 export class ApiService {
+  new:any;
   constructor(private http: HttpClient,private cookieService:CookieService) {}
   private baseURL = "http://localhost:8000/";
   httpHeaders = new HttpHeaders({ "Content-Type": "application/json" });
@@ -169,6 +170,9 @@ export class ApiService {
   }
   addrecharge(x, y, z, id): Observable<Recharge[]> {
     const body = { mobile: x, amount: y, rdate: z, pid: id };
+    console.log("insiide service");
+    console.log(x);
+    console.log(y,z,id);
     return this.http.post<Recharge[]>(this.baseURL + "api/recharge/", body, {
       headers: this.httpHeaders
     });
@@ -205,5 +209,9 @@ export class ApiService {
     console.log(userData);
     const body =JSON.stringify(userData);
     return this.http.post(this.baseURL + 'api/users/',body,{headers: this.httpHeaders});
+    }
+    getUser(x):Observable<Login[]>{
+      return this.http.get<Login[]>(this.baseURL + 'api/userbynum/'+x+'/',{headers:this.httpHeaders});
+      console.log(x);
     }
 }

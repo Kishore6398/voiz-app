@@ -49,7 +49,7 @@
                                     <i class="fab fa-cc-discover" style="color:orange;width:20px"></i>
                                 </div>
                                 <div class="md-form md-outline">
-                                    <input mdbInput mdbValidate name="name" type="text" id="name" class="form-control" formControlName="name" pattern="[a-zA-Z\s]{5,25}">
+                                    <input mdbInput mdbValidate name="name" type="text" id="name" class="form-control" formControlName="name" [(ngModel)]="paidby" pattern="[a-zA-Z\s]{5,25}">
                                     <label for="form2">Name on card </label>
                                     <mdb-error *ngIf="name.invalid && (name.dirty ||name.touched)"> </mdb-error>
                                     <mdb-success *ngIf="name.valid && (name.dirty ||name.touched)"></mdb-success>
@@ -80,7 +80,7 @@
                                     <mdb-success *ngIf="camt.valid && (camt.dirty ||camt.touched)"></mdb-success>
                                 </div>
                                 <div class="text-center mb-3">
-                                    <button type="submit" routerLink="/" (click)="createrecharge()" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white" [disabled]="name.invalid || cardno.invalid || ccv.invalid || expyear.invalid">Pay now</button>
+                                    <button type="submit" routerLink="/invoice" (click)="createrecharge()" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white" [disabled]="name.invalid || cardno.invalid || ccv.invalid || expyear.invalid">Pay now</button>
                                 </div>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                                     <i class="fab fa-cc-discover" style="color:orange;width:20px"></i>
                                 </div>
                                 <div class="md-form md-outline">
-                                    <input mdbInput mdbValidate name="dname" type="text" id="dname" class="form-control" formControlName="dname" pattern="[a-zA-Z\s]{5,25}">
+                                    <input mdbInput mdbValidate name="dname" type="text" id="dname" class="form-control" formControlName="dname" [(ngModel)]="paidby" pattern="[a-zA-Z\s]{5,25}">
                                     <label for="form3">Name on card </label>
                                     <mdb-error *ngIf="dname.invalid && (dname.dirty ||dname.touched)"> </mdb-error>
                                     <mdb-success *ngIf="dname.valid && (dname.dirty ||dname.touched)"></mdb-success>
@@ -138,7 +138,7 @@
                                     <mdb-success *ngIf="damt.valid && (damt.dirty ||damt.touched)"></mdb-success>
                                 </div>
                                 <div class="text-center mb-3">
-                                    <button type="submit" routerLink="/" (click)="createrecharge()" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white" [disabled]="dname.invalid || dcardno.invalid || dccv.invalid || dexpyear.invalid">Pay now</button>
+                                    <button type="submit" routerLink="/invoice" (click)="createrecharge()" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white" [disabled]="dname.invalid || dcardno.invalid || dccv.invalid || dexpyear.invalid">Pay now</button>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +168,7 @@
 
 
                                 <div class="md-form md-outline">
-                                    <input mdbInput mdbValidate name="mobile" type="tel" id="mobile" class="form-control" formControlName="mobileInput"  required pattern="[6789][0-9]{9}">
+                                    <input mdbInput mdbValidate name="mobile" type="tel" id="mobile" class="form-control" formControlName="mobileInput" [(ngModel)]="paidby" required pattern="[6789][0-9]{9}">
                                     <label for="mobile">Mobile </label>
                                     <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty ||mobileInput.touched)"></mdb-error>
                                     <mdb-success *ngIf="mobileInput.valid && (mobileInput.dirty ||mobileInput.touched)"></mdb-success>
@@ -185,7 +185,7 @@
                                     <mdb-success *ngIf="amt.valid && (amt.dirty ||amt.touched)"></mdb-success>
                                 </div>
                                 <div class="text-center mb-3">
-                                    <button routerLink="/" type="submit" (click)="createrecharge()" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white" [disabled]="mobileInput.invalid || amt.invalid">Pay now</button>
+                                    <button routerLink="/invoice" type="submit" (click)="createrecharge()" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light text-white" [disabled]="mobileInput.invalid || amt.invalid">Pay now</button>
                                 </div>
                             </div>
                         </div>

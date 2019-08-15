@@ -12,4 +12,8 @@ export class DataService {
   dongledata: any;
   number:any;
   value:any;
+  rdate3:any;
+  paidby:any;
+  uname:any;
+  firstname:any;
 }
