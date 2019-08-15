@@ -14,6 +14,7 @@ export class Pack3Component implements OnInit, OnDestroy {
   dongledata: any;
   amount: any;
   pid: any;
+  
 
   constructor(private apiService: ApiService, private data: DataService) {
 

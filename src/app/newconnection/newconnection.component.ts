@@ -17,6 +17,7 @@ export class NewconnectionComponent implements OnInit,OnDestroy {
   postpaidForm: FormGroup;
   upgradeForm: FormGroup;
   portableForm: FormGroup;
+  uname:any;
  number:any;
   form1 = [];
   form1details;
@@ -72,6 +73,7 @@ export class NewconnectionComponent implements OnInit,OnDestroy {
       bpincodeInput: new FormControl(null, Validators.required),
       bnewmobInput: new FormControl(null, Validators.required),
     });
+    this.uname=this.data.uname;
   }
   ngOnDestroy() {
     this.data.number = this.number;

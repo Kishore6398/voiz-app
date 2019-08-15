@@ -14,6 +14,7 @@ export class DongleComponent implements OnInit, OnDestroy {
   mobile: any;
   dongle1Form: FormGroup;
   dongle2Form: FormGroup;
+  uname:any;
   form3 = [];
   form3details;
   constructor(private fb: FormBuilder, private apiService: ApiService, private data: DataService) {
@@ -22,6 +23,7 @@ export class DongleComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.uname=this.data.uname;
     this.dongle1Form = new FormGroup({
       nameInput: new FormControl(null, Validators.required),
       emailInput: new FormControl(null, Validators.required),

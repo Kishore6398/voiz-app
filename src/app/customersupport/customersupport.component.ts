@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 @Component({
   selector: 'app-customersupport',
   templateUrl: './customersupport.component.html',
@@ -13,9 +14,10 @@ export class CustomersupportComponent implements OnInit {
   feedback=[];
   inquirydetails;
   feedbackdetails;
+  uname:any;
   customerForm: FormGroup;
   customerfeedbackForm: FormGroup;
-  constructor(private fb: FormBuilder,private apiService:ApiService, private router:Router) { 
+  constructor(private fb: FormBuilder,private apiService:ApiService, private router:Router,private data:DataService) { 
     this.inquirydetails={id: -1, name:'', phone:'', email:'', message:''};//1
     this.getinquiry();
     this.feedbackdetails={id: -1, fname:'', femail:'', fsubject:'', fmessage:''};
@@ -23,6 +25,7 @@ export class CustomersupportComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.uname=this.data.uname;
     this.customerForm = new FormGroup({
       name: new FormControl(null, Validators.required),
       email: new FormControl(null, Validators.required),
