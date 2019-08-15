@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { DataService } from '../data.service';
 import { ApiService } from '../api.service';
 import { DatePipe } from '@angular/common';
+import{Router} from '@angular/router';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -19,10 +20,11 @@ export class PaymentComponent implements OnInit {
   amount: any;
   mobile: any;
   pid: any;
+  paidby:any;
   recharge = [];
   rechargedetails;
 
-  constructor(private fb: FormBuilder, private data: DataService, private apiService: ApiService, private datepipe: DatePipe) {
+  constructor(private fb: FormBuilder, private data: DataService, private apiService: ApiService, private datepipe: DatePipe,private router:Router) {
     this.rechargedetails = { id: -1, mobile: '', amount: '' };//1
     this.getrecharge();
   }
@@ -52,12 +54,26 @@ export class PaymentComponent implements OnInit {
     this.amount = this.data.amount;
     this.mobile = this.data.mobile;
     this.pid = this.data.pid;
+    this.data.paidby=this.paidby;
+
 
     //console.log(this.amount);
     //console.log(this.mobile);
     console.log(this.rdate2);
     console.log(this.rdate3);
     console.log(this.pid);
+    console.log(this.mobile);
+    console.log(this.amount);
+    console.log(this.paidby);
+  
+  }
+  ngOnDestroy(){
+    console.log(this.paidby);
+    this.data.amount=this.amount;
+    this.data.mobile=this.mobile;
+    this.data.paidby=this.paidby;
+    this.data.rdate3=this.rdate3;
+
   }
   get name() { return this.payform.get('name'); }
   get cardno() { return this.payform.get('cardno'); }
@@ -82,5 +98,6 @@ export class PaymentComponent implements OnInit {
     console.log(this.pid)
     this.apiService.addrecharge(this.mobile, this.amount, this.rdate3, this.pid).subscribe(data => this.getrecharge());
     alert("Payment Successful")
+    this.router.navigate['/invoice']
   }
 }

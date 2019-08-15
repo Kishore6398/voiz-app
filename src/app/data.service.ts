@@ -12,4 +12,7 @@ export class DataService {
   dongledata: any;
   number:any;
   value:any;
+  paidby:any;
+  activeplan:any;
+  rdate3:any;
 }
