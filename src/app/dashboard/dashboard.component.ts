@@ -8,7 +8,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  uname:string;
+  uname:any;
   firstname:any;
   uemail:any;
   Recharge:any;
@@ -17,6 +17,8 @@ export class DashboardComponent implements OnInit {
   pid:any;
   rdate:any;
   recharge2:any;
+  inquiry:any;
+  prepaid:any;
 
   returnuname()
   {
@@ -40,6 +42,18 @@ export class DashboardComponent implements OnInit {
       this.uname=this.data.uname;
       console.log(this.uname);
       this.recharge2 = response;
+      console.log(response);
+     } )
+     this.apiService.getinquiry().subscribe(response => {
+      this.uname=this.data.uname;
+      console.log(this.uname);
+      this.inquiry = response;
+      console.log(response);
+     } )
+     this.apiService.getform1().subscribe(response => {
+      this.uname=this.data.uname;
+      console.log(this.uname);
+      this.prepaid = response;
       console.log(response);
      } )
      this.uname=this.data.uname;

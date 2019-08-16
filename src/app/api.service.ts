@@ -175,7 +175,7 @@ export class ApiService {
     });
   }
   addrecharge(x, y, z, id,postedby): Observable<Recharge[]> {
-    const body = { mobile: x, amount: y, rdate: z, pid: id,postedby:postedby };
+    const body = { mobile: x, amount: JSON.stringify(y), rdate: z, pid: id,postedby:postedby };
     console.log("insiide service");
     console.log(x);
     console.log(y,z,id);
@@ -221,7 +221,7 @@ export class ApiService {
       return this.http.get<Login[]>(this.baseURL + 'api/userbynum/'+x+'/',{headers:this.httpHeaders});
       console.log(x);
     }
-    
+
     getactivity(x):Observable<Recharge[]>{
       return this.http.get<Recharge[]>(this.baseURL + 'api/userbyname'+x+'/',{headers:this.httpHeaders});
       console.log(x);
