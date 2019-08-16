@@ -38,11 +38,14 @@ export class LoginComponent implements OnInit {
       if(token){
         this.router.navigate(['/dashboard']);
 }
+this.data.uname=this.uname;
+  this.data.firstname=this.firstname;
+  this.data.uemail=this.uemail;
  }
  ngOnDestroy(){
   this.data.uname=this.uname;
   this.data.firstname=this.firstname;
-  this.data.uemail=this.uemail;
+ this.data.uemail=this.uemail;
   //this.data.uname=this.User.username;
    //this.data.firstname=this.User.first_name;
    //console.log(this.data.firstname)

@@ -221,4 +221,9 @@ export class ApiService {
       return this.http.get<Login[]>(this.baseURL + 'api/userbynum/'+x+'/',{headers:this.httpHeaders});
       console.log(x);
     }
+    
+    getactivity(x):Observable<Recharge[]>{
+      return this.http.get<Recharge[]>(this.baseURL + 'api/userbyname'+x+'/',{headers:this.httpHeaders});
+      console.log(x);
+    }
 }

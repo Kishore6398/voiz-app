@@ -1,0 +1,12 @@
+0000000000000000000000000000000000000000 4d5f1471705ce8568546b20bda0148b7e5fcd07d sruthiashvi <sruthi@apptino.com> 1565014589 +0530	initial pull
+4d5f1471705ce8568546b20bda0148b7e5fcd07d 222da39b63845b746a969022707fd56ec0fdd568 sruthiashvi <sruthi@apptino.com> 1565428172 +0530	pull https://github.com/Kishore6398/voiz-app.git: Fast-forward
+222da39b63845b746a969022707fd56ec0fdd568 1050d4a489e31974e15a2c5a03c24e258622c4d9 sruthiashvi <sruthi@apptino.com> 1565540354 +0530	commit: recharge
+1050d4a489e31974e15a2c5a03c24e258622c4d9 3bce7cbcee64fd46b422f924a012a380c9c8ff0f sruthiashvi <sruthi@apptino.com> 1565544819 +0530	commit: paymentdb
+3bce7cbcee64fd46b422f924a012a380c9c8ff0f b08f1d4cecba32b55340faffe8a702840fd3f093 sruthiashvi <sruthi@apptino.com> 1565619346 +0530	pull https://github.com/Kishore6398/voiz-app.git: Fast-forward
+b08f1d4cecba32b55340faffe8a702840fd3f093 9b2268b2d6b01578a10082a06cd28407b212dd2c sruthiashvi <sruthi@apptino.com> 1565621806 +0530	commit: changed name to username
+9b2268b2d6b01578a10082a06cd28407b212dd2c 5a475591c7e6620126af1287c456533f4cd73eb1 sruthiashvi <sruthi@apptino.com> 1565623748 +0530	commit: passed planid to payment
+5a475591c7e6620126af1287c456533f4cd73eb1 44494996fba5cfc9096adea3f69a93c05f308118 sruthiashvi <sruthi@apptino.com> 1565633125 +0530	commit: Postpaid bill
+44494996fba5cfc9096adea3f69a93c05f308118 b1be6223558520af010e13c2cfc5a78c21b5ba24 sruthiashvi <sruthi@apptino.com> 1565710535 +0530	pull https://github.com/Kishore6398/voiz-app.git: Fast-forward
+b1be6223558520af010e13c2cfc5a78c21b5ba24 fdacc7b5102a74f5793cf3dbb87d64cc545c1749 sruthiashvi <sruthi@apptino.com> 1565793441 +0530	pull https://github.com/Kishore6398/voiz-app.git sru: Fast-forward
+fdacc7b5102a74f5793cf3dbb87d64cc545c1749 d66dda7b4b7b3ce6398d907ec9a3d78a9538aa6f sruthiashvi <sruthi@apptino.com> 1565795020 +0530	commit: auth
+d66dda7b4b7b3ce6398d907ec9a3d78a9538aa6f c6a196ce60cf2210fc6203d56193b269df2f6937 sruthiashvi <sruthi@apptino.com> 1565796461 +0530	commit: login auth
