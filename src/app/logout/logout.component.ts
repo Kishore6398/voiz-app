@@ -16,6 +16,10 @@ export class LogoutComponent implements OnInit {
     }
     onLogout(){
     this.cookieService.delete('usr_token');
+    this.cookieService.delete('csrftoken');
+    this.cookieService.delete('uname');
+    this.cookieService.delete('firstname');
+    this.cookieService.delete('uemail');
     }
 
 }

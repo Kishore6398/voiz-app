@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ApiService } from '../api.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,12 +20,13 @@ export class DashboardComponent implements OnInit {
   recharge2:any;
   inquiry:any;
   prepaid:any;
-
+  user_data: any;
+  User:any;
   returnuname()
   {
     return this.uname
   }
-  constructor(private data:DataService,private apiService:ApiService) {
+  constructor(private data:DataService,private apiService:ApiService,private Cookie:CookieService) {
     /*this.apiService.getrecharge().subscribe(response => {
       this.uname=this.data.uname;
       console.log(this.uname);
@@ -32,31 +34,41 @@ export class DashboardComponent implements OnInit {
       console.log(response);
      } )
      this.uname=this.data.uname;*/
+     user_data:Cookie;
    }
 
   ngOnInit() {
-    this.uname=this.data.uname;
-    this.firstname=this.data.firstname;
-    this.uemail=this.data.uemail;
+   // this.uname=this.data.uname;
+    //this.firstname=this.data.firstname;
+   // this.uemail=this.data.uemail;
+   this.uname=this.Cookie.get('uname');
+   this.firstname=this.Cookie.get('firstname');
+   this.uemail=this.Cookie.get('uemail');
+
+    this.User = {'username':this.data.uname,'first_name':this.data.firstname,'email':this.data.uemail}
+    // this.user_data = new CookieService('user_data',this.User);
+    //this.Cookie.set('uname',this.data.uname);
+    //this.Cookie.set('firstname',this.data.firstname);
+   // this.Cookie.set('uemail',this.data.uemail);
+    //console.log(this.user_data);
     this.apiService.getrecharge().subscribe(response => {
-      this.uname=this.data.uname;
+    
       console.log(this.uname);
       this.recharge2 = response;
       console.log(response);
      } )
      this.apiService.getinquiry().subscribe(response => {
-      this.uname=this.data.uname;
+
       console.log(this.uname);
       this.inquiry = response;
       console.log(response);
      } )
      this.apiService.getform1().subscribe(response => {
-      this.uname=this.data.uname;
       console.log(this.uname);
       this.prepaid = response;
       console.log(response);
      } )
-     this.uname=this.data.uname;
+    // this.uname=this.data.uname;
 
 
 	  

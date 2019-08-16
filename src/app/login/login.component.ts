@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   User: any;
   selected_user={username:'',mobile:'',email:'',password:''};
-  constructor(private fb: FormBuilder, private apiService:ApiService,private cookieService:CookieService,private router:Router,private data:DataService) {
+  constructor(private Cookie:CookieService,private fb: FormBuilder, private apiService:ApiService,private cookieService:CookieService,private router:Router,private data:DataService) {
    }
    
  ngOnInit() {
@@ -72,6 +72,11 @@ onSubmit(): void{
       this.uname=this.User.username;
       this.firstname=this.User.first_name;
       this.uemail=this.User.email;
+      this.Cookie.set('uname',this.User.username);
+      this.Cookie.set('firstname',this.User.first_name);
+      this.Cookie.set('uemail',this.User.email);
+
+
     },
     error => alert("User does not exists")
 
