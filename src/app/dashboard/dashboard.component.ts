@@ -45,6 +45,7 @@ export class DashboardComponent implements OnInit {
    this.firstname=this.Cookie.get('firstname');
    this.uemail=this.Cookie.get('uemail');
 
+
     this.User = {'username':this.data.uname,'first_name':this.data.firstname,'email':this.data.uemail}
     // this.user_data = new CookieService('user_data',this.User);
     //this.Cookie.set('uname',this.data.uname);
@@ -87,7 +88,6 @@ export class DashboardComponent implements OnInit {
      // this.uemail=this.User.email;
     },
     error => console.log(error)
-
     );
   }
 

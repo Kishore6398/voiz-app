@@ -13,9 +13,13 @@
                     <mdb-icon fas icon="shopping-bag"></mdb-icon> Shop</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link waves-light" routerLink="/login" mdbWavesEffect>
+                <a class="nav-link waves-light" *ngIf="!isloggedin" routerLink="/login" mdbWavesEffect>
                     <mdb-icon fas icon="user"></mdb-icon>Login</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link waves-light" *ngIf="isloggedin" routerLink="/dashboard" mdbWavesEffect>
+                  <mdb-icon fas icon="user"></mdb-icon>My profile</a>
+          </li>
 
             <li class="nav-item ">
                 <a class="nav-link waves-light" routerLink="/customersupport" mdbWavesEffect>
