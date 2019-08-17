@@ -55,9 +55,8 @@ onSubmit(): void{
   this.apiService.loginUser({username:this.loginForm.value.mobileInput,password:this.loginForm.value.passwordInput}).subscribe(
   (data: TokenObj) => {
   this.cookieService.set('usr_token',data.token);
-  data => this.router.navigate(['/dashboard']);
-  this.router.navigate(['/dashboard']);
-  },
+    location.href="/dashboard"
+},
   error => console.log(error)
   );
   this.getusertest();

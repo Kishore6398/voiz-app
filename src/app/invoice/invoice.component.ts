@@ -1,6 +1,7 @@
 import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
 import { DataService } from '../data.service';
 import * as jsPDF from 'jspdf';
+import {CookieService} from 'ngx-cookie-service';
 @Component({
   selector: 'app-invoice',
   templateUrl: './invoice.component.html',
@@ -33,7 +34,7 @@ export class InvoiceComponent implements OnInit {
   }
 
 
-  constructor(private data:DataService) { }
+  constructor(private data:DataService,private Cookie:CookieService) { }
 
   ngOnInit() {
     this.amount=this.data.amount;
@@ -41,8 +42,8 @@ export class InvoiceComponent implements OnInit {
     this.paidby=this.data.paidby;
     this.rdate3=this.data.rdate3;
     this.pid=this.data.pid;
-    this.uname=this.data.uname;
-    this.firstname=this.data.firstname;
+    this.uname=this.Cookie.get('uname');
+    this.firstname=this.Cookie.get('firstname');
     console.log(this.uname);
     console.log(this.firstname);
     console.log("invoicee");

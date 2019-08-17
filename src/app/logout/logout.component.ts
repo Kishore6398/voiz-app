@@ -22,4 +22,9 @@ export class LogoutComponent implements OnInit {
     this.cookieService.delete('uemail');
     }
 
+    gotologin(){
+      location.href='/login'
+    }
+
 }
+  
