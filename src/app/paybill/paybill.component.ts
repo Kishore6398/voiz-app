@@ -7,7 +7,7 @@ import { DataService } from '../data.service';
   styleUrls: ['./paybill.component.scss']
 })
 export class PaybillComponent implements OnInit,OnDestroy {
-amount:any;
+amount:number;
 mobile:any;
 pid:any;
   paybillForm: FormGroup;

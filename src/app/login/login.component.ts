@@ -6,6 +6,8 @@ import {CookieService} from 'ngx-cookie-service';
 import {Router} from '@angular/router';
 import { getDefaultService } from 'selenium-webdriver/chrome';
 import { DataService } from '../data.service';
+import { ToastrService } from 'ngx-toastr';
+
 interface TokenObj{
   token:string;
 }
@@ -26,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   User: any;
   selected_user={username:'',mobile:'',email:'',password:''};
-  constructor(private Cookie:CookieService,private fb: FormBuilder, private apiService:ApiService,private cookieService:CookieService,private router:Router,private data:DataService) {
+  constructor(private Cookie:CookieService,private fb: FormBuilder, private apiService:ApiService,private cookieService:CookieService,private router:Router,private data:DataService,private toast:ToastrService) {
    }
    
  ngOnInit() {
@@ -34,6 +36,7 @@ export class LoginComponent implements OnInit {
        mobileInput: new FormControl(null,Validators.required),
        passwordInput: new FormControl(null, Validators.required),       
      });
+     setTimeout(() => this.toast);
      const token = this.cookieService.get('usr_token');
       if(token){
         this.router.navigate(['/dashboard']);
@@ -54,15 +57,39 @@ onSubmit(): void{
   //console.log(this.loginForm.value);
   this.apiService.loginUser({username:this.loginForm.value.mobileInput,password:this.loginForm.value.passwordInput}).subscribe(
   (data: TokenObj) => {
-  this.cookieService.set('usr_token',data.token);
-    location.href="/dashboard"
-},
-  error => console.log(error)
+    this.Cookie.set('usr_token',data.token);
+    this.toast.success("You'll be atomatically redirected to your dashboard",'Login Successful!',{
+      easing: 'ease-in',
+      timeOut: 6000,
+      progressAnimation:'increasing',
+      progressBar: true,
+      tapToDismiss:true,
+    });
+
+    this.Cookie.set('usr_token',data.token);
+    setTimeout(() => {
+      location.href="/dashboard";
+    }, 6000);
+    },
+  error => {
+    if(error.error.non_field_errors)
+         {
+            this.toast.error(error.error.non_field_errors,"Invalid Credentials!",{
+              easing: 'ease-in',
+              timeOut: 6000,
+              progressAnimation:'decreasing',
+              progressBar: true,
+              tapToDismiss:true,
+            });
+         }  
+         setTimeout(() => {
+          this.router.navigateByUrl('/login');
+      }, 6000);
+  }
   );
   this.getusertest();
   
   console.log(this.loginForm.value.mobileInput);
-  
   }    
   getusertest(){
     this.apiService.getUser(this.loginForm.value.mobileInput).subscribe(data => {
@@ -74,10 +101,31 @@ onSubmit(): void{
       this.Cookie.set('uname',this.User.username);
       this.Cookie.set('firstname',this.User.first_name);
       this.Cookie.set('uemail',this.User.email);
-
-
+      if(this.Cookie.get('uname')&&this.Cookie.get('usr_token')){
+      this.toast.success("Hi"+this.User.first_name,'Login Successful!',{
+        easing: 'ease-in',
+        timeOut: 6000,
+        progressAnimation:'increasing',
+        progressBar: true,
+        tapToDismiss:true,
+      });
+    }
     },
-    error => alert("User does not exists")
+    error => {
+      if(error.error.non_field_errors)
+         {
+            this.toast.error(error.error.non_field_errors,"Invalid Credentials!",{
+              easing: 'ease-in',
+              timeOut: 6000,
+              progressAnimation:'decreasing',
+              progressBar: true,
+              tapToDismiss:true,
+            });
+         }  
+         setTimeout(() => {
+          this.router.navigateByUrl('/login');
+      }, 2000);
+    }
 
     );
   }

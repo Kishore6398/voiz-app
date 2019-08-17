@@ -24,7 +24,7 @@
 
             <div class="md-form md-bg form-lg">
               <input mdbValidate type="tel" id="mobile" class="form-control form-control-lg"
-                 mdbInput formControlName="mobileInput" [(ngModel)]="mobile" required pattern="[6789][0-9]{9}">
+                 mdbInput formControlName="mobileInput" [(ngModel)]="mobile" required pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$">
               <label for="form-bg-lg">Mobile</label>
               <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty || mobileInput.touched)"></mdb-error>
               <mdb-success *ngIf="mobileInput.valid && (mobileInput.dirty || mobileInput.touched)"> </mdb-success>

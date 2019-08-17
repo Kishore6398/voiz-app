@@ -193,7 +193,7 @@
                                         <mdb-success *ngIf="email.valid && (email.dirty ||email.touched)"> </mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="tel" id="materialRegisterFormPhone" formControlName="phonenumber" [(ngModel)]="inquirydetails.phone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock" required pattern="[789][0-9]{9}">
+                                        <input mdbInput mdbValidate type="tel" id="materialRegisterFormPhone" formControlName="phonenumber" [(ngModel)]="inquirydetails.phone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock" required pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$">
                                         <label for="materialRegisterFormPhone">Phone number</label>
                                         <mdb-error *ngIf="phonenumber.invalid && (phonenumber.dirty ||phonenumber.touched)"> </mdb-error>
                                         <mdb-success *ngIf="phonenumber.valid && (phonenumber.dirty ||phonenumber.touched)"> </mdb-success>
@@ -245,7 +245,7 @@
                                         <mdb-success *ngIf="fname.valid && (fname.dirty ||fname.touched)"> </mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="email" id="materialContactFormEmail" formControlName="femail" class="form-control" [(ngModel)]="feedbackdetails.femail" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
+                                        <input mdbInput mdbValidate type="email" id="materialContactFormEmail" formControlName="femail" class="form-control" [(ngModel)]="feedbackdetails.femail" required pattern="[a-zA-Z0-9\.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
                                         <label for="materialContactFormEmail">E-mail</label>
                                         <mdb-error *ngIf="femail.invalid && (femail.dirty ||femail.touched)"> </mdb-error>
                                         <mdb-success *ngIf="femail.valid && (femail.dirty ||femail.touched)"> </mdb-success>

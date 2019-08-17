@@ -26,11 +26,11 @@ export class InvoiceComponent implements OnInit {
     };
     let content=this.content.nativeElement;
     doc.fromHTML(content.innerHTML,15,15, {
-      'width': 190,
+      'width': 250,
       'elementHandlers':specialElementHandlers
     });
 
-    doc.save('test.pdf');
+    doc.save('invoice.pdf');
   }
 
 

@@ -2,6 +2,8 @@ import { Component, OnInit,OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ApiService } from '../api.service';
 import { DataService } from '../data.service';
+import {CookieService} from 'ngx-cookie-service';
+
 
 
 @Component({
@@ -28,7 +30,7 @@ export class NewconnectionComponent implements OnInit,OnDestroy {
   form5 = [];
   form5details;
   value:any;
-  constructor(private fb: FormBuilder,private apiService: ApiService, private data: DataService ) { 
+  constructor(private fb: FormBuilder,private apiService: ApiService, private data: DataService,private Cookie:CookieService ) { 
   this.form1details = { id: -1, name: '', email: '', mobile: '', address: '',city:'',pincode:'' };//1
   this.getform1();
   this.form2details = { id: -1, name: '', email: '', mobile: '', address: '',city:'',pincode:'' };//1
@@ -73,7 +75,7 @@ export class NewconnectionComponent implements OnInit,OnDestroy {
       bpincodeInput: new FormControl(null, Validators.required),
       bnewmobInput: new FormControl(null, Validators.required),
     });
-    this.uname=this.data.uname;
+    this.uname=this.Cookie.get('uname')
   }
   ngOnDestroy() {
     this.data.number = this.number;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CookieService} from 'ngx-cookie-service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -9,7 +10,7 @@ import {CookieService} from 'ngx-cookie-service';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(private cookieService:CookieService) { }
+  constructor(private cookieService:CookieService,private toast:ToastrService) { }
 
   ngOnInit() {
     this.onLogout();
@@ -20,11 +21,18 @@ export class LogoutComponent implements OnInit {
     this.cookieService.delete('uname');
     this.cookieService.delete('firstname');
     this.cookieService.delete('uemail');
+    this.toast.success("You'll be automatically redirected to Home page","Successfully loggedout",{
+      easing: 'ease-in',
+      timeOut: 6000,
+      progressAnimation:'decreasing',
+      progressBar: true,
+      tapToDismiss:true,
+    });
+    setTimeout(() => {
+      location.href='/'
+  }, 3000);
+    }
+      
     }
 
-    gotologin(){
-      location.href='/login'
-    }
-
-}
   

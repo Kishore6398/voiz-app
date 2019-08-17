@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
+import {CookieService} from 'ngx-cookie-service';
 @Component({
   selector: 'app-customersupport',
   templateUrl: './customersupport.component.html',
@@ -17,7 +18,7 @@ export class CustomersupportComponent implements OnInit {
   uname:any;
   customerForm: FormGroup;
   customerfeedbackForm: FormGroup;
-  constructor(private fb: FormBuilder,private apiService:ApiService, private router:Router,private data:DataService) { 
+  constructor(private fb: FormBuilder,private apiService:ApiService, private router:Router,private data:DataService,private Cookie:CookieService) { 
     this.inquirydetails={id: -1, name:'', phone:'', email:'', message:''};//1
     this.getinquiry();
     this.feedbackdetails={id: -1, fname:'', femail:'', fsubject:'', fmessage:''};
@@ -25,7 +26,7 @@ export class CustomersupportComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.uname=this.data.uname;
+    this.uname=this.Cookie.get('uname')
     this.customerForm = new FormGroup({
       name: new FormControl(null, Validators.required),
       email: new FormControl(null, Validators.required),
@@ -60,7 +61,7 @@ export class CustomersupportComponent implements OnInit {
   }
   createinquiry(){
     this.apiService.addinquiry(this.inquirydetails,this.uname).subscribe(data => {this.getinquiry();this.router.navigate(['/']);});
-    alert("Inquiry received");
+    
   }
 
   getfeedback(){

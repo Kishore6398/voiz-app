@@ -50,7 +50,7 @@
                                         </mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="mobileInput" [(ngModel)]="form1details.mobile" required pattern="[6789][0-9]{9}">
+                                        <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="mobileInput" [(ngModel)]="form1details.mobile" required pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$">
                                         <label for="mobile">Mobile </label>
                                         <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty ||mobileInput.touched)">
                                         </mdb-error>
@@ -121,7 +121,7 @@
                                         <mdb-success *ngIf="fnameInput.valid && (fnameInput.dirty ||fnameInput.touched)"></mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="email" id="email" class="form-control" formControlName="femailInput" [(ngModel)]="form2details.email" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
+                                        <input mdbInput mdbValidate type="email" id="email" class="form-control" formControlName="femailInput" [(ngModel)]="form2details.email" required pattern="[a-zA-Z0-9\.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
                                         <label for="email">Email </label>
                                         <mdb-error *ngIf="femailInput.invalid && (femailInput.dirty ||femailInput.touched)">
                                         </mdb-error>
@@ -129,7 +129,7 @@
                                         </mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="fmobileInput" [(ngModel)]="form2details.mobile" required pattern="[789][0-9]{9}">
+                                        <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="fmobileInput" [(ngModel)]="form2details.mobile" required pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$">
                                         <label for="mobile">Mobile </label>
                                         <mdb-error *ngIf="fmobileInput.invalid && (fmobileInput.dirty ||fmobileInput.touched)">
                                         </mdb-error>
@@ -199,7 +199,7 @@
                                         <mdb-success *ngIf="anameInput.valid && (anameInput.dirty ||anameInput.touched)"></mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="email" id="email" class="form-control" formControlName="aemailInput" [(ngModel)]="form4details.email" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
+                                        <input mdbInput mdbValidate type="email" id="email" class="form-control" formControlName="aemailInput" [(ngModel)]="form4details.email" required pattern="[a-zA-Z0-9\.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
                                         <label for="email">Email </label>
                                         <mdb-error *ngIf="aemailInput.invalid && (aemailInput.dirty ||aemailInput.touched)">
                                         </mdb-error>
@@ -207,7 +207,7 @@
                                         </mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="amobileInput" [(ngModel)]="form4details.mobile" required pattern="[789][0-9]{9}">
+                                        <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="amobileInput" [(ngModel)]="form4details.mobile" required pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$">
                                         <label for="mobile">Mobile </label>
                                         <mdb-error *ngIf="amobileInput.invalid && (amobileInput.dirty ||amobileInput.touched)">
                                         </mdb-error>
@@ -238,7 +238,7 @@
                                         </mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="tel" id="newmob" class="form-control" formControlName="anewmobInput" [(ngModel)]="form4details.newmob" required pattern="[789][0-9]{9}">
+                                        <input mdbInput mdbValidate type="tel" id="newmob" class="form-control" formControlName="anewmobInput" [(ngModel)]="form4details.newmob" required pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$">
                                         <label for="newmob">Mobile number to convert </label>
                                         <mdb-error *ngIf="anewmobInput.invalid && (anewmobInput.dirty ||anewmobInput.touched)">
                                         </mdb-error>
@@ -281,7 +281,7 @@
                                         <mdb-success *ngIf="bnameInput.valid && (bnameInput.dirty ||bnameInput.touched)"></mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="email" id="email" class="form-control" formControlName="bemailInput" [(ngModel)]="form5details.email" required pattern="[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
+                                        <input mdbInput mdbValidate type="email" id="email" class="form-control" formControlName="bemailInput" [(ngModel)]="form5details.email" required pattern="[a-zA-Z0-9\.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}">
                                         <label for="email">Email </label>
                                         <mdb-error *ngIf="bemailInput.invalid && (bemailInput.dirty ||bemailInput.touched)">
                                         </mdb-error>
@@ -289,7 +289,7 @@
                                         </mdb-success>
                                     </div>
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="bmobileInput" [(ngModel)]="form5details.mobile" required pattern="[789][0-9]{9}">
+                                        <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="bmobileInput" [(ngModel)]="form5details.mobile" required pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$">
                                         <label for="mobile">Mobile </label>
                                         <mdb-error *ngIf="bmobileInput.invalid && (bmobileInput.dirty ||bmobileInput.touched)">
                                         </mdb-error>
@@ -321,7 +321,7 @@
                                     </div>
 
                                     <div class="md-form md-outline">
-                                        <input mdbInput mdbValidate type="tel" id="newmob" class="form-control" formControlName="bnewmobInput" [(ngModel)]="form5details.newmob" required pattern="[789][0-9]{9}">
+                                        <input mdbInput mdbValidate type="tel" id="newmob" class="form-control" formControlName="bnewmobInput" [(ngModel)]="form5details.newmob" required pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$">
                                         <label for="newmob">Mobile number to port </label>
                                         <mdb-error *ngIf="bnewmobInput.invalid && (bnewmobInput.dirty ||bnewmobInput.touched)">
                                         </mdb-error>

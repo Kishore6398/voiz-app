@@ -26,7 +26,7 @@
                             </mdb-success>
                         </div>
                         <div class="md-form md-outline">
-                            <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="mobileInput" [(ngModel)]="form3details.mobile" required pattern="[789][0-9]{9}">
+                            <input mdbInput mdbValidate type="tel" id="mobile" class="form-control" formControlName="mobileInput" [(ngModel)]="form3details.mobile" required pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$">
                             <label for="mobile">Mobile </label>
                             <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty ||mobileInput.touched)">
                             </mdb-error>
@@ -75,7 +75,7 @@
             <h4 class="pb-4">For Quick Recharge</h4>
             <form [formGroup]="dongle2Form">
                 <div class="md-form md-outline">
-                    <input mdbInput mdbValidate type="tel" id="number" class="form-control" formControlName="numberInput" [(ngModel)]="mobile" required pattern="[789][0-9]{9}">
+                    <input mdbInput mdbValidate type="tel" id="number" class="form-control" formControlName="numberInput" [(ngModel)]="mobile" required pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$">
                     <label for="number">Number </label>
                     <mdb-error *ngIf="numberInput.invalid && (numberInput.dirty ||numberInput.touched)">
                     </mdb-error>

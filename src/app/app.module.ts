@@ -35,6 +35,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import {CookieService} from 'ngx-cookie-service';
 import { LogoutComponent } from './logout/logout.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { ToastrModule } from 'ngx-toastr';
+import { AppPasswordDirective } from './app-password.directive';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
     PagenotfoundComponent,
     LogoutComponent,
     InvoiceComponent,
+    AppPasswordDirective,
 
   ],
   imports: [
@@ -73,6 +76,11 @@ import { InvoiceComponent } from './invoice/invoice.component';
     SlimLoadingBarModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut: 7000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
 
   ],
   providers: [

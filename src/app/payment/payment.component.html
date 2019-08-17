@@ -61,7 +61,7 @@
                                     <mdb-success *ngIf="cardno.valid && (cardno.dirty ||cardno.touched)"></mdb-success>
                                 </div>
                                 <div class="md-form md-outline">
-                                    <input mdbInput mdbValidate name="expyear" id="expyear" placeholder="" type="month" class="form-control" formControlName="expyear">
+                                    <input mdbInput mdbValidate name="month" id="month" placeholder="----/--" type="text" class="form-control" formControlName="expyear" required pattern="^(?:(2)[0-9]{3})[/](0[1-9]|1[012])+$">
                                     <label for="form2">Exp Year </label>
                                     <mdb-error *ngIf="expyear.invalid && (expyear.dirty ||expyear.touched)"> </mdb-error>
                                     <mdb-success *ngIf="expyear.valid && (expyear.dirty ||expyear.touched)"></mdb-success>
@@ -119,7 +119,7 @@
                                     <mdb-success *ngIf="dcardno.valid && (dcardno.dirty ||dcardno.touched)"></mdb-success>
                                 </div>
                                 <div class="md-form md-outline">
-                                    <input mdbInput mdbValidate name="dexpyear" id="dexpyear" placeholder="" type="month" class="form-control" formControlName="dexpyear">
+                                    <input mdbInput mdbValidate name="month" id="month" placeholder="----/--" type="text" class="form-control" formControlName="dexpyear" required pattern="^(?:(2)[0-9]{3})[/](0[1-9]|1[012])+$">
                                     <label for="form3">Exp Year </label>
                                     <mdb-error *ngIf="dexpyear.invalid && (dexpyear.dirty ||dexpyear.touched)"> </mdb-error>
                                     <mdb-success *ngIf="dexpyear.valid && (dexpyear.dirty ||dexpyear.touched)"></mdb-success>
@@ -168,7 +168,7 @@
 
 
                                 <div class="md-form md-outline">
-                                    <input mdbInput mdbValidate name="mobile" type="tel" id="mobile" class="form-control" formControlName="mobileInput" [(ngModel)]="paidby" required pattern="[6789][0-9]{9}">
+                                    <input mdbInput mdbValidate name="mobile" type="tel" id="mobile" class="form-control" formControlName="mobileInput" [(ngModel)]="paidby" required pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$">
                                     <label for="mobile">Mobile </label>
                                     <mdb-error *ngIf="mobileInput.invalid && (mobileInput.dirty ||mobileInput.touched)"></mdb-error>
                                     <mdb-success *ngIf="mobileInput.valid && (mobileInput.dirty ||mobileInput.touched)"></mdb-success>

@@ -58,7 +58,7 @@
                             <div class="card-header">Data Usage</div>
                             <div class="card-body text-primary">
                                 <h5 class="card-title text-dark">Data Consumed
-                                    <div class="text-primary">32515 Mb</div>
+                                    <div class="text-primary">3251 MB</div>
                                 </h5>
                                 <p class="card-text">Your current data usage is as shown for this month till date.</p>
                             </div>
@@ -86,10 +86,10 @@
                             <div class="card-header">Balance</div>
                             <div class="card-body text-primary">
                                 <h5 class="card-title text-dark">Remaining Balance
-                                    <div class="text-primary">50.0</div>
+                                    <div class="text-primary">220 </div>
                                 </h5>
                                 <p class="card-text">Your main account balance is as shown.</p>
-                                <a routerLink="/recharge" type="button" class="btn btn-secondary">Recharge Now</a>
+                                <a routerLink="/prepaidrecharge" type="button" class="btn btn-secondary">Recharge Now</a>
                             </div>
 
                         </div>
@@ -98,10 +98,10 @@
                         <div class="card border-primary mb-3" style="width: 25rem;height: 16rem">
                             <div class="card-header">Active Plan</div>
                             <div class="card-body text-primary">
-                                <h5 class="card-title text-dark">Recharge Date: <b class="text-primary">02/05/2019</b>
-                                </h5>
-                                <h5 class="card-title text-dark">MRP: <b class="text-primary">100</b></h5>
-                                <h5 class="card-title text-dark">Expiry Date: <b class="text-primary">03/06/2019</b>
+                                <h5 class="card-title text-dark">Recharge Date: <b class="text-primary" *ngIf="val">{{ val  }}</b> <b class="text-primary" *ngIf="!val">03-08-2019</b></h5>
+                                
+                                <h5 class="card-title text-dark">MRP: <b class="text-primary"*ngIf="bal">{{ bal }}</b><b class="text-primary"*ngIf="!bal">249 RS</b></h5>
+                                <h5 class="card-title text-dark">Expiry Date: <b class="text-primary">03/11/2019</b>
                                 </h5><br>
                                 <p class="card-text">Please recharge before the validity expires.</p>
                             </div>
@@ -121,8 +121,8 @@
                             <p>Keep your profile up-to-date to help us serve your needs</p>
                         </div>
                         <div class="col-md-6 text-right mt-3">
-                                <h5><a class="pull-right" routerLink="/logout" >
-                                    <i class="fas fa-sign-out-alt"></i>Logout
+                                <h5><a class="pull-right" class="btn btn-md btn-danger text-white" routerLink="/logout" >
+                                    <i class="fas fa-sign-out-alt text-white"></i>  &nbsp;&nbsp;Logout
                                  </a></h5>
                         </div>
                 </div>

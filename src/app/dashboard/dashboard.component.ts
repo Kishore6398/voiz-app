@@ -22,6 +22,8 @@ export class DashboardComponent implements OnInit {
   prepaid:any;
   user_data: any;
   User:any;
+  bal:any;
+  val;
   returnuname()
   {
     return this.uname
@@ -34,7 +36,7 @@ export class DashboardComponent implements OnInit {
       console.log(response);
      } )
      this.uname=this.data.uname;*/
-     user_data:Cookie;
+     
    }
 
   ngOnInit() {
@@ -44,7 +46,8 @@ export class DashboardComponent implements OnInit {
    this.uname=this.Cookie.get('uname');
    this.firstname=this.Cookie.get('firstname');
    this.uemail=this.Cookie.get('uemail');
-
+    this.bal=this.Cookie.get('bal');
+    this.val=this.Cookie.get('validity');
 
     this.User = {'username':this.data.uname,'first_name':this.data.firstname,'email':this.data.uemail}
     // this.user_data = new CookieService('user_data',this.User);
