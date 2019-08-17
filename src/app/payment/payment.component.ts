@@ -4,6 +4,7 @@ import { DataService } from '../data.service';
 import { ApiService } from '../api.service';
 import { DatePipe } from '@angular/common';
 import{Router} from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -24,14 +25,17 @@ export class PaymentComponent implements OnInit {
   recharge = [];
   rechargedetails;
   uname:any;
+  firstname:any;
 
-  constructor(private fb: FormBuilder, private data: DataService, private apiService: ApiService, private datepipe: DatePipe,private router:Router) {
+  constructor(private fb: FormBuilder, private data: DataService, private apiService: ApiService, private datepipe: DatePipe,private router:Router,private Cookie:CookieService) {
     this.rechargedetails = { id: -1, mobile: '', amount: '' };//1
     this.getrecharge();
   }
 
   ngOnInit() {
-    this.uname=this.data.uname;
+    this.uname=this.Cookie.get('uname');
+   this.firstname=this.Cookie.get('firstname');
+   // this.uname=this.data.uname;
     this.rdate3 = this.datepipe.transform(this.rdate2, 'dd-MM-yyyy')
     this.payform = new FormGroup({
       name: new FormControl(null, Validators.required),
