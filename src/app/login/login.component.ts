@@ -67,9 +67,10 @@ onSubmit(): void{
     });
 
     this.Cookie.set('usr_token',data.token);
+    this.getusertest();
     setTimeout(() => {
       location.href="/dashboard";
-    }, 6000);
+    }, 3000);
     },
   error => {
     if(error.error.non_field_errors)
@@ -84,10 +85,10 @@ onSubmit(): void{
          }  
          setTimeout(() => {
           this.router.navigateByUrl('/login');
-      }, 6000);
+      }, 3000);
   }
   );
-  this.getusertest();
+  
   
   console.log(this.loginForm.value.mobileInput);
   }    

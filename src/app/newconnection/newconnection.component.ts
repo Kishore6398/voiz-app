@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { ApiService } from '../api.service';
 import { DataService } from '../data.service';
 import {CookieService} from 'ngx-cookie-service';
-
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -30,7 +30,7 @@ export class NewconnectionComponent implements OnInit,OnDestroy {
   form5 = [];
   form5details;
   value:any;
-  constructor(private fb: FormBuilder,private apiService: ApiService, private data: DataService,private Cookie:CookieService ) { 
+  constructor(private fb: FormBuilder,private apiService: ApiService, private data: DataService,private Cookie:CookieService,private toast:ToastrService) { 
   this.form1details = { id: -1, name: '', email: '', mobile: '', address: '',city:'',pincode:'' };//1
   this.getform1();
   this.form2details = { id: -1, name: '', email: '', mobile: '', address: '',city:'',pincode:'' };//1
@@ -117,37 +117,146 @@ export class NewconnectionComponent implements OnInit,OnDestroy {
   get bnewmobInput() { return this.portableForm.get('bnewmobInput'); }
 
   
-
+  mailform4()
+  {
+    this.apiService.mailedform4(this.form4details).subscribe(data=>this.getform4());
+  }
 
   getform1() {
     this.apiService.getform1().subscribe(data => (this.form1 = data));
   }
   createform1() {
-
-
-    this.apiService.addform1(this.form1details,this.value,this.uname).subscribe(data => this.getform1());
+    this.apiService.addform1(this.form1details,this.value,this.uname).subscribe(
+      data =>{
+        this.getform1();
+        this.toast.success("Your request has been submitted successfully, we'll be in touch with you soon.","Success!",{
+          easing: 'ease-in',
+          timeOut: 6000,
+          progressAnimation:'decreasing',
+          progressBar: true,
+          tapToDismiss:true,
+        });
+        this.mailform4();
+        setTimeout(() => {
+          this.prepaidForm.reset();
+      }, 2000);
+      },
+      error => {
+        this.toast.error("There was some problem while parsing your request, Apologies.","Oops!",{
+          easing: 'ease-in',
+          timeOut: 6000,
+          progressAnimation:'decreasing',
+          progressBar: true,
+          tapToDismiss:true,
+        });
+        setTimeout(() => {
+          this.prepaidForm.reset();
+      }, 2000);
+      }
+      );
 
   }
   getform2() {
     this.apiService.getform2().subscribe(data => (this.form2 = data));
   }
   createform2() {
-
-    
-
-    this.apiService.addform2(this.form2details,this.value,this.uname).subscribe(data => this.getform2());
+    this.apiService.addform2(this.form2details,this.value,this.uname).subscribe(
+      data =>{
+        this.getform2();
+        this.toast.success("Your request has been submitted successfully, we'll be in touch with you soon.","Success!",{
+          easing: 'ease-in',
+          timeOut: 6000,
+          progressAnimation:'decreasing',
+          progressBar: true,
+          tapToDismiss:true,
+        });
+        this.mailform4();
+        setTimeout(() => {
+          this.postpaidForm.reset();
+      }, 2000);
+      },
+      error =>{
+        this.toast.error("There was some problem while parsing your request, Apologies.","Oops!",{
+          easing: 'ease-in',
+          timeOut: 6000,
+          progressAnimation:'decreasing',
+          progressBar: true,
+          tapToDismiss:true,
+        });
+        setTimeout(() => {
+          this.postpaidForm.reset();
+      }, 2000);
+      }
+      );
   }
   getform4() {
     this.apiService.getform4().subscribe(data => (this.form4 = data));
   }
   createform4() {
-    this.apiService.addform4(this.form4details,this.uname).subscribe(data => this.getform4());
+    this.apiService.addform4(this.form4details,this.uname).subscribe(
+      data =>{
+        this.getform4();
+        this.toast.success("Your request has been submitted successfully, we'll be in touch with you soon.","Success!",{
+          easing: 'ease-in',
+          timeOut: 6000,
+          progressAnimation:'decreasing',
+          progressBar: true,
+          tapToDismiss:true,
+        });
+        this.mailform4();
+        setTimeout(() => {
+          this.upgradeForm.reset();
+      }, 2000);
+        this.mailform4();
+      },
+      error=>{
+        this.toast.error("There was some problem while parsing your request, Apologies.","Oops!",{
+          easing: 'ease-in',
+          timeOut: 6000,
+          progressAnimation:'decreasing',
+          progressBar: true,
+          tapToDismiss:true,
+        });
+        setTimeout(() => {
+          this.upgradeForm.reset();
+      }, 2000);
+      }
+      );
+    
+
   }
   getform5() {
     this.apiService.getform5().subscribe(data => (this.form5 = data));
   }
   createform5() {
-    this.apiService.addform5(this.form5details,this.uname).subscribe(data => this.getform5());
+    this.apiService.addform5(this.form5details,this.uname).subscribe(
+      data =>{ 
+        this.getform5();
+        this.toast.success("Your request has been submitted successfully, we'll be in touch with you soon.","Success!",{
+          easing: 'ease-in',
+          timeOut: 6000,
+          progressAnimation:'decreasing',
+          progressBar: true,
+          tapToDismiss:true,
+        });
+        this.mailform4();
+        setTimeout(() => {
+          this.upgradeForm.reset();
+      }, 2000);
+        this.mailform4();
+      },
+      error=>{
+        this.toast.error("There was some problem while parsing your request, Apologies.","Oops!",{
+          easing: 'ease-in',
+          timeOut: 6000,
+          progressAnimation:'decreasing',
+          progressBar: true,
+          tapToDismiss:true,
+        });
+        setTimeout(() => {
+          this.upgradeForm.reset();
+      }, 2000);
+      });
 
   }
 }

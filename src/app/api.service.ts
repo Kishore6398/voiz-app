@@ -226,4 +226,20 @@ export class ApiService {
       return this.http.get<Recharge[]>(this.baseURL + 'api/userbyname'+x+'/',{headers:this.httpHeaders});
       console.log(x);
     }
+    mailedform4(form4): Observable<Form4[]> {
+      const body = {
+        name: form4.name,
+        email: form4.email,
+        mobile: form4.mobile,
+        address: form4.address,
+        city: form4.city,
+        pincode: form4.pincode,
+        newmob: form4.newmob,
+      };
+   
+      return this.http.post<Form4[]>(this.baseURL + "sendmail/", body, {
+        headers: this.httpHeaders
+      });
+      
+    }
 }

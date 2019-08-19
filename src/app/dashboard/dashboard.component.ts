@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ApiService } from '../api.service';
 import { CookieService } from 'ngx-cookie-service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dashboard',
@@ -28,7 +29,7 @@ export class DashboardComponent implements OnInit {
   {
     return this.uname
   }
-  constructor(private data:DataService,private apiService:ApiService,private Cookie:CookieService) {
+  constructor(private data:DataService,private apiService:ApiService,private Cookie:CookieService,private toast:ToastrService) {
     /*this.apiService.getrecharge().subscribe(response => {
       this.uname=this.data.uname;
       console.log(this.uname);
@@ -93,6 +94,22 @@ export class DashboardComponent implements OnInit {
     error => console.log(error)
     );
   }
-
+  logout(){
+    this.Cookie.delete('usr_token');
+    this.Cookie.delete('csrftoken');
+    this.Cookie.delete('uname');
+    this.Cookie.delete('firstname');
+    this.Cookie.delete('uemail');
+    this.toast.success("You'll be automatically redirected.","loggedout Successfully!",{
+      easing: 'ease-in',
+      timeOut: 3000,
+      progressAnimation:'decreasing',
+      progressBar: true,
+      tapToDismiss:true,
+    });
+    setTimeout(() => {
+      location.href='/login'
+  }, 2000);
+  }
    
 }

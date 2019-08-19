@@ -107,14 +107,29 @@ export class PaymentComponent implements OnInit {
     console.log(this.amount)
     console.log(this.mobile)
     console.log(this.pid)
-    this.apiService.addrecharge(this.mobile, this.amount, this.rdate3, this.pid,this.uname).subscribe(data => this.getrecharge());
-    this.toast.success("your payment of RS."+this.amount+" is successful.","Payment Successful",{
-      easing: 'ease-in',
-      timeOut: 6000,
-      progressAnimation:'decreasing',
-      progressBar: true,
-      tapToDismiss:true,
-    })
-    this.router.navigate['/invoice']
+    this.getrecharge();
+    this.apiService.addrecharge(this.mobile, this.amount, this.rdate3, this.pid,this.uname).subscribe(
+      data =>{ this.getrecharge()l
+        this.toast.success("your payment of RS."+this.amount+" is successful.","Payment Successful",{
+          easing: 'ease-in',
+          timeOut: 6000,
+          progressAnimation:'decreasing',
+          progressBar: true,
+          tapToDismiss:true,
+        });
+        this.router.navigate['/invoice']
+      },
+      error =>
+      {
+        this.toast.error("There is some problem with the payment","Payment Error",{
+          easing: 'ease-in',
+          timeOut: 6000,
+          progressAnimation:'decreasing',
+          progressBar: true,
+          tapToDismiss:true,
+        });
+      }
+      );
+    
   }
 }

@@ -21,7 +21,7 @@ export class LogoutComponent implements OnInit {
     this.cookieService.delete('uname');
     this.cookieService.delete('firstname');
     this.cookieService.delete('uemail');
-    this.toast.success("You'll be automatically redirected to Home page","Successfully loggedout",{
+    this.toast.success("You'll be automatically redirected.","Successfully loggedout",{
       easing: 'ease-in',
       timeOut: 6000,
       progressAnimation:'decreasing',
@@ -29,7 +29,7 @@ export class LogoutComponent implements OnInit {
       tapToDismiss:true,
     });
     setTimeout(() => {
-      location.href='/'
+      location.href='/login'
   }, 3000);
     }
       
